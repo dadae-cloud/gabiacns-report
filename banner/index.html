@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>가비아CNS 배너 클릭 리포트</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+html, body { margin: 0; }
+body { background: #ecebe7; padding: 24px max(16px, env(safe-area-inset-left, 0px)) 40px max(16px, env(safe-area-inset-right, 0px)); }
+body.dark { background: #121211; }
+.bn { --cds-radius: 12px; --cds-gap-lg: 16px; }
+/* Layout: 머리(사이트 선택·기간) → KPI → 인사이트 → 일별 추이 → 위치별 → 배너별 순위 → 슬라이드 순서 → 닫기·넘기기 상세 → 기준 안내 */
+.bn { --bn-cta: #2f6fdb; --bn-dismiss: #d9480f; --bn-nav: #8f8a80; --bn-gabia: #2f6fdb; --bn-fm: #e8590c; --bn-cn: #0e9384;
+  --bn-insight: color-mix(in srgb, var(--bn-cta) 7%, var(--color-panel)); --bn-insight-line: color-mix(in srgb, var(--bn-cta) 28%, var(--color-border-line));
+  --color-fg: #1f1e1c; --color-fg-muted: #6b6a66; --color-bg: #f6f5f2; --color-panel: #ffffff; --color-border-line: #e4e2dc; --color-ok: #2e7d4f; --color-warn: #b7791f; --color-bad: #c0392b;
+  --cds-chart-grid: #ecebe7; --cds-text-secondary: #6b6a66; --cds-surface-popover: #ffffff; --cds-border: #dddbd5; --cds-shadow-popover: 0 4px 14px rgba(0,0,0,.12);
+  display: flex; flex-direction: column; gap: var(--cds-gap-lg, 16px); font-family: "Pretendard Variable", Pretendard, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; color: var(--color-fg); font-size: 13px; letter-spacing: -0.01em;
+  background: var(--color-bg); color-scheme: light; border-radius: var(--cds-radius, 12px); padding: 16px; max-width: 1080px; margin: 0 auto; box-sizing: border-box; width: 100%; }
+.bn.bn-dark { --color-fg: #ecebe8; --color-fg-muted: #a3a19c; --color-bg: #1b1b1a; --color-panel: #262624; --color-border-line: #3a3936; --color-ok: #5cbf86; --color-warn: #e0a84a; --color-bad: #ef7466;
+  --cds-chart-grid: #34332f; --cds-text-secondary: #a3a19c; --cds-surface-popover: #2f2f2c; --cds-border: #45443f; --cds-shadow-popover: 0 4px 14px rgba(0,0,0,.5);
+  --bn-cta: #6f9bff; --bn-dismiss: #ff8a5c; --bn-nav: #8a867d; --bn-gabia: #6f9bff; --bn-fm: #ff8a4c; --bn-cn: #3cc4b2; color-scheme: dark; }
+.bn button { font-family: inherit; }
+.bn h1 { font-weight: 700; font-size: 24px; letter-spacing: -0.02em; margin: 0; text-wrap: balance; }
+.bn h2 { font-size: 15px; font-weight: 600; margin: 0; }
+.bn-note { color: var(--color-fg-muted); font-size: 12px; margin: 0; line-height: 1.55; }
+.bn-top { display: flex; flex-direction: column; gap: 12px; background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius, 12px); padding: 14px 16px; }
+.bn-row { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+.bn-btn { font: inherit; font-size: 12px; border: 1px solid var(--color-border-line); background: var(--color-panel); color: var(--color-fg); border-radius: 8px; padding: 5px 11px; cursor: pointer; white-space: nowrap; }
+.bn-btn[aria-pressed="true"] { border-color: var(--bn-cta); color: var(--bn-cta); background: color-mix(in srgb, var(--bn-cta) 8%, var(--color-panel)); font-weight: 600; }
+.bn-btn:focus-visible, .bn summary:focus-visible { outline: 2px solid var(--bn-cta); outline-offset: 2px; }
+.bn-theme { margin-left: auto; gap: 4px; }
+.bn-card { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius, 12px); padding: 16px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.bn-sec-head { display: flex; flex-direction: column; gap: 2px; }
+.bn-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+.bn-kpi { gap: 3px; padding: 13px 15px; }
+.bn-kpi-label { font-size: 12px; color: var(--color-fg-muted); }
+.bn-kpi-value { font-weight: 700; font-size: 26px; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; line-height: 1.25; }
+.bn-kpi-sub { font-size: 11.5px; color: var(--color-fg-muted); font-variant-numeric: tabular-nums; }
+.bn-insight { background: var(--bn-insight); border-color: var(--bn-insight-line); }
+.bn-insight h2 { color: var(--bn-cta); font-size: 13px; }
+.bn-insight ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; line-height: 1.6; }
+.bn-insight li { display: list-item; list-style: disc outside; }
+.bn-insight li::marker { color: var(--bn-cta); }
+.bn-two { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: var(--cds-gap-lg, 16px); align-items: start; }
+.bn-chartbox { position: relative; min-height: 220px; }
+.bn-chart text { fill: var(--cds-text-secondary); font-size: 11px; }
+.bn-tip { position: absolute; pointer-events: none; background: var(--cds-surface-popover); border: 1px solid var(--cds-border); box-shadow: var(--cds-shadow-popover); border-radius: 8px; padding: 6px 10px; font-size: 12px; font-variant-numeric: tabular-nums; z-index: 2; line-height: 1.5; max-width: 260px; }
+.bn-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12px; color: var(--color-fg-muted); }
+.bn-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 4px; vertical-align: -1px; }
+.bn-tablewrap { overflow: auto; max-height: 520px; border: 1px solid var(--color-border-line); border-radius: 8px; }
+.bn table { width: 100%; border-collapse: collapse; font-size: 12.5px; font-variant-numeric: tabular-nums; }
+.bn th { text-align: left; font-weight: 600; color: var(--color-fg-muted); padding: 8px 10px; border-bottom: 1px solid var(--color-border-line); position: sticky; top: 0; background: var(--color-bg); white-space: nowrap; z-index: 1; font-size: 12px; }
+.bn td { padding: 8px 10px; border-bottom: 1px solid var(--color-border-line); vertical-align: top; }
+.bn tbody tr:last-child td { border-bottom: none; }
+.bn .num { text-align: right; white-space: nowrap; }
+.bn .sub { display: block; color: var(--color-fg-muted); font-size: 11px; }
+.bn td.wrap { min-width: 200px; line-height: 1.5; }
+.bn-swatch { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; }
+.bn-barcell { display: flex; align-items: center; gap: 6px; justify-content: flex-end; }
+.bn-bar { height: 6px; border-radius: 3px; opacity: .8; }
+.bn-heat { text-align: center; font-variant-numeric: tabular-nums; min-width: 34px; }
+.bn-pill { display: inline-block; font-size: 11px; border: 1px solid currentColor; border-radius: 999px; padding: 0 8px; white-space: nowrap; }
+.bn details.bn-card > summary { cursor: pointer; font-weight: 600; }
+.bn details ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 4px; line-height: 1.55; color: var(--color-fg-muted); font-size: 12px; }
+.bn details li { display: list-item; list-style: disc; }
+[data-dash-source-state=refreshing] { opacity: .5; }
+
+</style>
+</head>
+<body>
+<div class="bn" id="bn-root">
+  <header class="bn-top" id="bn-top">
+    <div class="bn-row" style="align-items:flex-start">
+      <div style="flex:1;min-width:0">
+        <h1>가비아CNS 배너 클릭 리포트</h1>
+        <p class="bn-note">사이트 배너(헤드리스 배너)에서 일어난 클릭을 GA4로 모았어요 · 11월 23일 저녁부터 측정해 아직 데이터가 적어요</p>
+      </div>
+      <div class="bn-row bn-theme" role="group" aria-label="화면 모드"><button class="bn-btn" type="button" data-theme-opt="light" aria-pressed="true">라이트</button><button class="bn-btn" type="button" data-theme-opt="dark" aria-pressed="false">다크</button></div>
+    </div>
+    <div class="bn-row">
+      <div class="bn-row" role="group" aria-label="사이트" id="bn-sites" style="gap:6px">
+        <button class="bn-btn" type="button" data-site="전체" aria-pressed="true">전체</button>
+        <button class="bn-btn" type="button" data-site="가비아커머스" aria-pressed="false">가비아커머스</button>
+        <button class="bn-btn" type="button" data-site="퍼스트몰" aria-pressed="false">퍼스트몰</button>
+        <button class="bn-btn" type="button" data-site="클릭엔" aria-pressed="false">클릭엔</button>
+      </div>
+      <span class="bn-note">기간 <b data-draw="rangeText" data-source="bn_meta">—</b></span>
+    </div>
+  </header>
+
+  <section class="bn-kpis" id="bn-kpis">
+    <div class="bn-card bn-kpi" id="kpi-cta"><span class="bn-kpi-label">배너 클릭</span><span class="bn-kpi-value" data-draw="kCta">—</span><span class="bn-kpi-sub">배너를 눌러 연결 페이지로 이동</span></div>
+    <div class="bn-card bn-kpi" id="kpi-dismiss"><span class="bn-kpi-label">닫기·숨기기</span><span class="bn-kpi-value" data-draw="kDismiss">—</span><span class="bn-kpi-sub">배너를 치운 클릭</span></div>
+    <div class="bn-card bn-kpi" id="kpi-nav"><span class="bn-kpi-label">넘기기·전체보기</span><span class="bn-kpi-value" data-draw="kNav">—</span><span class="bn-kpi-sub">화살표·페이지 점·재생·전체보기</span></div>
+    <div class="bn-card bn-kpi" id="kpi-share"><span class="bn-kpi-label">배너 클릭 비중</span><span class="bn-kpi-value" data-draw="kShare">—</span><span class="bn-kpi-sub">전체 배너 관련 클릭 중 배너 클릭</span></div>
+  </section>
+
+  <section class="bn-card bn-insight" id="bn-insights">
+    <h2>한눈에 보기</h2>
+    <ul data-draw="insights" data-source="bn_insights"></ul>
+  </section>
+
+  <section class="bn-card" id="bn-daily">
+    <div class="bn-sec-head"><h2>일별 클릭</h2><p class="bn-note">배너 클릭과 닫기·숨기기를 날짜별로 비교해요</p></div>
+    <div class="bn-legend"><span><i style="background:var(--bn-cta)"></i>배너 클릭</span><span><i style="background:var(--bn-dismiss)"></i>닫기·숨기기</span><span><i style="background:var(--bn-nav)"></i>넘기기·전체보기</span></div>
+    <div class="bn-chartbox" data-draw="dailyChart" data-source="bn_daily"></div>
+  </section>
+
+  <section class="bn-card" id="bn-loc">
+    <div class="bn-sec-head"><h2>배너 위치별</h2><p class="bn-note">위치마다 배너 클릭, 닫기·숨기기, 넘기기 수예요</p></div>
+    <div class="bn-tablewrap">
+      <table id="tbl-loc" data-source="bn_loc" data-row-key="site,location">
+        <thead><tr><th>위치</th><th class="num">배너 클릭</th><th class="num">닫기·숨기기</th><th class="num">넘기기·전체보기</th><th class="num">배너 클릭 비중</th></tr></thead>
+        <tbody data-draw="locTable"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="bn-card" id="bn-titles">
+    <div class="bn-sec-head"><h2>배너별 클릭 순위</h2><p class="bn-note">배너 제목 기준이에요 · 같은 배너가 여러 페이지에 걸려 있으면 합쳐서 세요</p></div>
+    <div class="bn-tablewrap">
+      <table id="tbl-titles" data-source="bn_titles" data-row-key="site,location,title">
+        <thead><tr><th class="num">순위</th><th>배너</th><th class="num">순서</th><th class="num">클릭</th><th class="num">PC</th><th class="num">모바일·태블릿</th></tr></thead>
+        <tbody data-draw="titleTable"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="bn-two">
+    <div class="bn-card" id="bn-pos">
+      <div class="bn-sec-head"><h2>슬라이드 순서별 클릭</h2><p class="bn-note">돌아가는 배너에서 몇 번째 배너가 눌렸는지예요</p></div>
+      <div class="bn-tablewrap">
+        <table id="tbl-pos" data-source="bn_pos" data-row-key="site,location">
+          <thead><tr><th>위치</th><th class="bn-heat">1</th><th class="bn-heat">2</th><th class="bn-heat">3</th><th class="bn-heat">4</th><th class="bn-heat">5</th><th class="bn-heat">6</th><th class="bn-heat">7</th></tr></thead>
+          <tbody data-draw="posTable"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="bn-card" id="bn-ctrl">
+      <div class="bn-sec-head"><h2>닫기·넘기기 상세</h2><p class="bn-note">어떤 조작이 어느 페이지에서 많았는지예요</p></div>
+      <div class="bn-tablewrap">
+        <table id="tbl-ctrl" data-source="bn_ctrl" data-row-key="site,location,action">
+          <thead><tr><th>위치 · 조작</th><th class="num">클릭</th><th>가장 많은 페이지</th></tr></thead>
+          <tbody data-draw="ctrlTable"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <details class="bn-card" id="bn-basis">
+    <summary>기준 안내</summary>
+    <ul>
+      <li>배너 클릭 = 배너를 눌러 연결된 페이지로 이동한 클릭이에요. 닫기·숨기기, 화살표·페이지 점·재생 버튼, 전체보기는 따로 세요.</li>
+      <li>클릭 수는 GA4 이벤트 수예요. 한 사람이 여러 번 누르면 여러 번 세요.</li>
+      <li>순서 = 돌아가는 배너에서 해당 배너의 실제 순서(1번째, 2번째…)예요.</li>
+      <li>가비아커머스·퍼스트몰·클릭엔 사이트를 집계해요. 이셀러스는 아직 포함하지 않아요.</li>
+      <li>오늘 숫자는 하루가 끝난 뒤 반영돼요.</li>
+    </ul>
+  </details>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+window.dash = (() => {
+  const src = {}, calcs = {}, draws = {}, cache = {};
+  const get = (id) => {
+    if (src[id]) return { status: 'ok', data: src[id] };
+    const c = calcs[id]; if (!c) return { status: 'loading', data: [] };
+    if (cache[id]) return cache[id];
+    const ins = c.inputs.map((i) => get(i));
+    if (ins.some((x) => x.status !== 'ok')) return { status: 'loading', data: null };
+    return (cache[id] = { status: 'ok', data: c.fn(...ins.map((x) => x.data)) });
+  };
+  const run = (name) => { for (const el of document.querySelectorAll(`[data-draw="${name}"]`)) { try { draws[name](el); } catch (e) { console.error(name, e); } } };
+  return {
+    _load(id, rows) { src[id] = rows; for (const k in cache) delete cache[k]; for (const n in draws) run(n); },
+    data: get,
+    calc(id, o) { calcs[id] = o; },
+    draw(name, fn) { if (fn) { draws[name] = fn; run(name); } else if (draws[name]) run(name); },
+    _all() { for (const n in draws) run(n); },
+  };
+})();
+</script>
+<script>
+window.BN = window.BN || { site: '전체' };
+window.bnFmt = { n: (v) => (v == null || v === '' || isNaN(+v)) ? '—' : d3.format(',')(Math.round(+v)), pct: (v, d = 0) => (v == null || isNaN(+v)) ? '—' : (+v).toFixed(d) + '%' };
+window.bnDraws = ['rangeText', 'kCta', 'kDismiss', 'kNav', 'kShare', 'insights', 'dailyChart', 'locTable', 'titleTable', 'posTable', 'ctrlTable'];
+window.bnSiteColor = { '가비아커머스': 'var(--bn-gabia)', '퍼스트몰': 'var(--bn-fm)', '클릭엔': 'var(--bn-cn)' };
+window.bnBucket = (r) => r.kind === 'cta' ? 'cta' : (r.action === '닫기' || r.action === '숨기기') ? 'dismiss' : 'nav';
+const SITES = ['가비아커머스', '퍼스트몰', '클릭엔'];
+const withAll = (rows, keyFn, aggFn) => {
+  const out = [];
+  for (const site of ['전체', ...SITES]) {
+    const g = d3.group(rows.filter((r) => site === '전체' || r.site === site), keyFn);
+    for (const [k, rs] of g) out.push({ site, ...aggFn(k, rs) });
+  }
+  return out;
+};
+
+dash.calc('bn_kpi', {
+  title: '사이트별 요약',
+  description: '사이트마다(전체 포함) 배너 클릭, 닫기·숨기기, 넘기기·전체보기 클릭 수와 배너 클릭 비중을 합산해요.',
+  inputs: ['bn_clicks'],
+  fn: (clicks) => ['전체', '가비아커머스', '퍼스트몰', '클릭엔'].map((site) => {
+    const rs = clicks.filter((r) => site === '전체' || r.site === site);
+    const sum = (b) => rs.filter((r) => (r.kind === 'cta' ? 'cta' : (r.action === '닫기' || r.action === '숨기기') ? 'dismiss' : 'nav') === b).reduce((a, r) => a + (+r.clicks || 0), 0);
+    const cta = sum('cta'), dismiss = sum('dismiss'), nav = sum('nav'), all = cta + dismiss + nav;
+    return { site, cta, dismiss, nav, cta_share: all ? Math.round(cta / all * 1000) / 10 : null };
+  }),
+});
+
+dash.calc('bn_daily', {
+  title: '일별 클릭',
+  description: '사이트(전체 포함)·날짜마다 배너 클릭, 닫기·숨기기, 넘기기·전체보기 클릭 수를 합산해요.',
+  inputs: ['bn_clicks'],
+  fn: (clicks) => {
+    const out = [];
+    for (const site of ['전체', '가비아커머스', '퍼스트몰', '클릭엔']) {
+      const rs = clicks.filter((r) => site === '전체' || r.site === site);
+      for (const date of [...new Set(clicks.map((r) => r.date))].sort()) {
+        const d = rs.filter((r) => r.date === date);
+        const s = (b) => d.filter((r) => (r.kind === 'cta' ? 'cta' : (r.action === '닫기' || r.action === '숨기기') ? 'dismiss' : 'nav') === b).reduce((a, r) => a + (+r.clicks || 0), 0);
+        out.push({ site, date, cta: s('cta'), dismiss: s('dismiss'), nav: s('nav') });
+      }
+    }
+    return out;
+  },
+});
+
+dash.calc('bn_loc', {
+  title: '위치별 클릭',
+  description: '사이트·배너 위치마다 배너 클릭, 닫기·숨기기, 넘기기·전체보기 클릭 수와 배너 클릭 비중을 합산해요.',
+  inputs: ['bn_clicks'],
+  fn: (clicks) => {
+    const out = [];
+    for (const [k, rs] of d3.group(clicks, (r) => r.site + '|' + r.location)) {
+      const [site, location] = k.split('|');
+      const s = (b) => rs.filter((r) => (r.kind === 'cta' ? 'cta' : (r.action === '닫기' || r.action === '숨기기') ? 'dismiss' : 'nav') === b).reduce((a, r) => a + (+r.clicks || 0), 0);
+      const cta = s('cta'), dismiss = s('dismiss'), nav = s('nav');
+      out.push({ site, location, cta, dismiss, nav, cta_share: Math.round(cta / (cta + dismiss + nav) * 1000) / 10 });
+    }
+    return out.sort((a, b) => (b.cta + b.dismiss + b.nav) - (a.cta + a.dismiss + a.nav));
+  },
+});
+
+dash.calc('bn_titles', {
+  title: '배너별 클릭',
+  description: '배너 클릭만 골라 사이트·위치·배너 제목마다 클릭 수를 합치고, PC와 모바일·태블릿으로 나눠요. 순서는 가장 많이 눌린 슬라이드 순서예요.',
+  inputs: ['bn_clicks'],
+  fn: (clicks) => {
+    const out = [];
+    for (const [k, rs] of d3.group(clicks.filter((r) => r.kind === 'cta'), (r) => r.site + '|' + r.location + '|' + (r.title || '(제목 없음)'))) {
+      const [site, location, title] = k.split('|');
+      const tot = d3.sum(rs, (r) => +r.clicks), pc = d3.sum(rs.filter((r) => r.device === 'desktop'), (r) => +r.clicks);
+      const pos = d3.greatest(d3.rollups(rs, (v) => d3.sum(v, (r) => +r.clicks), (r) => r.position), (x) => x[1]);
+      out.push({ site, location, title, position: pos && pos[0] ? pos[0] : '', clicks: tot, desktop: pc, mobile: tot - pc });
+    }
+    return out.sort((a, b) => b.clicks - a.clicks || a.title.localeCompare(b.title));
+  },
+});
+
+dash.calc('bn_pos', {
+  title: '슬라이드 순서별 클릭',
+  description: '배너 클릭 중 순서 값이 있는 것만 골라 사이트·위치·순서(1~7)마다 클릭 수를 합쳐요.',
+  inputs: ['bn_clicks'],
+  fn: (clicks) => {
+    const out = [];
+    for (const [k, rs] of d3.group(clicks.filter((r) => r.kind === 'cta' && r.position), (r) => r.site + '|' + r.location)) {
+      const [site, location] = k.split('|');
+      const row = { site, location };
+      for (let i = 1; i <= 7; i++) row['p' + i] = d3.sum(rs.filter((r) => +r.position === i), (r) => +r.clicks);
+      row.total = d3.sum(rs, (r) => +r.clicks);
+      out.push(row);
+    }
+    return out.sort((a, b) => b.total - a.total);
+  },
+});
+
+dash.calc('bn_ctrl', {
+  title: '닫기·넘기기 상세',
+  description: '배너 클릭이 아닌 조작(닫기·숨기기·화살표·페이지 점·재생·전체보기)을 사이트·위치·조작마다 합치고, 가장 많이 일어난 페이지와 그 비중을 붙여요.',
+  inputs: ['bn_clicks'],
+  fn: (clicks) => {
+    const out = [];
+    for (const [k, rs] of d3.group(clicks.filter((r) => r.kind === 'control'), (r) => r.site + '|' + r.location + '|' + r.action)) {
+      const [site, location, action] = k.split('|');
+      const tot = d3.sum(rs, (r) => +r.clicks);
+      const top = d3.greatest(d3.rollups(rs, (v) => d3.sum(v, (r) => +r.clicks), (r) => r.page), (x) => x[1]);
+      out.push({ site, location, action, clicks: tot, top_page: top[0], top_share: Math.round(top[1] / tot * 100) });
+    }
+    return out.sort((a, b) => b.clicks - a.clicks);
+  },
+});
+
+dash.calc('bn_insights', {
+  title: '한눈에 보기',
+  description: '사이트(전체 포함)마다 배너 클릭과 닫기·숨기기를 비교하고, 가장 많이 눌린 배너, 가장 많이 닫힌 위치, 메인 배너의 첫 번째 슬라이드 비중을 문장으로 정리해요.',
+  inputs: ['bn_kpi', 'bn_titles', 'bn_ctrl', 'bn_pos'],
+  fn: (kpi, titles, ctrl, pos) => {
+    const out = [];
+    const n = (v) => d3.format(',')(v);
+    for (const site of ['전체', '가비아커머스', '퍼스트몰', '클릭엔']) {
+      const pick = (rows) => rows.filter((r) => site === '전체' || r.site === site);
+      const k = kpi.find((r) => r.site === site); let i = 0;
+      const add = (text) => out.push({ site, i: i++, text });
+      if (!k || !(k.cta + k.dismiss + k.nav)) { add('아직 집계된 클릭이 없어요.'); continue; }
+      if (k.dismiss > k.cta) add(`닫기·숨기기가 ${n(k.dismiss)}회로 배너 클릭 ${n(k.cta)}회의 ${(k.dismiss / Math.max(k.cta, 1)).toFixed(1)}배예요. 배너를 치우는 사람이 누르는 사람보다 많아요.`);
+      else add(`배너 클릭 ${n(k.cta)}회, 닫기·숨기기 ${n(k.dismiss)}회예요.`);
+      const t = pick(titles)[0];
+      if (t) add(`가장 많이 눌린 배너는 ${site === '전체' ? t.site + ' ' : ''}${t.location}의 "${t.title}"(${n(t.clicks)}회)예요.`);
+      const d = pick(ctrl).filter((r) => r.action === '닫기' || r.action === '숨기기');
+      if (d.length) { const top = d3.rollups(d, (v) => d3.sum(v, (r) => r.clicks), (r) => (site === '전체' ? r.site + ' ' : '') + r.location).sort((a, b) => b[1] - a[1])[0]; add(`가장 많이 닫힌 곳은 ${top[0]}(${n(top[1])}회)예요.`); }
+      const m = pick(pos).filter((r) => r.location === '메인 배너' && r.total >= 3);
+      for (const r of m) add(`${site === '전체' ? r.site + ' ' : ''}메인 배너 클릭 ${n(r.total)}회 중 첫 번째 슬라이드가 ${n(r.p1)}회(${Math.round(r.p1 / r.total * 100)}%)예요.`);
+      add('측정 초기라 숫자가 작아요. 1~2주 쌓인 뒤 비교하는 걸 권해요.');
+    }
+    return out;
+  },
+});
+
+const enc = (v) => encodeURIComponent(v);
+const rowsOf = (id) => { const d = dash.data(id); return d.status === 'ok' ? d.data.filter((r) => BN.site === '전체' || r.site === BN.site) : null; };
+const mkTd = (v, cls) => { const td = document.createElement('td'); if (cls) td.className = cls; if (v instanceof Node) td.append(v); else td.textContent = v; return td; };
+const bar = (v, max, color) => { const w = document.createElement('div'); w.className = 'bn-barcell'; const i = document.createElement('span'); i.className = 'bn-bar'; i.style.width = Math.max(v ? 2 : 0, v / (max || 1) * 60) + 'px'; i.style.background = color; const t = document.createElement('span'); t.textContent = bnFmt.n(v); w.append(i, t); return w; };
+const siteName = (r) => { const f = document.createDocumentFragment(); const sw = document.createElement('span'); sw.className = 'bn-swatch'; sw.style.background = bnSiteColor[r.site]; f.append(sw, r.location); const s = document.createElement('span'); s.className = 'sub'; s.textContent = r.site; f.append(s); return f; };
+
+const bnTheme = (dark) => {
+  for (const r of document.querySelectorAll('#bn-root')) r.classList.toggle('bn-dark', dark);
+  document.body.classList.toggle('dark', dark);
+  for (const b of document.querySelectorAll('[data-theme-opt]')) b.setAttribute('aria-pressed', String((b.dataset.themeOpt === 'dark') === dark));
+  try { localStorage.setItem('bn-theme', dark ? 'dark' : 'light'); } catch (e) {}
+};
+let bnDark = false; try { bnDark = localStorage.getItem('bn-theme') === 'dark'; } catch (e) {}
+bnTheme(bnDark);
+for (const b of document.querySelectorAll('[data-theme-opt]')) b.addEventListener('click', () => { bnTheme(b.dataset.themeOpt === 'dark'); for (const n of bnDraws) dash.draw(n); });
+for (const b of document.querySelectorAll('#bn-sites [data-site]')) b.addEventListener('click', () => {
+  BN.site = b.dataset.site;
+  for (const x of document.querySelectorAll('#bn-sites [data-site]')) x.setAttribute('aria-pressed', String(x.dataset.site === BN.site));
+  for (const n of bnDraws) dash.draw(n);
+});
+
+dash.draw('rangeText', (el) => { const d = dash.data('bn_meta'); const m = d.status === 'ok' ? d.data[0] : null; el.textContent = m ? `${m.start} ~ ${m.end}` : '—'; });
+
+const kDraw = (name, field, fmt) => dash.draw(name, (el) => {
+  const d = dash.data('bn_kpi'); const k = d.status === 'ok' ? d.data.find((r) => r.site === BN.site) : null;
+  if (!k || k[field] == null) { el.textContent = '—'; for (const a of ['data-source', 'data-field', 'data-where']) el.removeAttribute(a); return; }
+  el.textContent = fmt(k[field]); el.setAttribute('data-source', 'bn_kpi'); el.setAttribute('data-field', field); el.setAttribute('data-where', 'site=' + enc(BN.site));
+});
+kDraw('kCta', 'cta', bnFmt.n); kDraw('kDismiss', 'dismiss', bnFmt.n); kDraw('kNav', 'nav', bnFmt.n); kDraw('kShare', 'cta_share', (v) => bnFmt.pct(v, 1));
+
+dash.draw('insights', (ul) => {
+  const d = dash.data('bn_insights'); if (d.status !== 'ok') { ul.replaceChildren(); return; }
+  ul.replaceChildren(...d.data.filter((r) => r.site === BN.site).map((r) => { const li = document.createElement('li'); li.textContent = r.text; li.setAttribute('data-source', 'bn_insights'); li.setAttribute('data-field', 'text'); li.setAttribute('data-where', 'site=' + enc(r.site) + '&i=' + r.i); return li; }));
+});
+
+dash.draw('dailyChart', (el) => {
+  const d = dash.data('bn_daily'); if (d.status !== 'ok') { el.replaceChildren('—'); return; }
+  const rows = d.data.filter((r) => r.site === BN.site);
+  const W = Math.max(280, el.clientWidth), H = 220, m = { t: 12, r: 8, b: 26, l: 34 };
+  const keys = [['cta', '배너 클릭', 'var(--bn-cta)'], ['dismiss', '닫기·숨기기', 'var(--bn-dismiss)'], ['nav', '넘기기·전체보기', 'var(--bn-nav)']];
+  const x0 = d3.scaleBand().domain(rows.map((r) => r.date)).range([m.l, W - m.r]).padding(0.25);
+  const x1 = d3.scaleBand().domain(keys.map((k) => k[0])).range([0, x0.bandwidth()]).padding(0.08);
+  const y = d3.scaleLinear().domain([0, d3.max(rows, (r) => Math.max(r.cta, r.dismiss, r.nav)) || 1]).nice().range([H - m.b, m.t]);
+  const svg = d3.create('svg').attr('class', 'bn-chart').attr('width', W).attr('height', H).attr('viewBox', `0 0 ${W} ${H}`);
+  svg.append('g').selectAll('line').data(y.ticks(4)).join('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y).attr('y2', y).attr('stroke', 'var(--cds-chart-grid)');
+  svg.append('g').selectAll('text').data(y.ticks(4)).join('text').attr('x', m.l - 6).attr('y', (v) => y(v) + 4).attr('text-anchor', 'end').text(d3.format(','));
+  svg.append('g').selectAll('text').data(rows).join('text').attr('x', (r) => x0(r.date) + x0.bandwidth() / 2).attr('y', H - 8).attr('text-anchor', 'middle').text((r) => r.date.slice(5).replace('-', '/'));
+  const tip = document.createElement('div'); tip.className = 'bn-tip'; tip.hidden = true;
+  const g = svg.append('g').selectAll('g').data(rows).join('g').attr('transform', (r) => `translate(${x0(r.date)},0)`);
+  g.selectAll('rect').data((r) => keys.map((k) => ({ r, k }))).join('rect')
+    .attr('x', (o) => x1(o.k[0])).attr('width', x1.bandwidth()).attr('y', (o) => y(o.r[o.k[0]])).attr('height', (o) => y(0) - y(o.r[o.k[0]])).attr('rx', 2).attr('fill', (o) => o.k[2])
+    .on('pointermove', (ev, o) => { tip.hidden = false; tip.textContent = ''; const b = document.createElement('b'); b.textContent = o.r.date; tip.append(b, document.createElement('br'), ...keys.flatMap((k) => [`${k[1]} ${bnFmt.n(o.r[k[0]])}`, document.createElement('br')])); const [px, py] = d3.pointer(ev, el); tip.style.left = Math.min(px + 12, W - 170) + 'px'; tip.style.top = Math.max(0, py - 60) + 'px'; })
+    .on('pointerleave', () => { tip.hidden = true; });
+  el.replaceChildren(svg.node(), tip);
+});
+
+dash.draw('locTable', (tb) => {
+  const rows = rowsOf('bn_loc'); if (!rows) { tb.replaceChildren(); return; }
+  const max = d3.max(rows, (r) => Math.max(r.cta, r.dismiss)) || 1;
+  tb.replaceChildren(...rows.map((r) => { const tr = document.createElement('tr'); tr.setAttribute('data-key', enc(r.site) + ',' + enc(r.location));
+    tr.append(mkTd(siteName(r)), mkTd(bar(r.cta, max, 'var(--bn-cta)'), 'num'), mkTd(bar(r.dismiss, max, 'var(--bn-dismiss)'), 'num'), mkTd(bnFmt.n(r.nav), 'num'), mkTd(bnFmt.pct(r.cta_share), 'num')); return tr; }));
+});
+
+dash.draw('titleTable', (tb) => {
+  const rows = rowsOf('bn_titles'); if (!rows) { tb.replaceChildren(); return; }
+  const max = d3.max(rows, (r) => r.clicks) || 1;
+  tb.replaceChildren(...rows.map((r, i) => { const tr = document.createElement('tr'); tr.setAttribute('data-key', enc(r.site) + ',' + enc(r.location) + ',' + enc(r.title));
+    const nm = document.createElement('div'); nm.append(r.title); const s = document.createElement('span'); s.className = 'sub'; s.textContent = `${r.site} · ${r.location}`; nm.append(s);
+    tr.append(mkTd(String(i + 1), 'num'), mkTd(nm, 'wrap'), mkTd(r.position ? r.position + '번째' : '—', 'num'), mkTd(bar(r.clicks, max, bnSiteColor[r.site]), 'num'), mkTd(bnFmt.n(r.desktop), 'num'), mkTd(bnFmt.n(r.mobile), 'num')); return tr; }));
+});
+
+dash.draw('posTable', (tb) => {
+  const rows = rowsOf('bn_pos'); if (!rows) { tb.replaceChildren(); return; }
+  const max = d3.max(rows, (r) => d3.max([1, 2, 3, 4, 5, 6, 7], (i) => r['p' + i])) || 1;
+  tb.replaceChildren(...rows.map((r) => { const tr = document.createElement('tr'); tr.setAttribute('data-key', enc(r.site) + ',' + enc(r.location)); tr.append(mkTd(siteName(r)));
+    for (let i = 1; i <= 7; i++) { const v = r['p' + i]; const td = mkTd(v ? bnFmt.n(v) : '·', 'bn-heat'); if (v) td.style.background = `color-mix(in srgb, ${bnSiteColor[r.site]} ${Math.round(12 + v / max * 45)}%, transparent)`; tr.append(td); }
+    return tr; }));
+});
+
+dash.draw('ctrlTable', (tb) => {
+  const rows = rowsOf('bn_ctrl'); if (!rows) { tb.replaceChildren(); return; }
+  const max = d3.max(rows, (r) => r.clicks) || 1;
+  tb.replaceChildren(...rows.map((r) => { const tr = document.createElement('tr'); tr.setAttribute('data-key', enc(r.site) + ',' + enc(r.location) + ',' + enc(r.action));
+    const nm = document.createElement('div'); nm.append(`${r.location} · ${r.action}`); const s = document.createElement('span'); s.className = 'sub'; s.textContent = r.site; nm.append(s);
+    const dis = r.action === '닫기' || r.action === '숨기기';
+    const pg = document.createElement('div'); pg.append(r.top_page); const ps = document.createElement('span'); ps.className = 'sub'; ps.textContent = `이 조작의 ${r.top_share}%`; pg.append(ps);
+    tr.append(mkTd(nm), mkTd(bar(r.clicks, max, dis ? 'var(--bn-dismiss)' : 'var(--bn-nav)'), 'num'), mkTd(pg)); return tr; }));
+});
+
+
+
+const NUM = ['clicks', 'users'];
+Promise.all(['bn_clicks', 'bn_meta'].map((id) => fetch(`data/${id}.csv?v=${Date.now()}`).then((r) => r.text()).then((t) => [id, d3.csvParse(t, (r) => { for (const k of NUM) if (k in r) r[k] = +r[k]; return r; })])))
+  .then((all) => { for (const [id, rows] of all) dash._load(id, rows); })
+  .catch((e) => { for (const el of document.querySelectorAll('#bn-insights ul')) el.textContent = '데이터를 불러오지 못했어요.'; console.error(e); });
+let rt; window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => dash._all(), 150); });
+</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+site,date,event,kind,click_class,location,action,title,position,device,page,clicks,users
+클릭엔,2026-11-23,banner_control_click,control,clickn-quick-banner-close,퀵 배너,닫기,,,desktop,/mypage,7,5
+클릭엔,2026-11-23,banner_control_click,control,clickn-top-banner-close,상단 띠배너,닫기,,,desktop,/,4,3
+클릭엔,2026-11-23,banner_control_click,control,clickn-quick-banner-close,퀵 배너,닫기,,,desktop,/,3,3
+클릭엔,2026-11-23,banner_control_click,control,clickn-quick-banner-close,퀵 배너,닫기,,,desktop,/template/homepage,1,1
+클릭엔,2026-11-23,banner_control_click,control,clickn-quick-banner-hide,퀵 배너,숨기기,,,desktop,/mypage,1,1
+클릭엔,2026-11-23,banner_control_click,control,clickn-top-banner-close,상단 띠배너,닫기,,,desktop,/template/homepage/external/gabia,1,1
+클릭엔,2026-11-23,banner_control_click,control,clickn-top-banner-hide,상단 띠배너,숨기기,,,desktop,/mypage,1,1
+퍼스트몰,2026-11-23,banner_click,cta,firstmall-main-banner-cta,메인 배너,배너 클릭,"공공 및 민간 기관, 대형 쇼핑몰 니즈를 반영한 맞춤 제작",5,desktop,/,1,1
+퍼스트몰,2026-11-23,banner_control_click,control,firstmall-top-banner-arr-next,상단 띠배너,다음 화살표,,,desktop,/,1,1
+퍼스트몰,2026-11-23,banner_control_click,control,firstmall-top-banner-close,상단 띠배너,닫기,,,desktop,/customer/notice/26392,1,1
+가비아커머스,2026-11-24,banner_control_click,control,gabiacns-submain-banner-arr-prev,서브메인 배너,이전 화살표,,,desktop,/ads/agency,3,1
+가비아커머스,2026-11-24,banner_click,cta,gabiacns-main-banner-cta,메인 배너,배너 클릭,가비아 @ 창업지원센터 2027 입주사 모집,1,desktop,/,1,1
+가비아커머스,2026-11-24,banner_click,cta,gabiacns-mypage-banner-cta,마이페이지 띠배너,배너 클릭,,1,desktop,/my,1,1
+가비아커머스,2026-11-24,banner_click,cta,gabiacns-submain-banner-cta,서브메인 배너,배너 클릭,네이버 광고 '공식 파트너사' 선정 🎉,2,desktop,/ads/agency,1,1
+클릭엔,2026-11-24,banner_control_click,control,clickn-quick-banner-close,퀵 배너,닫기,,,desktop,/mypage,48,38
+클릭엔,2026-11-24,banner_control_click,control,clickn-quick-banner-close,퀵 배너,닫기,,,desktop,/,15,14
+클릭엔,2026-11-24,banner_control_click,control,clickn-quick-banner-hide,퀵 배너,숨기기,,,desktop,/mypage,7,5
+클릭엔,2026-11-24,banner_control_click,control,clickn-top-banner-close,상단 띠배너,닫기,,,desktop,/,4,4
+클릭엔,2026-11-24,banner_control_click,control,clickn-top-banner-hide,상단 띠배너,숨기기,,,desktop,/mypage,4,4
+클릭엔,2026-11-24,banner_control_click,control,clickn-main-banner-pagination,메인 배너,페이지 점,,,desktop,/,3,1
+클릭엔,2026-11-24,banner_control_click,control,clickn-quick-banner-close,퀵 배너,닫기,,,desktop,/template,3,3
+클릭엔,2026-11-24,banner_control_click,control,clickn-quick-banner-close,퀵 배너,닫기,,,desktop,/template/homepage,3,3
+클릭엔,2026-11-24,banner_control_click,control,clickn-quick-banner-hide,퀵 배너,숨기기,,,desktop,/,3,3
+클릭엔,2026-11-24,banner_control_click,control,clickn-top-banner-close,상단 띠배너,닫기,,,desktop,/mypage,3,3
+클릭엔,2026-11-24,banner_control_click,control,clickn-top-banner-hide,상단 띠배너,숨기기,,,desktop,/,3,3
+클릭엔,2026-11-24,banner_click,cta,clickn-main-banner-cta,메인 배너,배너 클릭,전문가가 다 해주는 홈페이지 제작,1,desktop,/,2,2
+클릭엔,2026-11-24,banner_click,cta,clickn-main-banner-cta,메인 배너,배너 클릭,전문가가 다 해주는 홈페이지 제작,1,mobile,/,2,2
+클릭엔,2026-11-24,banner_click,cta,clickn-quick-banner-cta,퀵 배너,배너 클릭,"카드결제 오픈, 로켓처럼 빠르게.",1,desktop,/,2,2
+클릭엔,2026-11-24,banner_control_click,control,clickn-quick-banner-close,퀵 배너,닫기,,,desktop,/case,2,2
+클릭엔,2026-11-24,banner_control_click,control,clickn-quick-banner-close,퀵 배너,닫기,,,desktop,/event/clickn2026,2,2
+클릭엔,2026-11-24,banner_control_click,control,clickn-quick-banner-close,퀵 배너,닫기,,,desktop,/intro/shopping,2,2
+클릭엔,2026-11-24,banner_control_click,control,clickn-quick-banner-close,퀵 배너,닫기,,,desktop,/price,2,2
+클릭엔,2026-11-24,banner_control_click,control,clickn-top-banner-close,상단 띠배너,닫기,,,desktop,/intro/shopping,2,1
+클릭엔,2026-11-24,banner_click,cta,clickn-main-banner-cta,메인 배너,배너 클릭,월 5천원으로 시작하는 나만의 앱!,4,desktop,/,1,1
+클릭엔,2026-11-24,banner_click,cta,clickn-main-banner-cta,메인 배너,배너 클릭,클릭엔을 선택한 고객의 이야기를 확인해보세요,2,desktop,/,1,1
+클릭엔,2026-11-24,banner_click,cta,clickn-top-banner-cta,상단 띠배너,배너 클릭,운영비 월 최대 10만원 할인,1,desktop,/template,1,1
+클릭엔,2026-11-24,banner_control_click,control,clickn-quick-banner-close,퀵 배너,닫기,,,desktop,/intro/homepage,1,1
+클릭엔,2026-11-24,banner_control_click,control,clickn-quick-banner-close,퀵 배너,닫기,,,desktop,/payment/service_completed,1,1
+클릭엔,2026-11-24,banner_control_click,control,clickn-quick-banner-close,퀵 배너,닫기,,,desktop,/template/custom,1,1
+클릭엔,2026-11-24,banner_control_click,control,clickn-quick-banner-hide,퀵 배너,숨기기,,,desktop,/template,1,1
+클릭엔,2026-11-24,banner_control_click,control,clickn-top-banner-arr-prev,상단 띠배너,이전 화살표,,,desktop,/intro/shopping,1,1
+클릭엔,2026-11-24,banner_control_click,control,clickn-top-banner-close,상단 띠배너,닫기,,,desktop,/event/clickn2026,1,1
+클릭엔,2026-11-24,banner_control_click,control,clickn-top-banner-close,상단 띠배너,닫기,,,desktop,/intro/homepage,1,1
+클릭엔,2026-11-24,banner_control_click,control,clickn-top-banner-close,상단 띠배너,닫기,,,desktop,/price,1,1
+클릭엔,2026-11-24,banner_control_click,control,clickn-top-banner-close,상단 띠배너,닫기,,,desktop,/template,1,1
+퍼스트몰,2026-11-24,banner_click,cta,firstmall-main-banner-cta,메인 배너,배너 클릭,복잡한 쇼핑몰 세팅 끝! 이제 사장님은 판매에만 집중하세요,1,desktop,/,2,2
+퍼스트몰,2026-11-24,banner_click,cta,firstmall-gnb-banner-cta,GNB 배너,배너 클릭,스킨 선택부터 오픈까지 한 번에!,2,desktop,/,1,1
+퍼스트몰,2026-11-24,banner_click,cta,firstmall-main-banner-cta,메인 배너,배너 클릭,당신의 비즈니스에 딱 맞춘 쇼핑몰 가비아 퍼스트몰 독립 쇼핑몰,3,desktop,/,1,1
+퍼스트몰,2026-11-24,banner_click,cta,firstmall-submain-banner-cta,서브메인 배너,배너 클릭,믿고 쓰는 똑똑한 퍼스트몰,1,desktop,/introduce/firstmall/prem,1,1
+퍼스트몰,2026-11-24,banner_click,cta,firstmall-submain-banner-cta,서브메인 배너,배너 클릭,믿고 쓰는 똑똑한 퍼스트몰,1,mobile,/introduce/firstmall/prem,1,1
+퍼스트몰,2026-11-24,banner_click,cta,firstmall-submain-banner-cta,서브메인 배너,배너 클릭,운영중인 쇼핑몰 그대로 쉽고 빠르게 무료 이전,1,desktop,/buildservice/frelocate,1,1
+퍼스트몰,2026-11-24,banner_click,cta,firstmall-top-banner-cta,상단 띠배너,배너 클릭,가비아 @ 창업지원센터,1,desktop,/,1,1
+퍼스트몰,2026-11-24,banner_click,cta,firstmall-top-banner-cta,상단 띠배너,배너 클릭,가비아 @ 창업지원센터,1,desktop,/customer/faq/12,1,1
+퍼스트몰,2026-11-24,banner_click,cta,firstmall-top-banner-cta,상단 띠배너,배너 클릭,가비아 쇼핑몰로 환승하세요.,4,desktop,/customer/patch,1,1
+퍼스트몰,2026-11-24,banner_control_click,control,firstmall-top-banner-close,상단 띠배너,닫기,,,desktop,/customer/faq/26349,1,1
+퍼스트몰,2026-11-24,banner_control_click,control,firstmall-top-banner-close,상단 띠배너,닫기,,,desktop,/customer/notice/27590,1,1
+퍼스트몰,2026-11-24,banner_control_click,control,firstmall-top-banner-close,상단 띠배너,닫기,,,desktop,/myshop,1,1
+가비아커머스,2026-11-25,banner_control_click,control,gabiacns-main-banner-arr-next,메인 배너,다음 화살표,,,desktop,/,6,2
+가비아커머스,2026-11-25,banner_control_click,control,gabiacns-main-banner-arr-prev,메인 배너,이전 화살표,,,desktop,/,2,1
+가비아커머스,2026-11-25,banner_control_click,control,gabiacns-submain-banner-arr-prev,서브메인 배너,이전 화살표,,,desktop,/ads/agency,2,1
+가비아커머스,2026-11-25,banner_click,cta,gabiacns-main-banner-cta,메인 배너,배너 클릭,"도메인이 있다면, 홈페이지는 무료?",7,mobile,/,1,1
+가비아커머스,2026-11-25,banner_click,cta,gabiacns-submain-banner-cta,서브메인 배너,배너 클릭,카카오 광고 공식 파트너사 선정 🎉,1,desktop,/ads/agency,1,1
+클릭엔,2026-11-25,banner_control_click,control,clickn-quick-banner-close,퀵 배너,닫기,,,desktop,/mypage,25,20
+클릭엔,2026-11-25,banner_control_click,control,clickn-quick-banner-close,퀵 배너,닫기,,,desktop,/template/homepage,9,9
+클릭엔,2026-11-25,banner_control_click,control,clickn-quick-banner-close,퀵 배너,닫기,,,desktop,/,7,7
+클릭엔,2026-11-25,banner_control_click,control,clickn-quick-banner-hide,퀵 배너,숨기기,,,desktop,/mypage,4,4
+클릭엔,2026-11-25,banner_control_click,control,clickn-top-banner-close,상단 띠배너,닫기,,,desktop,/mypage,4,3
+클릭엔,2026-11-25,banner_control_click,control,clickn-top-banner-hide,상단 띠배너,숨기기,,,desktop,/,4,4
+클릭엔,2026-11-25,banner_control_click,control,clickn-quick-banner-close,퀵 배너,닫기,,,desktop,/template,3,3
+클릭엔,2026-11-25,banner_control_click,control,clickn-top-banner-close,상단 띠배너,닫기,,,desktop,/,3,3
+클릭엔,2026-11-25,banner_click,cta,clickn-main-banner-cta,메인 배너,배너 클릭,AI 어시스트로 더 빠르고 스마트하게,3,mobile,/,2,1
+클릭엔,2026-11-25,banner_click,cta,clickn-main-banner-cta,메인 배너,배너 클릭,클릭엔을 선택한 고객의 이야기를 확인해보세요,2,desktop,/,2,2
+클릭엔,2026-11-25,banner_click,cta,clickn-top-banner-cta,상단 띠배너,배너 클릭,상품명 하나로 상세페이지 완성,2,desktop,/,2,2
+클릭엔,2026-11-25,banner_control_click,control,clickn-quick-banner-close,퀵 배너,닫기,,,desktop,/event/clickn2026,2,2
+클릭엔,2026-11-25,banner_control_click,control,clickn-quick-banner-hide,퀵 배너,숨기기,,,desktop,/customer/qna,2,2
+클릭엔,2026-11-25,banner_click,cta,clickn-loading-banner-cta,사이트 설치 로딩 배너,배너 클릭,"월 5,000원으로 시작하는 나만의 앱",1,desktop,/register,1,1
+클릭엔,2026-11-25,banner_click,cta,clickn-main-banner-cta,메인 배너,배너 클릭,AI 어시스트로 더 빠르고 스마트하게,3,desktop,/,1,1
+클릭엔,2026-11-25,banner_click,cta,clickn-main-banner-cta,메인 배너,배너 클릭,전문가가 다 해주는 홈페이지 제작,1,desktop,/,1,1
+클릭엔,2026-11-25,banner_click,cta,clickn-top-banner-cta,상단 띠배너,배너 클릭,상품명 하나로 상세페이지 완성,2,mobile,/price,1,1
+클릭엔,2026-11-25,banner_click,cta,clickn-top-banner-cta,상단 띠배너,배너 클릭,운영비 월 최대 10만원 할인,1,desktop,/,1,1
+클릭엔,2026-11-25,banner_click,cta,clickn-top-banner-cta,상단 띠배너,배너 클릭,운영비 월 최대 10만원 할인,1,desktop,/event/clickn2026,1,1
+클릭엔,2026-11-25,banner_control_click,control,clickn-main-banner-pagination,메인 배너,페이지 점,,,desktop,/,1,1
+클릭엔,2026-11-25,banner_control_click,control,clickn-quick-banner-close,퀵 배너,닫기,,,desktop,/ai_editor,1,1
+클릭엔,2026-11-25,banner_control_click,control,clickn-quick-banner-close,퀵 배너,닫기,,,desktop,/customer/notice,1,1
+클릭엔,2026-11-25,banner_control_click,control,clickn-quick-banner-close,퀵 배너,닫기,,,desktop,/customer/qna,1,1
+클릭엔,2026-11-25,banner_control_click,control,clickn-quick-banner-close,퀵 배너,닫기,,,desktop,/intro/shopping,1,1
+클릭엔,2026-11-25,banner_control_click,control,clickn-quick-banner-close,퀵 배너,닫기,,,desktop,/payment/service_completed,1,1
+클릭엔,2026-11-25,banner_control_click,control,clickn-quick-banner-hide,퀵 배너,숨기기,,,desktop,/,1,1
+클릭엔,2026-11-25,banner_control_click,control,clickn-quick-banner-hide,퀵 배너,숨기기,,,desktop,/customer/notice,1,1
+클릭엔,2026-11-25,banner_control_click,control,clickn-quick-banner-hide,퀵 배너,숨기기,,,desktop,/template/homepage,1,1
+클릭엔,2026-11-25,banner_control_click,control,clickn-top-banner-close,상단 띠배너,닫기,,,desktop,/customer/qna,1,1
+클릭엔,2026-11-25,banner_control_click,control,clickn-top-banner-close,상단 띠배너,닫기,,,desktop,/price,1,1
+클릭엔,2026-11-25,banner_control_click,control,clickn-top-banner-close,상단 띠배너,닫기,,,desktop,/template/shoppingmall,1,1
+클릭엔,2026-11-25,banner_control_click,control,clickn-top-banner-close,상단 띠배너,닫기,,,mobile,/customer/qna,1,1
+클릭엔,2026-11-25,banner_control_click,control,clickn-top-banner-hide,상단 띠배너,숨기기,,,desktop,/event/clickn2026,1,1
+클릭엔,2026-11-25,banner_control_click,control,clickn-top-banner-hide,상단 띠배너,숨기기,,,desktop,/mypage,1,1
+퍼스트몰,2026-11-25,banner_control_click,control,firstmall-top-banner-close,상단 띠배너,닫기,,,desktop,/,5,5
+퍼스트몰,2026-11-25,banner_click,cta,firstmall-main-banner-cta,메인 배너,배너 클릭,복잡한 쇼핑몰 세팅 끝! 이제 사장님은 판매에만 집중하세요,1,desktop,/,3,3
+퍼스트몰,2026-11-25,banner_click,cta,firstmall-submain-banner-cta,서브메인 배너,배너 클릭,믿고 쓰는 똑똑한 퍼스트몰,1,desktop,/introduce/firstmall/prem,2,2
+퍼스트몰,2026-11-25,banner_control_click,control,firstmall-top-banner-hide,상단 띠배너,숨기기,,,desktop,/,2,2
+퍼스트몰,2026-11-25,banner_click,cta,firstmall-main-banner-cta,메인 배너,배너 클릭,AI 답변에 내 상품을 노출하세요,2,desktop,/,1,1
+퍼스트몰,2026-11-25,banner_click,cta,firstmall-submain-banner-cta,서브메인 배너,배너 클릭,원하는대로 필요한 기능만 쏙쏙!,1,desktop,/introduce/firstmall/aren,1,1
+퍼스트몰,2026-11-25,banner_click,cta,firstmall-top-banner-cta,상단 띠배너,배너 클릭,가비아 @ 창업지원센터,1,desktop,/customer/patch,1,1
+퍼스트몰,2026-11-25,banner_click,cta,firstmall-top-banner-cta,상단 띠배너,배너 클릭,"카드결제 오픈, 로켓처럼 빠르게.",3,tablet,/introduce/firstmall/prem,1,1
+퍼스트몰,2026-11-25,banner_control_click,control,firstmall-top-banner-close,상단 띠배너,닫기,,,tablet,/introduce/firstmall/prem,1,1
+퍼스트몰,2026-11-25,banner_control_click,control,firstmall-top-banner-hide,상단 띠배너,숨기기,,,desktop,/customer/patch,1,1
+퍼스트몰,2026-11-25,banner_control_click,control,firstmall-top-banner-viewall,상단 띠배너,전체보기,,,desktop,/,1,1
