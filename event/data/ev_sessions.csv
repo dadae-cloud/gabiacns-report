@@ -1,0 +1,313 @@
+event_id,date,group,channel,source,medium,campaign,device,sessions,users,new_users,engaged_sessions,engagement_seconds,pageviews
+php,2026-10-23,직접,직접 유입,(direct),(none),(direct),desktop,11,11,11,0,0,11
+php,2026-10-23,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,mobile,7,7,7,4,170,7
+php,2026-10-23,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,desktop,6,6,6,6,409,11
+php,2026-10-23,직접,직접 유입,(direct),(none),(direct),mobile,2,1,1,1,21,2
+php,2026-10-24,직접,직접 유입,(direct),(none),(direct),desktop,9,9,9,0,0,9
+php,2026-10-24,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,mobile,7,6,6,7,745,9
+php,2026-10-24,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,desktop,4,3,3,3,53,6
+php,2026-10-25,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,mobile,12,12,11,10,770,13
+php,2026-10-25,직접,직접 유입,(direct),(none),(direct),desktop,11,11,11,0,0,11
+php,2026-10-25,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,desktop,3,3,2,2,31,3
+php,2026-10-25,검색,구글 검색,google,organic,(organic),desktop,1,1,1,1,25,1
+php,2026-10-25,검색,구글 검색,google,organic,(organic),mobile,1,1,1,0,0,1
+php,2026-10-26,직접,직접 유입,(direct),(none),(direct),desktop,14,14,14,0,0,14
+php,2026-10-26,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,desktop,13,12,12,11,665,17
+php,2026-10-26,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,mobile,12,12,12,4,178,13
+php,2026-10-26,검색,구글 검색,google,organic,(organic),desktop,10,9,9,7,339,10
+php,2026-10-26,검색,구글 검색,google,organic,(organic),mobile,3,3,3,2,48,3
+php,2026-10-27,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,mobile,11,10,12,7,122,13
+php,2026-10-27,직접,직접 유입,(direct),(none),(direct),desktop,9,9,9,1,14,9
+php,2026-10-27,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,desktop,9,9,8,8,465,10
+php,2026-10-27,검색,구글 검색,google,organic,(organic),desktop,7,7,6,5,159,8
+php,2026-10-27,기타 추천,firstmall.kr (추천),firstmall.kr,referral,(referral),desktop,1,1,0,1,25,2
+php,2026-10-27,검색,구글 검색,google,organic,(organic),mobile,1,1,1,1,27,1
+php,2026-10-28,직접,직접 유입,(direct),(none),(direct),desktop,8,8,8,0,0,8
+php,2026-10-28,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,mobile,6,6,6,6,193,9
+php,2026-10-28,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,desktop,5,5,5,4,215,7
+php,2026-10-28,검색,구글 검색,google,organic,(organic),desktop,2,2,2,1,18,2
+php,2026-10-29,직접,직접 유입,(direct),(none),(direct),desktop,79,79,80,38,1656,114
+php,2026-10-29,직접,직접 유입,(direct),(none),(direct),mobile,3,3,3,0,0,3
+php,2026-10-29,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,desktop,3,3,2,2,649,11
+php,2026-10-29,기타 추천,가비아 사이트,dns.gabia.com,referral,(referral),desktop,2,2,2,0,0,2
+php,2026-10-29,기타 추천,가비아 사이트,gabia.com,referral,(referral),desktop,2,2,2,0,0,2
+php,2026-10-29,검색,구글 검색,google,organic,(organic),desktop,2,2,2,2,50,6
+php,2026-10-29,UTM 캠페인,가비아 메인 배너,gabia,main_banner,phpupgrade,desktop,1,1,0,1,16,4
+php,2026-10-29,검색,구글 검색,google,organic,(organic),mobile,1,1,1,1,41,1
+php,2026-10-29,기타 추천,웹메일 (이메일 공유),mail.bmit.co.kr,referral,(referral),desktop,1,1,1,1,48,2
+php,2026-10-29,기타 추천,웹메일 (이메일 공유),mails.gabiaoffice.hiworks.com,referral,(referral),desktop,1,1,1,0,0,1
+php,2026-10-29,기타 추천,웹메일 (이메일 공유),webmail.inday.co.kr,referral,(referral),mobile,1,1,1,1,29,1
+php,2026-10-29,기타 추천,웹메일 (이메일 공유),webmail.lcm21.com,referral,(referral),desktop,1,1,1,1,41,14
+php,2026-10-30,직접,직접 유입,(direct),(none),(direct),desktop,28,28,27,18,1400,35
+php,2026-10-30,직접,직접 유입,(direct),(none),(direct),mobile,3,3,3,2,54,3
+php,2026-10-30,기타 추천,br.nate.com (추천),br.nate.com,referral,(referral),desktop,3,3,3,2,144,3
+php,2026-10-30,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,mobile,3,3,3,1,19,3
+php,2026-10-30,검색,구글 검색,google,organic,(organic),desktop,2,2,2,2,27,2
+php,2026-10-30,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,desktop,2,2,1,2,123,3
+php,2026-10-30,UTM 캠페인,diad / site_topbanner,diad,site_topbanner,comarketing_coupang,desktop,1,1,0,1,26,1
+php,2026-10-30,기타 추천,웹메일 (이메일 공유),gw.verthill.com,referral,(referral),desktop,1,1,1,1,24,1
+php,2026-10-30,기타 추천,innobiz.or.kr (추천),innobiz.or.kr,referral,(referral),desktop,1,1,0,1,23,2
+php,2026-10-30,기타 추천,웹메일 (이메일 공유),webmail.hanbitens.co.kr,referral,(referral),desktop,1,1,1,0,4,1
+php,2026-10-30,기타 추천,웹메일 (이메일 공유),webmail.workskorea.co.kr,referral,(referral),desktop,1,1,1,1,53,1
+php,2026-10-31,직접,직접 유입,(direct),(none),(direct),desktop,5,5,5,3,470,6
+php,2026-10-31,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,mobile,1,1,1,1,16,1
+php,2026-11-01,직접,직접 유입,(direct),(none),(direct),desktop,4,4,4,2,129,5
+php,2026-11-01,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,mobile,1,1,1,1,11,1
+php,2026-11-02,직접,직접 유입,(direct),(none),(direct),desktop,14,14,14,6,380,15
+php,2026-11-02,UTM 캠페인,가비아 메인 배너,gabia,main_banner,phpupgrade,desktop,7,5,3,2,58,11
+php,2026-11-02,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,desktop,3,3,3,3,240,6
+php,2026-11-02,기타 추천,가비아 사이트,accounts.gabia.com,referral,(referral),desktop,1,1,1,0,0,1
+php,2026-11-02,UTM 캠페인,가비아 프리홈 메인 배너,freehome,main_banner,phpupgrade,desktop,1,1,0,1,9,5
+php,2026-11-02,기타 추천,가비아 사이트,gabia.com,referral,(referral),desktop,1,1,1,0,0,1
+php,2026-11-02,검색,구글 검색,google,organic,(organic),desktop,1,1,1,1,33,1
+php,2026-11-02,기타 추천,웹메일 (이메일 공유),mail.nagaileben.co.kr,referral,(referral),desktop,1,1,1,1,460,1
+php,2026-11-02,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,mobile,1,1,1,1,14,1
+php,2026-11-02,기타 추천,웹메일 (이메일 공유),webmail.designhub.kr,referral,(referral),desktop,1,1,1,0,0,1
+php,2026-11-03,직접,직접 유입,(direct),(none),(direct),desktop,9,9,8,4,203,12
+php,2026-11-03,UTM 캠페인,가비아 메인 배너,gabia,main_banner,phpupgrade,desktop,8,8,5,3,45,11
+php,2026-11-03,UTM 캠페인,가비아 메인 배너,gabia,main_banner,phpupgrade,mobile,4,4,4,2,180,7
+php,2026-11-03,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,desktop,2,2,2,1,1447,4
+php,2026-11-03,기타 추천,가비아 사이트,domain.gabia.com,referral,(referral),desktop,1,1,1,0,0,1
+php,2026-11-03,기타 추천,firstmall.kr (추천),firstmall.kr,referral,(referral),desktop,1,1,0,1,32,1
+php,2026-11-03,기타 추천,가비아 사이트,gabia.com,referral,(referral),desktop,1,1,0,1,11,1
+php,2026-11-03,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,tablet,1,1,1,1,31,1
+php,2026-11-04,직접,직접 유입,(direct),(none),(direct),desktop,6,5,5,1,49,6
+php,2026-11-04,UTM 캠페인,가비아 메인 배너,gabia,main_banner,phpupgrade,desktop,6,6,4,2,78,10
+php,2026-11-04,UTM 캠페인,가비아 프리홈 메인 배너,freehome,main_banner,phpupgrade,desktop,4,4,3,2,21,4
+php,2026-11-04,UTM 캠페인,가비아 메인 배너,gabia,main_banner,phpupgrade,mobile,4,4,4,3,92,14
+php,2026-11-04,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,mobile,2,2,2,2,178,3
+php,2026-11-04,기타 추천,가비아 사이트,gabia.com,referral,(referral),desktop,1,1,1,0,0,1
+php,2026-11-04,UTM 캠페인,카카오 채널 메시지,kakao,channel_message,phpupgrade,mobile,1,1,1,0,0,1
+php,2026-11-04,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,desktop,1,1,1,1,136,3
+php,2026-11-05,UTM 캠페인,가비아 메인 배너,gabia,main_banner,phpupgrade,desktop,7,7,6,3,23,8
+php,2026-11-05,직접,직접 유입,(direct),(none),(direct),desktop,4,4,4,1,0,5
+php,2026-11-05,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,desktop,2,2,2,2,748,11
+php,2026-11-05,UTM 캠페인,가비아 프리홈 메인 배너,freehome,main_banner,phpupgrade,desktop,1,1,1,1,71,1
+php,2026-11-06,UTM 캠페인,가비아 메인 배너,gabia,main_banner,phpupgrade,desktop,6,6,6,1,26,9
+php,2026-11-06,직접,직접 유입,(direct),(none),(direct),desktop,4,4,3,0,0,4
+php,2026-11-06,검색,구글 검색,google,organic,(organic),desktop,2,2,2,1,22,2
+php,2026-11-06,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,desktop,2,2,2,1,22,3
+php,2026-11-06,UTM 캠페인,가비아 프리홈 메인 배너,freehome,main_banner,phpupgrade,desktop,1,1,1,1,9,2
+php,2026-11-06,UTM 캠페인,가비아CNS 로그인 배너,gabiacns,site_login,phpupgrade,desktop,1,1,1,0,4,1
+php,2026-11-06,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,mobile,1,1,1,1,17,1
+php,2026-11-07,직접,직접 유입,(direct),(none),(direct),desktop,3,3,3,0,0,3
+php,2026-11-07,UTM 캠페인,가비아 메인 배너,gabia,main_banner,phpupgrade,desktop,2,2,2,0,0,2
+php,2026-11-07,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,mobile,2,2,2,1,32,2
+php,2026-11-07,UTM 캠페인,가비아 메인 배너,gabia,main_banner,phpupgrade,mobile,1,1,1,1,52,1
+php,2026-11-08,직접,직접 유입,(direct),(none),(direct),desktop,4,4,4,0,0,4
+php,2026-11-08,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,mobile,2,2,2,2,234,3
+php,2026-11-08,UTM 캠페인,가비아 프리홈 메인 배너,freehome,main_banner,phpupgrade,desktop,1,1,1,0,4,1
+php,2026-11-08,UTM 캠페인,가비아 메인 배너,gabia,main_banner,phpupgrade,mobile,1,1,1,0,0,1
+php,2026-11-08,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,desktop,1,1,1,1,723,3
+php,2026-11-09,UTM 캠페인,가비아 메인 배너,gabia,main_banner,phpupgrade,desktop,8,7,7,3,153,11
+php,2026-11-09,직접,직접 유입,(direct),(none),(direct),desktop,3,2,2,0,0,3
+php,2026-11-09,UTM 캠페인,가비아 프리홈 메인 배너,freehome,main_banner,phpupgrade,desktop,1,1,1,1,394,4
+php,2026-11-09,UTM 캠페인,가비아 GNB 배너,gabia,gnb_banner,phpupgrade,desktop,1,1,1,1,21,1
+php,2026-11-09,UTM 캠페인,가비아 메인 배너,gabia,main_banner,phpupgrade,mobile,1,1,0,1,68,1
+php,2026-11-09,UTM 캠페인,가비아CNS 메인 배너,gabiacns,site_mainbanner,phpupgrade,desktop,1,1,1,1,51,1
+php,2026-11-09,검색,구글 검색,google,organic,(organic),mobile,1,1,1,1,265,1
+php,2026-11-09,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,desktop,1,1,1,0,2,1
+php,2026-11-10,UTM 캠페인,가비아 메인 배너,gabia,main_banner,phpupgrade,desktop,10,9,7,3,120,12
+php,2026-11-10,직접,직접 유입,(direct),(none),(direct),desktop,3,3,3,1,65,3
+php,2026-11-10,검색,구글 검색,google,organic,(organic),desktop,3,3,3,2,118,3
+php,2026-11-10,UTM 캠페인,가비아 프리홈 메인 배너,freehome,main_banner,phpupgrade,desktop,1,1,1,0,3,1
+php,2026-11-11,직접,직접 유입,(direct),(none),(direct),desktop,9,9,8,2,78,9
+php,2026-11-11,UTM 캠페인,가비아 메인 배너,gabia,main_banner,phpupgrade,desktop,9,9,9,3,150,14
+php,2026-11-11,UTM 캠페인,가비아 프리홈 메인 배너,freehome,main_banner,phpupgrade,desktop,2,2,2,2,94,13
+php,2026-11-11,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,mobile,2,2,2,1,123,2
+php,2026-11-11,직접,직접 유입,(direct),(none),(direct),mobile,1,1,1,1,91,1
+php,2026-11-11,UTM 캠페인,가비아 GNB 배너,gabia,gnb_banner,phpupgrade,desktop,1,1,1,0,7,1
+php,2026-11-11,UTM 캠페인,가비아 메인 배너,gabia,main_banner,phpupgrade,mobile,1,1,1,0,0,1
+php,2026-11-11,검색,구글 검색,google,organic,(organic),desktop,1,1,1,1,5,2
+php,2026-11-11,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,desktop,1,1,1,1,45,1
+php,2026-11-12,기타 추천,EMS 이메일 (메일 링크),tr.maillink.co.kr,referral,(referral),desktop,9,9,9,5,476,16
+php,2026-11-12,UTM 캠페인,가비아 메인 배너,gabia,main_banner,phpupgrade,desktop,7,6,5,4,226,12
+php,2026-11-12,직접,직접 유입,(direct),(none),(direct),desktop,3,3,3,2,710,11
+php,2026-11-12,UTM 캠페인,가비아 프리홈 메인 배너,freehome,main_banner,phpupgrade,desktop,1,1,1,0,1,1
+php,2026-11-12,UTM 캠페인,가비아 프리홈 메인 배너,freehome,main_banner,phpupgrade,mobile,1,1,1,0,0,1
+php,2026-11-12,UTM 캠페인,가비아 메인 배너,gabia,main_banner,phpupgrade,mobile,1,1,1,0,0,1
+php,2026-11-12,UTM 캠페인,가비아CNS 로그인 배너,gabiacns,site_login,phpupgrade,desktop,1,1,0,1,18,1
+php,2026-11-12,검색,구글 검색,google,organic,(organic),mobile,1,1,1,1,62,1
+php,2026-11-13,직접,직접 유입,(direct),(none),(direct),desktop,7,7,7,0,0,7
+php,2026-11-13,UTM 캠페인,가비아 메인 배너,gabia,main_banner,phpupgrade,desktop,6,5,3,3,59,9
+php,2026-11-13,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,desktop,6,5,1,3,33,10
+php,2026-11-13,기타 추천,EMS 이메일 (메일 링크),tr.maillink.co.kr,referral,(referral),desktop,5,5,5,2,144,5
+php,2026-11-13,UTM 캠페인,가비아 프리홈 메인 배너,freehome,main_banner,phpupgrade,desktop,2,2,2,1,12,2
+php,2026-11-13,UTM 캠페인,가비아 GNB 배너,gabia,gnb_banner,phpupgrade,desktop,1,1,1,0,2,1
+php,2026-11-13,UTM 캠페인,가비아 메인 배너,gabia,main_banner,phpupgrade,mobile,1,1,1,0,0,1
+php,2026-11-13,기타 추천,innobiz.or.kr (추천),innobiz.or.kr,referral,(referral),mobile,1,1,1,0,0,1
+php,2026-11-13,기타 추천,EMS 이메일 (메일 링크),tr.maillink.co.kr,referral,(referral),mobile,1,1,1,0,0,1
+php,2026-11-14,직접,직접 유입,(direct),(none),(direct),desktop,1,1,1,0,0,1
+php,2026-11-14,UTM 캠페인,가비아 GNB 배너,gabia,gnb_banner,phpupgrade,desktop,1,1,1,1,19,1
+php,2026-11-14,UTM 캠페인,가비아 메인 배너,gabia,main_banner,phpupgrade,desktop,1,1,1,1,10,1
+php,2026-11-14,UTM 캠페인,가비아 메인 배너,gabia,main_banner,phpupgrade,mobile,1,1,1,1,0,2
+php,2026-11-14,UTM 캠페인,가비아CNS 로그인 배너,gabiacns,site_login,phpupgrade,tablet,1,1,1,1,6,3
+php,2026-11-14,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,mobile,1,1,1,1,36,2
+php,2026-11-15,직접,직접 유입,(direct),(none),(direct),desktop,4,4,4,0,0,4
+php,2026-11-15,UTM 캠페인,가비아 프리홈 메인 배너,freehome,main_banner,phpupgrade,desktop,2,2,2,2,111,8
+php,2026-11-15,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,desktop,1,1,1,1,15,1
+php,2026-11-15,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,mobile,1,1,1,1,81,1
+php,2026-11-16,직접,직접 유입,(direct),(none),(direct),desktop,7,6,6,1,11,7
+php,2026-11-16,UTM 캠페인,가비아 메인 배너,gabia,main_banner,phpupgrade,mobile,4,2,2,2,12,7
+php,2026-11-16,UTM 캠페인,가비아 메인 배너,gabia,main_banner,phpupgrade,desktop,3,3,3,3,666,6
+php,2026-11-16,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,desktop,3,3,1,3,162,15
+php,2026-11-16,UTM 캠페인,가비아 프리홈 메인 배너,freehome,main_banner,phpupgrade,desktop,2,2,1,2,64,6
+php,2026-11-16,UTM 캠페인,가비아 GNB 배너,gabia,gnb_banner,phpupgrade,desktop,1,1,1,1,51,1
+php,2026-11-16,검색,구글 검색,google,organic,(organic),desktop,1,1,1,1,21,3
+php,2026-11-17,직접,직접 유입,(direct),(none),(direct),desktop,5,4,4,0,0,5
+php,2026-11-17,UTM 캠페인,가비아 메인 배너,gabia,main_banner,phpupgrade,desktop,4,4,4,3,62,10
+php,2026-11-17,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,desktop,3,3,2,0,4,3
+php,2026-11-17,UTM 캠페인,가비아 프리홈 메인 배너,freehome,main_banner,phpupgrade,desktop,1,1,0,1,182,1
+php,2026-11-17,검색,구글 검색,google,organic,(organic),desktop,1,1,1,1,27,1
+php,2026-11-18,직접,직접 유입,(direct),(none),(direct),desktop,6,4,4,0,0,6
+php,2026-11-18,UTM 캠페인,유튜브 쇼츠,youtube,channel_shorts,phpupgrade,desktop,4,4,4,0,0,4
+php,2026-11-18,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,desktop,3,3,3,1,33,4
+php,2026-11-18,기타 추천,EMS 이메일 (메일 링크),tr.maillink.co.kr,referral,(referral),mobile,3,2,2,1,35,3
+php,2026-11-18,검색,구글 검색,google,organic,(organic),desktop,1,1,1,1,18,1
+php,2026-11-18,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,mobile,1,1,1,0,2,1
+php,2026-11-18,기타 추천,EMS 이메일 (메일 링크),tr.maillink.co.kr,referral,(referral),desktop,1,1,0,0,0,1
+php,2026-11-19,직접,직접 유입,(direct),(none),(direct),desktop,8,7,7,1,85,8
+php,2026-11-19,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,desktop,3,3,2,3,220,5
+php,2026-11-19,UTM 캠페인,가비아 메인 배너,gabia,main_banner,phpupgrade,mobile,1,1,1,0,0,1
+php,2026-11-19,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,mobile,1,1,1,1,212,1
+php,2026-11-20,직접,직접 유입,(direct),(none),(direct),desktop,5,4,3,1,4,8
+php,2026-11-20,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,desktop,2,2,2,2,145,4
+php,2026-11-20,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,mobile,2,2,2,2,65,2
+php,2026-11-20,UTM 캠페인,가비아 프리홈 메인 배너,freehome,main_banner,phpupgrade,mobile,1,1,1,0,1,1
+php,2026-11-20,검색,구글 검색,google,organic,(organic),desktop,1,1,1,1,65,3
+php,2026-11-20,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,tablet,1,1,1,0,0,1
+php,2026-11-21,직접,직접 유입,(direct),(none),(direct),desktop,2,2,2,0,0,2
+php,2026-11-22,직접,직접 유입,(direct),(none),(direct),desktop,2,2,2,0,0,2
+php,2026-11-22,UTM 캠페인,가비아 프리홈 메인 배너,freehome,main_banner,phpupgrade,mobile,1,1,1,1,7,1
+php,2026-11-22,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,desktop,1,1,1,0,7,1
+php,2026-11-23,직접,직접 유입,(direct),(none),(direct),desktop,3,3,3,0,0,3
+php,2026-11-23,UTM 캠페인,가비아 프리홈 메인 배너,freehome,main_banner,phpupgrade,mobile,1,0,0,0,0,1
+php,2026-11-23,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,desktop,1,1,1,0,0,1
+php,2026-11-23,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,mobile,1,1,1,0,0,1
+php,2026-11-24,직접,직접 유입,(direct),(none),(direct),desktop,3,2,2,0,0,3
+php,2026-11-24,UTM 캠페인,가비아 메인 배너,gabia,main_banner,phpupgrade,mobile,2,0,0,0,0,2
+php,2026-11-24,직접,직접 유입,(direct),(none),(direct),mobile,1,1,1,1,112,1
+php,2026-11-24,UTM 캠페인,가비아 프리홈 메인 배너,freehome,main_banner,phpupgrade,desktop,1,1,1,1,18,2
+php,2026-11-24,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,desktop,1,1,1,1,5,2
+php,2026-11-24,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,mobile,1,1,1,0,0,1
+php,2026-11-25,직접,직접 유입,(direct),(none),(direct),desktop,7,6,5,2,54,9
+php,2026-11-25,직접,직접 유입,(direct),(none),(direct),mobile,2,1,0,1,157,3
+php,2026-11-25,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,mobile,2,2,2,2,76,6
+php,2026-11-25,UTM 캠페인,가비아CNS 로그인 배너,gabiacns,site_login,phpupgrade,desktop,1,1,1,1,6,1
+php,2026-11-25,UTM 캠페인,네이버 검색광고,naver,php_cpc,2610,desktop,1,1,1,0,6,1
+skinopen,2026-11-02,UTM 캠페인,퍼스트몰 솔루션 대시보드,firstmall,solution_dashboard,review,desktop,2,1,0,2,145,16
+skinopen,2026-11-02,UTM 캠페인,네이버 블로그,naver,blog_post,2611skin,desktop,2,2,2,2,125,3
+skinopen,2026-11-02,직접,직접 유입,(direct),(none),(direct),desktop,1,1,0,0,0,1
+skinopen,2026-11-02,직접,직접 유입,(direct),(none),(direct),mobile,1,1,0,1,9,2
+skinopen,2026-11-02,UTM 캠페인,이셀러스 하단 배너,esellers,site_bottombanner,2611skin,desktop,1,1,0,1,74,3
+skinopen,2026-11-02,UTM 캠페인,이셀러스 상단 배너,esellers,site_topbanner,2611skin,desktop,1,1,1,0,0,1
+skinopen,2026-11-02,UTM 캠페인,퍼스트몰 메인 배너,firstmall,site_mainbanner,2611skin,desktop,1,1,0,1,71,6
+skinopen,2026-11-02,UTM 캠페인,가비아CNS 로그인 배너,gabiacns,site_login,2611skin,desktop,1,1,1,1,167,1
+skinopen,2026-11-02,UTM 캠페인,가비아CNS 메인 배너,gabiacns,site_mainbanner,2611skin,desktop,1,1,0,1,192,2
+skinopen,2026-11-03,UTM 캠페인,이셀러스 상단 배너,esellers,site_topbanner,2611skin,desktop,1,1,1,1,2,1
+skinopen,2026-11-03,UTM 캠페인,가비아CNS 로그인 배너,gabiacns,site_login,2611skin,desktop,1,1,1,0,1,1
+skinopen,2026-11-03,UTM 캠페인,가비아CNS 메인 배너,gabiacns,site_mainbanner,2611skin,desktop,1,1,0,1,40,1
+skinopen,2026-11-04,UTM 캠페인,이셀러스 상단 배너,esellers,site_topbanner,2611skin,desktop,1,1,0,1,51,1
+skinopen,2026-11-06,UTM 캠페인,가비아CNS 메인 배너,gabiacns,site_mainbanner,2611skin,desktop,1,1,0,1,61,2
+skinopen,2026-11-07,UTM 캠페인,가비아CNS 메인 배너,gabiacns,site_mainbanner,2611skin,mobile,1,1,0,0,8,1
+skinopen,2026-11-07,검색,네이버·다음 검색,m.search.naver.com,referral,(referral),mobile,1,1,0,0,0,1
+skinopen,2026-11-08,UTM 캠페인,가비아CNS 메인 배너,gabiacns,site_mainbanner,2611skin,mobile,1,1,0,1,29,2
+skinopen,2026-11-08,검색,네이버 검색,naver,organic,(organic),desktop,1,1,1,0,0,1
+skinopen,2026-11-10,UTM 캠페인,카카오 채널 메시지,kakao,channel_message,2611skin,mobile,14,14,14,8,417,23
+skinopen,2026-11-10,UTM 캠페인,카카오 채널 메시지,kakao,channel_message,2611skin,desktop,5,5,3,3,191,11
+skinopen,2026-11-10,UTM 캠페인,유튜브 쇼츠,youtube,channel_shorts,2611skin,desktop,2,2,2,0,0,2
+skinopen,2026-11-10,UTM 캠페인,유튜브 쇼츠,youtube,shorts,202610_skinopen,desktop,2,2,2,0,0,2
+skinopen,2026-11-10,UTM 캠페인,가비아CNS 로그인 배너,gabiacns,site_login,2611skin,desktop,1,1,1,0,0,1
+skinopen,2026-11-11,UTM 캠페인,가비아CNS 메인 배너,gabiacns,site_mainbanner,2611skin,desktop,1,1,0,1,66,5
+skinopen,2026-11-11,UTM 캠페인,카카오 채널 메시지,kakao,channel_message,2611skin,mobile,1,1,0,1,309,2
+skinopen,2026-11-12,UTM 캠페인,카카오 채널 메시지,kakao,channel_message,2611skin,mobile,3,3,3,2,0,4
+skinopen,2026-11-12,기타 추천,가비아CNS 사이트,customer.gabiacns.com,referral,(referral),desktop,1,1,1,1,29,1
+skinopen,2026-11-13,UTM 캠페인,이셀러스 하단 배너,esellers,site_bottombanner,2611skin,desktop,1,1,1,0,2,1
+skinopen,2026-11-13,UTM 캠페인,가비아CNS 메인 배너,gabiacns,site_mainbanner,2611skin,mobile,1,1,0,1,27,3
+skinopen,2026-11-16,UTM 캠페인,가비아CNS 로그인 배너,gabiacns,site_login,2611skin,mobile,1,1,1,0,0,1
+skinopen,2026-11-16,UTM 캠페인,가비아CNS 메인 배너,gabiacns,site_mainbanner,2611skin,desktop,1,1,0,0,0,1
+skinopen,2026-11-18,직접,직접 유입,(direct),(none),(direct),desktop,1,1,1,1,22,1
+skinopen,2026-11-23,직접,직접 유입,(direct),(none),(direct),desktop,1,1,0,1,0,3
+skinopen,2026-11-23,기타 추천,가비아 사이트,neoems.gabia.com,referral,(referral),desktop,1,1,0,0,0,1
+startup,2026-11-17,직접,직접 유입,(direct),(none),(direct),desktop,94,94,94,30,1869,100
+startup,2026-11-17,UTM 캠페인,카카오 채널 메시지,kakao,channel_message,2027startup,mobile,75,71,68,29,728,81
+startup,2026-11-17,UTM 캠페인,카카오 채널 메시지,kakao,channel_message,2027startup,desktop,13,13,13,11,481,15
+startup,2026-11-17,직접,직접 유입,(direct),(none),(direct),mobile,12,12,11,9,294,16
+startup,2026-11-17,UTM 캠페인,가비아 메인 배너,gabia,main_banner,2027startup,desktop,12,12,10,4,110,17
+startup,2026-11-17,UTM 캠페인,유튜브 쇼츠,youtube,channel_shorts,2027startup,desktop,4,4,4,0,0,4
+startup,2026-11-17,UTM 캠페인,가비아 메인 배너,gabia,main_banner,2027startup,mobile,2,1,1,0,1,2
+startup,2026-11-17,검색,구글 검색,google,organic,(organic),desktop,2,2,1,2,63,2
+startup,2026-11-17,UTM 캠페인,네이버 블로그,naver,blog_post,2027startup,desktop,2,2,2,1,26,2
+startup,2026-11-17,UTM 캠페인,클릭엔 팝업,clickn,referral,(referral),desktop,1,1,1,0,5,1
+startup,2026-11-17,UTM 캠페인,클릭엔 솔루션 대시보드,clickn,solution_dashboard,2027startup,desktop,1,1,0,1,32,4
+startup,2026-11-17,UTM 캠페인,인스타그램 게시물,instagram,channel_post,2027startup,mobile,1,1,1,0,0,1
+startup,2026-11-17,검색,네이버 검색,naver,organic,(organic),desktop,1,1,1,1,38,1
+startup,2026-11-18,직접,직접 유입,(direct),(none),(direct),desktop,87,81,80,58,3041,105
+startup,2026-11-18,UTM 캠페인,가비아 메인 배너,gabia,main_banner,2027startup,desktop,14,14,12,11,894,28
+startup,2026-11-18,직접,직접 유입,(direct),(none),(direct),mobile,8,7,7,2,56,8
+startup,2026-11-18,UTM 캠페인,카카오 채널 메시지,kakao,channel_message,2027startup,mobile,8,7,7,3,48,8
+startup,2026-11-18,검색,구글 검색,google,organic,(organic),desktop,6,6,6,6,177,7
+startup,2026-11-18,UTM 캠페인,클릭엔 팝업,clickn,referral,(referral),desktop,4,2,2,1,0,5
+startup,2026-11-18,UTM 캠페인,이셀러스 메인 배너,esellers,site_mainbanner,2027startup,desktop,2,2,1,1,46,5
+startup,2026-11-18,기타 추천,ChatGPT,chatgpt.com,ai-assistant,(ai-assistant),desktop,1,1,1,1,32,2
+startup,2026-11-18,UTM 캠페인,이셀러스 메인 배너,esellers,site_mainbanner,2027startup,mobile,1,1,1,0,0,1
+startup,2026-11-18,UTM 캠페인,가비아 GNB 배너,gabia,gnb_banner,2027startup,desktop,1,1,1,1,61,1
+startup,2026-11-18,UTM 캠페인,가비아 메인 배너,gabia,main_banner,2027startup,mobile,1,1,1,0,5,1
+startup,2026-11-18,UTM 캠페인,가비아 메인 배너,gabia,main_banner,2027startup,tablet,1,1,1,1,30,4
+startup,2026-11-18,UTM 캠페인,카카오 채널 메시지,kakao,channel_message,2027startup,tablet,1,0,0,0,0,1
+startup,2026-11-18,UTM 캠페인,네이버 블로그,naver,blog_post,2027startup,desktop,1,1,0,1,38,4
+startup,2026-11-19,직접,직접 유입,(direct),(none),(direct),desktop,16,15,14,9,262,17
+startup,2026-11-19,UTM 캠페인,가비아 메인 배너,gabia,main_banner,2027startup,desktop,7,6,5,5,194,8
+startup,2026-11-19,직접,직접 유입,(direct),(none),(direct),mobile,2,2,1,1,96,2
+startup,2026-11-19,UTM 캠페인,퍼스트몰 상단 배너,firstmall,site_topbanner,2027startup,desktop,2,2,0,2,144,8
+startup,2026-11-19,UTM 캠페인,카카오 채널 메시지,kakao,channel_message,2027startup,mobile,2,2,2,1,27,2
+startup,2026-11-19,UTM 캠페인,클릭엔 팝업,clickn,referral,(referral),desktop,1,1,0,0,0,1
+startup,2026-11-19,기타 추천,클릭엔 플로팅 (다른 캠페인),clickn,site_Floating,KICC,desktop,1,1,0,1,16,1
+startup,2026-11-19,UTM 캠페인,이셀러스 상단 배너,esellers,site_topbanner,2027startup,desktop,1,1,1,0,1,1
+startup,2026-11-19,기타 추천,irounspace.com (추천),irounspace.com,referral,(referral),desktop,1,1,0,0,0,1
+startup,2026-11-19,검색,네이버 검색,naver,organic,(organic),desktop,1,1,1,1,51,1
+startup,2026-11-20,UTM 캠페인,가비아 메인 배너,gabia,main_banner,2027startup,desktop,5,5,5,4,158,5
+startup,2026-11-20,직접,직접 유입,(direct),(none),(direct),desktop,4,4,4,3,65,4
+startup,2026-11-20,직접,직접 유입,(direct),(none),(direct),mobile,3,1,0,0,0,3
+startup,2026-11-20,UTM 캠페인,카카오 채널 메시지,kakao,channel_message,2027startup,mobile,2,2,2,1,20,2
+startup,2026-11-20,UTM 캠페인,이셀러스 상단 배너,esellers,site_topbanner,2027startup,desktop,1,1,0,0,0,1
+startup,2026-11-21,직접,직접 유입,(direct),(none),(direct),desktop,5,5,5,4,132,5
+startup,2026-11-21,직접,직접 유입,(direct),(none),(direct),mobile,2,2,2,1,92,2
+startup,2026-11-21,UTM 캠페인,가비아 메인 배너,gabia,main_banner,2027startup,desktop,2,2,2,0,0,2
+startup,2026-11-21,UTM 캠페인,카카오 채널 메시지,kakao,channel_message,2027startup,tablet,2,1,1,0,0,2
+startup,2026-11-21,UTM 캠페인,클릭엔 팝업,clickn,referral,(referral),desktop,1,1,1,0,0,1
+startup,2026-11-21,UTM 캠페인,카카오 채널 메시지,kakao,channel_message,2027startup,mobile,1,1,1,0,0,1
+startup,2026-11-22,UTM 캠페인,가비아 메인 배너,gabia,main_banner,2027startup,desktop,4,4,4,3,263,12
+startup,2026-11-22,직접,직접 유입,(direct),(none),(direct),mobile,2,2,1,2,28,3
+startup,2026-11-22,UTM 캠페인,가비아 메인 배너,gabia,main_banner,2027startup,mobile,2,2,2,1,44,4
+startup,2026-11-22,UTM 캠페인,카카오 채널 메시지,kakao,channel_message,2027startup,mobile,2,2,2,1,14,2
+startup,2026-11-22,UTM 캠페인,클릭엔 모달,clickn,modal,(referral),desktop,1,1,1,0,0,1
+startup,2026-11-22,UTM 캠페인,클릭엔 팝업,clickn,referral,(referral),desktop,1,1,0,1,30,1
+startup,2026-11-22,기타 추천,naver 광고 (cpc_클릭엔K),naver,cpc_클릭엔K,2605,desktop,1,1,0,1,24,1
+startup,2026-11-23,UTM 캠페인,가비아 메인 배너,gabia,main_banner,2027startup,desktop,12,12,12,6,214,12
+startup,2026-11-23,UTM 캠페인,가비아 GNB 배너,gabia,gnb_banner,2027startup,desktop,3,2,2,2,53,5
+startup,2026-11-23,직접,직접 유입,(direct),(none),(direct),desktop,2,2,2,1,120,2
+startup,2026-11-23,검색,bing 검색,bing,organic,(organic),desktop,2,1,1,1,96,2
+startup,2026-11-23,UTM 캠페인,클릭엔 팝업,clickn,referral,(referral),desktop,1,1,0,1,63,1
+startup,2026-11-23,UTM 캠페인,퍼스트몰 상단 배너,firstmall,site_topbanner,2027startup,desktop,1,1,0,0,0,1
+startup,2026-11-23,UTM 캠페인,가비아 메인 배너,gabia,main_banner,2027startup,mobile,1,1,1,1,15,1
+startup,2026-11-23,검색,구글 검색,google,organic,(organic),desktop,1,1,1,1,115,2
+startup,2026-11-23,UTM 캠페인,카카오 채널 메시지,kakao,channel_message,2027startup,mobile,1,1,1,1,6,1
+startup,2026-11-24,UTM 캠페인,가비아 메인 배너,gabia,main_banner,2027startup,desktop,9,9,9,5,176,13
+startup,2026-11-24,직접,직접 유입,(direct),(none),(direct),desktop,4,4,4,3,88,5
+startup,2026-11-24,UTM 캠페인,가비아 메인 배너,gabia,main_banner,2027startup,mobile,3,3,3,2,95,7
+startup,2026-11-24,직접,직접 유입,(direct),(none),(direct),mobile,2,2,2,0,0,2
+startup,2026-11-24,UTM 캠페인,클릭엔 팝업,clickn,referral,(referral),desktop,1,1,1,1,11,1
+startup,2026-11-24,UTM 캠페인,클릭엔 솔루션 대시보드,clickn,solution_dashboard,2027startup,desktop,1,1,1,1,44,1
+startup,2026-11-24,UTM 캠페인,퍼스트몰 상단 배너,firstmall,site_topbanner,2027startup,desktop,1,1,1,1,8,2
+startup,2026-11-24,UTM 캠페인,가비아 GNB 배너,gabia,gnb_banner,2027startup,desktop,1,1,1,1,52,1
+startup,2026-11-24,UTM 캠페인,네이버 블로그,naver,blog_post,2027startup,mobile,1,1,1,0,0,1
+startup,2026-11-25,UTM 캠페인,가비아 메인 배너,gabia,main_banner,2027startup,desktop,7,7,4,7,343,14
+startup,2026-11-25,UTM 캠페인,퍼스트몰 상단 배너,firstmall,site_topbanner,2027startup,desktop,2,1,0,0,1,2
+startup,2026-11-25,직접,직접 유입,(direct),(none),(direct),desktop,1,1,0,1,5,2
+startup,2026-11-25,직접,직접 유입,(direct),(none),(direct),mobile,1,0,0,0,0,1
+startup,2026-11-25,UTM 캠페인,클릭엔 팝업,clickn,referral,(referral),desktop,1,1,0,1,16,1
+startup,2026-11-25,UTM 캠페인,클릭엔 솔루션 대시보드,clickn,solution_dashboard,2027startup,desktop,1,1,1,0,0,1
+startup,2026-11-25,UTM 캠페인,클릭엔 팝업,clickn,solution_popup,2027startup,desktop,1,1,1,1,47,3
+startup,2026-11-26,직접,직접 유입,(direct),(none),(direct),desktop,1,1,1,1,20,1
+startup,2026-11-26,UTM 캠페인,가비아 메인 배너,gabia,main_banner,2027startup,desktop,1,1,1,1,99,2

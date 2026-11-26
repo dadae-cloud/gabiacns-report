@@ -1,0 +1,343 @@
+event_id,date,referrer,ref_group,device,pageviews,users
+startup,2026-11-17,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,127,121
+startup,2026-11-17,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,mobile,97,88
+startup,2026-11-17,www.gabiacns.com,자사 사이트,desktop,4,3
+startup,2026-11-17,blog.naver.com,블로그·SNS,desktop,2,2
+startup,2026-11-17,err404.clickn.co.kr,자사 사이트,desktop,1,1
+startup,2026-11-17,kma.education,외부 사이트,desktop,1,1
+startup,2026-11-17,l.instagram.com,블로그·SNS,mobile,1,1
+startup,2026-11-17,search.naver.com,검색,desktop,1,1
+startup,2026-11-17,www.google.com,검색,desktop,1,1
+startup,2026-11-18,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,108,101
+startup,2026-11-18,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,mobile,17,16
+startup,2026-11-18,www.google.com,검색,desktop,7,7
+startup,2026-11-18,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,tablet,3,2
+startup,2026-11-18,www.brighteched.com,외부 사이트,desktop,3,1
+startup,2026-11-18,www.esellers.co.kr,자사 사이트,desktop,2,2
+startup,2026-11-18,www.gabiacns.com,자사 사이트,desktop,2,3
+startup,2026-11-18,blog.naver.com,블로그·SNS,desktop,1,1
+startup,2026-11-18,pluslife.clickn.co.kr,자사 사이트,desktop,1,1
+startup,2026-11-18,www.esellers.co.kr,자사 사이트,mobile,1,1
+startup,2026-11-19,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,27,23
+startup,2026-11-19,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,mobile,4,4
+startup,2026-11-19,www.firstmall.kr,자사 사이트,desktop,2,2
+startup,2026-11-19,accounts.gabiacns.com,자사 사이트,desktop,1,1
+startup,2026-11-19,search.naver.com,검색,desktop,1,1
+startup,2026-11-19,www.brighteched.com,외부 사이트,desktop,1,1
+startup,2026-11-19,www.esellers.co.kr,자사 사이트,desktop,1,1
+startup,2026-11-19,www.gabiacns.com,자사 사이트,desktop,1,1
+startup,2026-11-20,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,10,13
+startup,2026-11-20,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,mobile,5,4
+startup,2026-11-20,www.esellers.co.kr,자사 사이트,desktop,1,1
+startup,2026-11-21,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,7,7
+startup,2026-11-21,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,mobile,3,3
+startup,2026-11-21,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,tablet,2,2
+startup,2026-11-21,atrion.clickn.co.kr,자사 사이트,desktop,1,1
+startup,2026-11-21,www.gabiacns.com,자사 사이트,desktop,1,1
+startup,2026-11-22,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,mobile,8,6
+startup,2026-11-22,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,6,5
+startup,2026-11-22,workhappy.co.kr,외부 사이트,desktop,2,1
+startup,2026-11-22,accounts.gabiacns.com,자사 사이트,desktop,1,1
+startup,2026-11-23,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,17,16
+startup,2026-11-23,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,mobile,2,2
+startup,2026-11-23,www.bing.com,검색,desktop,2,1
+startup,2026-11-23,www.firstmall.kr,자사 사이트,desktop,2,2
+startup,2026-11-23,www.brighteched.com,외부 사이트,desktop,1,1
+startup,2026-11-23,www.google.com,검색,desktop,1,1
+startup,2026-11-24,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,18,15
+startup,2026-11-24,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,mobile,6,6
+startup,2026-11-24,multicul.clickn.co.kr,자사 사이트,desktop,1,1
+startup,2026-11-24,www.duvroo.com,외부 사이트,desktop,1,1
+startup,2026-11-24,www.esellers.co.kr,자사 사이트,desktop,1,1
+startup,2026-11-24,www.firstmall.kr,자사 사이트,desktop,1,1
+startup,2026-11-24,www.gabiacns.com,자사 사이트,desktop,1,1
+startup,2026-11-25,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,10,8
+startup,2026-11-25,accounts.gabiacns.com,자사 사이트,desktop,2,2
+startup,2026-11-25,hicharger.co.kr,외부 사이트,desktop,2,1
+startup,2026-11-25,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,mobile,1,1
+startup,2026-11-25,firstmall.kr,자사 사이트,desktop,1,1
+startup,2026-11-25,khhm.clickn.co.kr,자사 사이트,desktop,1,1
+startup,2026-11-25,nessang.clickn.co.kr,자사 사이트,desktop,1,1
+startup,2026-11-25,www.firstmall.kr,자사 사이트,desktop,1,1
+startup,2026-11-26,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,3,2
+skinopen,2026-11-02,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,29,5
+skinopen,2026-11-02,www.firstmall.kr,자사 사이트,desktop,14,7
+skinopen,2026-11-02,www.esellers.co.kr,자사 사이트,desktop,5,3
+skinopen,2026-11-02,www.gabiacns.com,자사 사이트,desktop,5,2
+skinopen,2026-11-02,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,mobile,3,2
+skinopen,2026-11-02,accounts.gabiacns.com,자사 사이트,desktop,2,2
+skinopen,2026-11-02,www.google.com,검색,desktop,2,1
+skinopen,2026-11-02,blog.naver.com,블로그·SNS,desktop,2,2
+skinopen,2026-11-02,customer.gabiacns.com,자사 사이트,desktop,1,1
+skinopen,2026-11-02,firstmall.kr,자사 사이트,desktop,1,1
+skinopen,2026-11-02,mails.office.hiworks.com,이메일,desktop,1,1
+skinopen,2026-11-03,firstmall.kr,자사 사이트,mobile,3,1
+skinopen,2026-11-03,www.firstmall.kr,자사 사이트,desktop,2,2
+skinopen,2026-11-03,accounts.gabiacns.com,자사 사이트,desktop,1,1
+skinopen,2026-11-03,www.esellers.co.kr,자사 사이트,desktop,1,1
+skinopen,2026-11-03,www.firstmall.kr,자사 사이트,mobile,1,1
+skinopen,2026-11-03,www.gabiacns.com,자사 사이트,desktop,1,1
+skinopen,2026-11-04,www.firstmall.kr,자사 사이트,desktop,5,5
+skinopen,2026-11-04,firstmall.kr,자사 사이트,desktop,3,3
+skinopen,2026-11-04,accounts.gabiacns.com,자사 사이트,desktop,1,1
+skinopen,2026-11-04,firstmall.kr,자사 사이트,mobile,1,1
+skinopen,2026-11-04,www.esellers.co.kr,자사 사이트,desktop,1,1
+skinopen,2026-11-04,www.firstmall.kr,자사 사이트,mobile,1,1
+skinopen,2026-11-05,www.firstmall.kr,자사 사이트,desktop,4,4
+skinopen,2026-11-05,firstmall.kr,자사 사이트,desktop,1,1
+skinopen,2026-11-06,www.firstmall.kr,자사 사이트,desktop,3,3
+skinopen,2026-11-06,firstmall.kr,자사 사이트,desktop,2,3
+skinopen,2026-11-06,customer.gabiacns.com,자사 사이트,desktop,1,1
+skinopen,2026-11-06,www.gabiacns.com,자사 사이트,desktop,1,1
+skinopen,2026-11-07,www.firstmall.kr,자사 사이트,mobile,2,1
+skinopen,2026-11-07,www.gabiacns.com,자사 사이트,mobile,1,1
+skinopen,2026-11-08,search.daum.net,검색,desktop,1,1
+skinopen,2026-11-08,www.firstmall.kr,자사 사이트,desktop,1,1
+skinopen,2026-11-08,www.gabiacns.com,자사 사이트,mobile,1,1
+skinopen,2026-11-09,www.firstmall.kr,자사 사이트,desktop,1,1
+skinopen,2026-11-10,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,mobile,18,14
+skinopen,2026-11-10,www.firstmall.kr,자사 사이트,desktop,7,6
+skinopen,2026-11-10,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,6,5
+skinopen,2026-11-10,business.kakao.com,블로그·SNS,desktop,3,1
+skinopen,2026-11-10,accounts.gabiacns.com,자사 사이트,desktop,2,2
+skinopen,2026-11-10,customer.gabiacns.com,자사 사이트,mobile,1,1
+skinopen,2026-11-10,firstmall.kr,자사 사이트,desktop,1,1
+skinopen,2026-11-11,www.firstmall.kr,자사 사이트,desktop,2,2
+skinopen,2026-11-11,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,mobile,1,2
+skinopen,2026-11-11,accounts.gabiacns.com,자사 사이트,desktop,1,1
+skinopen,2026-11-11,www.gabiacns.com,자사 사이트,desktop,1,1
+skinopen,2026-11-12,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,mobile,3,3
+skinopen,2026-11-12,www.firstmall.kr,자사 사이트,desktop,2,2
+skinopen,2026-11-12,customer.gabiacns.com,자사 사이트,desktop,1,1
+skinopen,2026-11-12,www.gabiacns.com,자사 사이트,desktop,1,1
+skinopen,2026-11-13,www.esellers.co.kr,자사 사이트,desktop,1,1
+skinopen,2026-11-13,www.gabiacns.com,자사 사이트,mobile,1,1
+skinopen,2026-11-14,www.firstmall.kr,자사 사이트,mobile,1,1
+skinopen,2026-11-16,accounts.gabiacns.com,자사 사이트,mobile,1,1
+skinopen,2026-11-16,www.firstmall.kr,자사 사이트,desktop,1,1
+skinopen,2026-11-16,www.gabiacns.com,자사 사이트,desktop,1,1
+skinopen,2026-11-17,www.firstmall.kr,자사 사이트,desktop,5,4
+skinopen,2026-11-17,firstmall.kr,자사 사이트,desktop,1,1
+skinopen,2026-11-18,firstmall.kr,자사 사이트,desktop,2,2
+skinopen,2026-11-18,www.firstmall.kr,자사 사이트,desktop,2,2
+skinopen,2026-11-19,www.firstmall.kr,자사 사이트,desktop,2,2
+skinopen,2026-11-19,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,1,1
+skinopen,2026-11-20,m.blog.naver.com,블로그·SNS,mobile,3,1
+skinopen,2026-11-23,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,4,2
+skinopen,2026-11-23,www.firstmall.kr,자사 사이트,desktop,4,4
+skinopen,2026-11-24,www.firstmall.kr,자사 사이트,desktop,3,3
+skinopen,2026-11-24,blog.naver.com,블로그·SNS,desktop,1,1
+skinopen,2026-11-25,www.firstmall.kr,자사 사이트,desktop,2,2
+skinopen,2026-11-25,firstmall.kr,자사 사이트,desktop,1,1
+php,2026-10-23,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,11,11
+php,2026-10-23,search.naver.com,검색,desktop,7,6
+php,2026-10-23,m.search.naver.com,검색,mobile,6,6
+php,2026-10-23,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,mobile,2,2
+php,2026-10-23,m.ad.search.naver.com,검색,mobile,1,1
+php,2026-10-23,www.gabiacns.com,자사 사이트,desktop,1,1
+php,2026-10-24,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,9,9
+php,2026-10-24,m.search.naver.com,검색,mobile,6,6
+php,2026-10-24,search.naver.com,검색,desktop,5,3
+php,2026-10-24,m.ad.search.naver.com,검색,mobile,1,1
+php,2026-10-25,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,11,11
+php,2026-10-25,m.search.naver.com,검색,mobile,11,11
+php,2026-10-25,search.naver.com,검색,desktop,2,2
+php,2026-10-25,ad.search.naver.com,검색,desktop,1,1
+php,2026-10-25,m.search.daum.net,검색,mobile,1,1
+php,2026-10-25,www.google.com,검색,desktop,1,1
+php,2026-10-25,www.google.com,검색,mobile,1,1
+php,2026-10-26,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,14,14
+php,2026-10-26,m.search.naver.com,검색,mobile,13,12
+php,2026-10-26,search.naver.com,검색,desktop,10,11
+php,2026-10-26,www.google.com,검색,desktop,10,9
+php,2026-10-26,ad.search.naver.com,검색,desktop,3,2
+php,2026-10-26,www.gabiacns.com,자사 사이트,desktop,3,1
+php,2026-10-26,www.google.com,검색,mobile,3,3
+php,2026-10-27,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,12,12
+php,2026-10-27,m.search.naver.com,검색,mobile,11,9
+php,2026-10-27,search.naver.com,검색,desktop,6,6
+php,2026-10-27,www.google.com,검색,desktop,6,6
+php,2026-10-27,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,mobile,2,1
+php,2026-10-27,ad.search.naver.com,검색,desktop,2,2
+php,2026-10-27,link.naver.com,외부 사이트,desktop,1,1
+php,2026-10-27,www.google.com,검색,mobile,1,1
+php,2026-10-27,www.gabiacns.com,자사 사이트,desktop,0,1
+php,2026-10-28,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,9,9
+php,2026-10-28,m.search.naver.com,검색,mobile,6,6
+php,2026-10-28,search.naver.com,검색,desktop,5,5
+php,2026-10-28,www.google.com,검색,desktop,2,2
+php,2026-10-29,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,100,99
+php,2026-10-29,www.google.com,검색,desktop,5,2
+php,2026-10-29,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,mobile,3,3
+php,2026-10-29,search.naver.com,검색,desktop,3,3
+php,2026-10-29,dns.gabia.com,자사 사이트,desktop,2,2
+php,2026-10-29,www.gabia.com,자사 사이트,desktop,2,2
+php,2026-10-29,accounts.gabiacns.com,자사 사이트,desktop,1,1
+php,2026-10-29,ad.search.naver.com,검색,desktop,1,1
+php,2026-10-29,mail.bmit.co.kr,이메일,desktop,1,1
+php,2026-10-29,mails.gabiaoffice.hiworks.com,이메일,desktop,1,1
+php,2026-10-29,neoems.gabia.com,자사 사이트,desktop,1,1
+php,2026-10-29,webmail.inday.co.kr,이메일,mobile,1,1
+php,2026-10-29,webmail.lcm21.com,이메일,desktop,1,1
+php,2026-10-29,www.google.com,검색,mobile,1,1
+php,2026-10-30,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,37,35
+php,2026-10-30,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,mobile,3,3
+php,2026-10-30,br.nate.com,외부 사이트,desktop,3,3
+php,2026-10-30,m.search.naver.com,검색,mobile,3,3
+php,2026-10-30,www.google.com,검색,desktop,2,2
+php,2026-10-30,webmail.hanbitens.co.kr,이메일,desktop,1,1
+php,2026-10-30,ad.search.naver.com,검색,desktop,1,1
+php,2026-10-30,gw.verthill.com,외부 사이트,desktop,1,1
+php,2026-10-30,mail.zeospace.com,이메일,desktop,1,1
+php,2026-10-30,search.naver.com,검색,desktop,1,1
+php,2026-10-30,webmail.workskorea.co.kr,이메일,desktop,1,1
+php,2026-10-31,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,6,6
+php,2026-10-31,m.search.naver.com,검색,mobile,1,1
+php,2026-11-01,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,4,4
+php,2026-11-01,m.search.naver.com,검색,mobile,1,1
+php,2026-11-02,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,31,21
+php,2026-11-02,search.naver.com,검색,desktop,2,2
+php,2026-11-02,accounts.gabia.com,자사 사이트,desktop,1,1
+php,2026-11-02,ad.search.naver.com,검색,desktop,1,1
+php,2026-11-02,freehome.gabia.com,자사 사이트,desktop,1,1
+php,2026-11-02,m.search.naver.com,검색,mobile,1,1
+php,2026-11-02,mail.nagaileben.co.kr,이메일,desktop,1,1
+php,2026-11-02,webmail.designhub.kr,이메일,desktop,1,1
+php,2026-11-02,www.gabia.com,자사 사이트,desktop,1,1
+php,2026-11-02,www.gabiacns.com,자사 사이트,mobile,1,1
+php,2026-11-02,www.google.com,검색,desktop,1,1
+php,2026-11-03,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,20,21
+php,2026-11-03,www.gabiacns.com,자사 사이트,desktop,6,6
+php,2026-11-03,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,mobile,4,4
+php,2026-11-03,search.naver.com,검색,desktop,3,2
+php,2026-11-03,domain.gabia.com,자사 사이트,desktop,1,1
+php,2026-11-03,freehome.gabia.com,자사 사이트,desktop,1,1
+php,2026-11-03,m.search.naver.com,검색,tablet,1,1
+php,2026-11-03,www.gabiacns.com,자사 사이트,mobile,1,2
+php,2026-11-04,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,14,15
+php,2026-11-04,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,mobile,6,5
+php,2026-11-04,www.gabiacns.com,자사 사이트,desktop,6,4
+php,2026-11-04,freehome.gabia.com,자사 사이트,desktop,5,5
+php,2026-11-04,m.search.naver.com,검색,mobile,3,2
+php,2026-11-04,search.naver.com,검색,desktop,1,1
+php,2026-11-04,www.esellers.co.kr,자사 사이트,desktop,1,1
+php,2026-11-04,www.gabia.com,자사 사이트,desktop,1,1
+php,2026-11-04,www.google.com,검색,desktop,1,1
+php,2026-11-05,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,11,12
+php,2026-11-05,search.naver.com,검색,desktop,3,2
+php,2026-11-05,www.gabiacns.com,자사 사이트,desktop,2,2
+php,2026-11-05,freehome.gabia.com,자사 사이트,desktop,1,1
+php,2026-11-06,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,11,10
+php,2026-11-06,search.naver.com,검색,desktop,3,2
+php,2026-11-06,accounts.gabiacns.com,자사 사이트,desktop,2,2
+php,2026-11-06,www.google.com,검색,desktop,2,2
+php,2026-11-06,freehome.gabia.com,자사 사이트,desktop,1,1
+php,2026-11-06,m.search.naver.com,검색,mobile,1,1
+php,2026-11-06,www.gabiacns.com,자사 사이트,desktop,1,1
+php,2026-11-07,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,6,6
+php,2026-11-07,m.search.naver.com,검색,mobile,2,2
+php,2026-11-07,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,mobile,1,1
+php,2026-11-08,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,4,5
+php,2026-11-08,m.search.naver.com,검색,mobile,2,2
+php,2026-11-08,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,mobile,1,1
+php,2026-11-08,freehome.gabia.com,자사 사이트,desktop,1,1
+php,2026-11-08,search.naver.com,검색,desktop,1,1
+php,2026-11-09,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,13,12
+php,2026-11-09,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,mobile,1,1
+php,2026-11-09,freehome.gabia.com,자사 사이트,desktop,1,1
+php,2026-11-09,search.naver.com,검색,desktop,1,1
+php,2026-11-09,www.gabiacns.com,자사 사이트,desktop,1,1
+php,2026-11-09,www.google.com,검색,mobile,1,1
+php,2026-11-10,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,13,14
+php,2026-11-10,www.google.com,검색,desktop,3,3
+php,2026-11-10,www.gabiacns.com,자사 사이트,desktop,2,2
+php,2026-11-10,freehome.gabia.com,자사 사이트,desktop,1,1
+php,2026-11-11,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,22,20
+php,2026-11-11,freehome.gabia.com,자사 사이트,desktop,2,2
+php,2026-11-11,m.search.naver.com,검색,mobile,2,2
+php,2026-11-11,www.gabiacns.com,자사 사이트,desktop,2,2
+php,2026-11-11,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,mobile,1,1
+php,2026-11-11,com.slack,외부 사이트,mobile,1,1
+php,2026-11-11,search.naver.com,검색,desktop,1,1
+php,2026-11-11,www.google.com,검색,desktop,1,1
+php,2026-11-12,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,14,11
+php,2026-11-12,tr.maillink.co.kr,이메일,desktop,10,10
+php,2026-11-12,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,mobile,1,1
+php,2026-11-12,accounts.gabiacns.com,자사 사이트,desktop,1,1
+php,2026-11-12,freehome.gabia.com,자사 사이트,desktop,1,1
+php,2026-11-12,freehome.gabia.com,자사 사이트,mobile,1,1
+php,2026-11-12,www.gabiacns.com,자사 사이트,desktop,1,1
+php,2026-11-12,www.google.com,검색,mobile,1,1
+php,2026-11-13,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,16,15
+php,2026-11-13,tr.maillink.co.kr,이메일,desktop,5,5
+php,2026-11-13,search.naver.com,검색,desktop,4,3
+php,2026-11-13,ad.search.naver.com,검색,desktop,2,2
+php,2026-11-13,freehome.gabia.com,자사 사이트,desktop,2,2
+php,2026-11-13,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,mobile,1,1
+php,2026-11-13,innobiz.or.kr,외부 사이트,desktop,1,1
+php,2026-11-13,innobiz.or.kr,외부 사이트,mobile,1,1
+php,2026-11-13,tr.maillink.co.kr,이메일,mobile,1,1
+php,2026-11-14,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,3,3
+php,2026-11-14,m.search.naver.com,검색,mobile,2,1
+php,2026-11-14,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,mobile,1,1
+php,2026-11-14,accounts.gabiacns.com,자사 사이트,tablet,1,1
+php,2026-11-14,www.gabiacns.com,자사 사이트,tablet,1,1
+php,2026-11-15,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,4,4
+php,2026-11-15,freehome.gabia.com,자사 사이트,desktop,2,2
+php,2026-11-15,m.search.naver.com,검색,mobile,1,1
+php,2026-11-15,search.naver.com,검색,desktop,1,1
+php,2026-11-16,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,11,11
+php,2026-11-16,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,mobile,7,2
+php,2026-11-16,freehome.gabia.com,자사 사이트,desktop,2,2
+php,2026-11-16,search.naver.com,검색,desktop,2,2
+php,2026-11-16,www.google.com,검색,desktop,2,1
+php,2026-11-16,ad.search.naver.com,검색,desktop,1,1
+php,2026-11-16,www.gabiacns.com,자사 사이트,desktop,1,1
+php,2026-11-17,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,12,11
+php,2026-11-17,search.naver.com,검색,desktop,2,2
+php,2026-11-17,accounts.gabiacns.com,자사 사이트,desktop,1,1
+php,2026-11-17,ad.search.naver.com,검색,desktop,1,1
+php,2026-11-17,freehome.gabia.com,자사 사이트,desktop,1,1
+php,2026-11-17,www.google.com,검색,desktop,1,1
+php,2026-11-18,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,7,6
+php,2026-11-18,tr.maillink.co.kr,이메일,mobile,3,2
+php,2026-11-18,www.gabiacns.com,자사 사이트,desktop,3,3
+php,2026-11-18,accounts.gabiacns.com,자사 사이트,desktop,2,2
+php,2026-11-18,search.naver.com,검색,desktop,2,2
+php,2026-11-18,ad.search.naver.com,검색,desktop,1,1
+php,2026-11-18,m.search.naver.com,검색,mobile,1,1
+php,2026-11-18,www.google.com,검색,desktop,1,1
+php,2026-11-19,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,8,8
+php,2026-11-19,search.naver.com,검색,desktop,2,2
+php,2026-11-19,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,mobile,1,1
+php,2026-11-19,ad.search.naver.com,검색,desktop,1,1
+php,2026-11-19,m.search.naver.com,검색,mobile,1,1
+php,2026-11-20,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,5,5
+php,2026-11-20,m.search.naver.com,검색,mobile,2,2
+php,2026-11-20,search.naver.com,검색,desktop,2,2
+php,2026-11-20,freehome.gabia.com,자사 사이트,mobile,1,1
+php,2026-11-20,m.search.naver.com,검색,tablet,1,1
+php,2026-11-20,www.gabiacns.com,자사 사이트,desktop,1,1
+php,2026-11-20,www.google.com,검색,desktop,1,1
+php,2026-11-21,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,2,2
+php,2026-11-22,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,2,2
+php,2026-11-22,freehome.gabia.com,자사 사이트,mobile,1,1
+php,2026-11-22,search.naver.com,검색,desktop,1,1
+php,2026-11-23,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,3,3
+php,2026-11-23,accounts.gabiacns.com,자사 사이트,desktop,1,1
+php,2026-11-23,freehome.gabia.com,자사 사이트,mobile,1,1
+php,2026-11-23,m.search.naver.com,검색,mobile,1,1
+php,2026-11-23,search.naver.com,검색,desktop,1,1
+php,2026-11-23,www.esellers.co.kr,자사 사이트,desktop,1,1
+php,2026-11-24,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,3,3
+php,2026-11-24,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,mobile,2,1
+php,2026-11-24,com.google.android.gm,외부 사이트,mobile,1,1
+php,2026-11-24,freehome.gabia.com,자사 사이트,desktop,1,1
+php,2026-11-24,m.search.naver.com,검색,mobile,1,1
+php,2026-11-24,search.naver.com,검색,desktop,1,2
+php,2026-11-25,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,desktop,7,6
+php,2026-11-25,m.search.naver.com,검색,mobile,6,2
+php,2026-11-25,com.google.android.gm,외부 사이트,mobile,2,1
+php,2026-11-25,accounts.gabiacns.com,자사 사이트,desktop,2,2
+php,2026-11-25,(없음: 직접·이메일·앱 내 브라우저),직접·알 수 없음,mobile,1,1
+php,2026-11-25,search.naver.com,검색,desktop,1,1

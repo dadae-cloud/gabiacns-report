@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>서치콘솔 성과 보고서</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+</head>
+<body>
+<style>
+html, body { margin: 0; }
+body { background: #ecebe7; padding: 24px max(16px, env(safe-area-inset-left, 0px)) 40px max(16px, env(safe-area-inset-right, 0px)); }
+body:has(.ev-dark, .sc-dark, .bn-dark) { background: #121211; }
+#sc-root { --cds-radius: 12px; --cds-gap-lg: 16px; --cds-font-weight-medium: 600; --font-anthropic-sans: system-ui; }
+.dash-select { font: inherit; font-size: 12.5px; padding: 5px 8px; border: 1px solid var(--color-border-line); border-radius: 8px; }
+.pub-back { display: inline-block; margin-bottom: 6px; font-size: 12px; color: var(--color-fg-muted); text-decoration: none; }
+.pub-back:hover { text-decoration: underline; }
+
+/* Layout: 머리(제목·기간·사이트 탭) → 인사이트 → 요약·KPI → 일별 추이 → 점검 → 검색어|페이지 → GA4 → 콘텐츠 검색 */
+.sc { --sc-site: #2f6fdb; --sc-insight: color-mix(in srgb, var(--color-warn) 8%, var(--color-bg)); --sc-insight-line: color-mix(in srgb, var(--color-warn) 30%, var(--color-border-line)); display: flex; flex-direction: column; gap: var(--cds-gap-lg); font-family: "Pretendard Variable", Pretendard, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", var(--font-anthropic-sans), sans-serif; color: var(--color-fg); font-size: 13px; letter-spacing: -0.01em; }
+.sc select, .sc button, .sc input { font-family: inherit; }
+.sc[data-site="firstmall"] { --sc-site: #0e9384; }
+.sc[data-site="clickn"] { --sc-site: #7a5af8; }
+.sc h1 { font-weight: 700; font-size: 24px; margin: 0; letter-spacing: -0.02em; }
+.sc h2 { font-size: 15px; font-weight: var(--cds-font-weight-medium); margin: 0; }
+.sc-note { color: var(--color-fg-muted); font-size: 12px; margin: 0; line-height: 1.5; }
+.sc-top { display: flex; flex-direction: column; gap: 10px; background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: 14px 16px 0; }
+.sc-toprow { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: space-between; }
+.sc-bar { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.sc-btn { font: inherit; font-size: 12px; border: 1px solid var(--color-border-line); background: var(--color-panel); color: var(--color-fg); border-radius: 999px; padding: 4px 11px; cursor: pointer; white-space: nowrap; }
+.sc-btn[aria-pressed="true"] { background: var(--color-fg); color: var(--color-bg); border-color: var(--color-fg); }
+.sc-btn:focus-visible, .sc-tab:focus-visible, .sc input:focus-visible, .sc tr:focus-visible { outline: 2px solid var(--sc-site); outline-offset: 2px; }
+.sc-date { font: inherit; font-size: 12px; padding: 3px 6px; border: 1px solid var(--color-border-line); border-radius: 6px; background: var(--color-bg); color: var(--color-fg); }
+.sc-tabs { display: flex; gap: 4px; overflow-x: auto; margin: 0 -16px; padding: 0 16px; border-bottom: 1px solid var(--color-border-line); }
+.sc-tab { font: inherit; font-size: 12px; padding: 7px 16px; border: 1px solid var(--color-border-line); border-bottom: none; border-radius: 8px 8px 0 0; background: var(--color-bg); color: var(--color-fg-muted); cursor: pointer; transform: translateY(4px); transition: transform .12s; white-space: nowrap; }
+.sc-tab[data-site="gabiacns"] { --t: #2f6fdb; } .sc-tab[data-site="firstmall"] { --t: #0e9384; } .sc-tab[data-site="clickn"] { --t: #7a5af8; }
+.sc-tab::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--t); margin-right: 6px; vertical-align: 0; }
+.sc-tab[aria-selected="true"] { color: var(--color-fg); background: var(--color-panel); transform: none; font-weight: var(--cds-font-weight-medium); box-shadow: inset 0 3px 0 var(--t); }
+.sc-card { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: 16px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.sc-card.sc-warm { background: var(--sc-insight); border-color: var(--sc-insight-line); }
+.sc-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; flex-wrap: wrap; }
+.sc-insights { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.sc-insights li { display: flex; gap: 8px; align-items: baseline; line-height: 1.6; }
+.sc-tag { flex: none; font-size: 11px; border: 1px solid var(--color-border-line); border-radius: 999px; padding: 0 8px; background: var(--color-panel); color: var(--color-fg-muted); min-width: 52px; text-align: center; }
+.sc-tag[data-tone="bad"] { color: var(--color-bad); border-color: currentColor; } .sc-tag[data-tone="ok"] { color: var(--color-ok); border-color: currentColor; } .sc-tag[data-tone="warn"] { color: var(--color-warn); border-color: currentColor; }
+.sc-insights b { font-weight: var(--cds-font-weight-medium); }
+.sc-summary { margin: 0; font-size: 14px; line-height: 1.6; }
+.sc-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+.sc-kpi { gap: 2px; padding: 14px 16px; }
+.sc-kpi-label { font-size: 12px; color: var(--color-fg-muted); }
+.sc-kpi-value { font-weight: 700; letter-spacing: -0.02em; font-size: 28px; font-variant-numeric: tabular-nums; line-height: 1.25; }
+.sc-kpi-cmp { font-size: 11.5px; color: var(--color-fg-muted); font-variant-numeric: tabular-nums; display: flex; flex-direction: column; gap: 1px; }
+.sc-up { color: var(--color-ok); } .sc-down { color: var(--color-bad); } .sc-flat { color: var(--color-fg-muted); }
+.sc b.sc-up, .sc b.sc-down { font-weight: var(--cds-font-weight-medium); }
+.sc-chartbox { position: relative; min-height: 250px; }
+.sc-tip { position: absolute; pointer-events: none; background: var(--cds-surface-popover); border: 1px solid var(--cds-border); box-shadow: var(--cds-shadow-popover); border-radius: 8px; padding: 6px 10px; font-size: 12px; font-variant-numeric: tabular-nums; white-space: nowrap; z-index: 2; line-height: 1.5; }
+.sc-legend { display: flex; flex-wrap: wrap; gap: 12px; font-size: 12px; color: var(--color-fg-muted); }
+.sc-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 4px; vertical-align: -1px; }
+.sc-chart text { fill: var(--cds-text-secondary); font-size: 11px; }
+.sc-two { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: var(--cds-gap-lg); align-items: stretch; }
+.sc-tablewrap { overflow: auto; max-height: 520px; border-top: 1px solid var(--color-border-line); }
+.sc-tablewrap.sc-short { max-height: 380px; }
+.sc table { width: 100%; border-collapse: collapse; font-size: 12.5px; font-variant-numeric: tabular-nums; }
+.sc th { text-align: left; font-weight: var(--cds-font-weight-medium); color: var(--color-fg-muted); padding: 7px 8px; border-bottom: 1px solid var(--color-border-line); position: sticky; top: 0; background: var(--color-panel); white-space: nowrap; z-index: 1; font-size: 12px; }
+.sc-warm th { background: var(--sc-insight); }
+.sc td { padding: 6px 8px; border-bottom: 1px solid var(--color-border-line); vertical-align: middle; }
+.sc .num { text-align: right; white-space: nowrap; }
+.sc .clip { max-width: 0; width: 100%; }
+.sc .clip > * , .sc .clip-t { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sc .sub { color: var(--color-fg-muted); font-size: 11px; }
+.sc a { color: inherit; text-decoration: none; } .sc a:hover { text-decoration: underline; }
+.sc td.wrap { min-width: 160px; max-width: 380px; line-height: 1.45; }
+.sc-pill { display: inline-block; font-size: 11px; border: 1px solid currentColor; border-radius: 999px; padding: 0 8px; white-space: nowrap; }
+.sc-filter { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; font-size: 12px; color: var(--color-fg-muted); }
+.sc-filter select { max-width: min(100%, 420px); }
+.sc-search { font: inherit; padding: 7px 10px; border: 1px solid var(--color-border-line); border-radius: 8px; background: var(--color-bg); color: var(--color-fg); width: min(100%, 420px); }
+.sc tr.sc-click { cursor: pointer; }
+.sc tr.sc-click:hover td { background: color-mix(in srgb, var(--sc-site) 6%, transparent); }
+.sc tr[aria-selected="true"] td { background: color-mix(in srgb, var(--sc-site) 13%, transparent); }
+.sc-detail { display: flex; flex-direction: column; gap: 12px; border-top: 1px dashed var(--color-border-line); padding-top: 12px; }
+.sc-detail-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 12px; align-items: start; }
+.sc-detail-cols .sc-card { padding: 12px; gap: 6px; }
+.sc-totals { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 12.5px; }
+.sc-totals b { font-variant-numeric: tabular-nums; }
+.sc-more { align-self: center; }
+.sc-foot { display: flex; justify-content: center; }
+/* 테마: 기본은 라이트, .sc-dark면 다크 — 대시보드 토큰을 이 페이지 안에서 덮어써요 */
+.sc { --color-fg: #1f1e1c; --color-fg-muted: #6b6a66; --color-bg: #f6f5f2; --color-panel: #ffffff; --color-border-line: #e4e2dc; --color-ok: #2e7d4f; --color-warn: #b7791f; --color-bad: #c0392b;
+  --cds-chart-grid: #ecebe7; --cds-chart-muted: #9aa6b8; --cds-text-secondary: #6b6a66; --cds-surface-popover: #ffffff; --cds-border: #dddbd5; --cds-shadow-popover: 0 4px 14px rgba(0,0,0,.12);
+  background: var(--color-bg); color-scheme: light; border-radius: var(--cds-radius); padding: 16px; max-width: 1080px; margin: 0 auto; box-sizing: border-box; width: 100%; }
+.sc.sc-dark { --color-fg: #ecebe8; --color-fg-muted: #a3a19c; --color-bg: #1b1b1a; --color-panel: #262624; --color-border-line: #3a3936; --color-ok: #5cbf86; --color-warn: #e0a84a; --color-bad: #ef7466;
+  --cds-chart-grid: #34332f; --cds-chart-muted: #7b8596; --cds-text-secondary: #a3a19c; --cds-surface-popover: #2f2f2c; --cds-border: #45443f; --cds-shadow-popover: 0 4px 14px rgba(0,0,0,.5); color-scheme: dark; }
+.sc .dash-select { background-color: var(--color-panel); color: var(--color-fg); border-color: var(--color-border-line); }
+.sc-modes { display: flex; gap: 4px; }
+.sc-modes .sc-btn[aria-pressed="true"] { background: var(--color-fg); color: var(--color-bg); border-color: var(--color-fg); }
+[data-dash-source-state=refreshing] { opacity: .5; }
+</style>
+
+<div class="sc" id="sc-root" data-site="gabiacns">
+  <header class="sc-top" id="sc-top">
+    <div class="sc-toprow">
+      <div>
+        <a class="pub-back" href="../">← 리포트 허브</a>
+<h1>서치콘솔 성과 보고서</h1>
+        <p class="sc-note">Google Search Console 웹 검색 · 데이터 <span data-draw="dataRange">—</span>(서치콘솔 보관 기간 16개월) · 서치콘솔은 2일 딜레이되어 업데이트됩니다</p>
+      </div>
+      <div class="sc-modes" role="group" aria-label="화면 모드"><button class="sc-btn" type="button" data-theme-opt="light" aria-pressed="true">라이트</button><button class="sc-btn" type="button" data-theme-opt="dark" aria-pressed="false">다크</button></div>
+    </div>
+    <div class="sc-toprow">
+      <div class="sc-bar" id="sc-presets" role="group" aria-label="기간">
+        <button class="sc-btn" type="button" data-range="7" aria-pressed="false">최근 7일</button>
+        <button class="sc-btn" type="button" data-range="14" aria-pressed="false">최근 14일</button>
+        <button class="sc-btn" type="button" data-range="28" aria-pressed="true">최근 28일</button>
+        <button class="sc-btn" type="button" data-range="90" aria-pressed="false">최근 90일</button>
+        <button class="sc-btn" type="button" data-range="365" aria-pressed="false">최근 1년</button>
+      </div>
+      <div class="sc-bar" id="sc-custom">
+        <label class="sc-note" for="sc-start">시작</label><input class="sc-date" id="sc-start" type="date">
+        <span class="sc-note">~</span>
+        <label class="sc-note" for="sc-end">종료</label><input class="sc-date" id="sc-end" type="date">
+        <button class="sc-btn" type="button" id="sc-reset">초기화</button>
+      </div>
+    </div>
+    <p class="sc-note" data-draw="rangeText">—</p>
+    <div class="sc-tabs" role="tablist" aria-label="사이트">
+      <button class="sc-tab" type="button" role="tab" data-site="gabiacns" aria-selected="true">gabiacns.com</button>
+      <button class="sc-tab" type="button" role="tab" data-site="firstmall" aria-selected="false">firstmall.kr</button>
+      <button class="sc-tab" type="button" role="tab" data-site="clickn" aria-selected="false">clickn.co.kr</button>
+    </div>
+  </header>
+
+  <section class="sc-card sc-warm" id="sc-insights">
+    <h2>인사이트</h2>
+    <p class="sc-note">날짜 필터와 관계없이 최근 28일 vs 직전 28일 기준입니다. Claude가 데이터를 읽고 정리했어요.</p>
+    <ul class="sc-insights" data-draw="insights" data-source="sc_insights"></ul>
+  </section>
+
+  <p class="sc-summary" id="sc-summary" data-draw="summary">—</p>
+
+  <div class="sc-kpis" id="sc-kpis">
+    <div class="sc-card sc-kpi"><span class="sc-kpi-label">노출 · 선택 기간</span><span class="sc-kpi-value" data-draw="kpiImpr">—</span><span class="sc-kpi-cmp" data-draw="kpiImprCmp">—</span></div>
+    <div class="sc-card sc-kpi"><span class="sc-kpi-label">클릭 · 선택 기간</span><span class="sc-kpi-value" data-draw="kpiClicks">—</span><span class="sc-kpi-cmp" data-draw="kpiClicksCmp">—</span></div>
+    <div class="sc-card sc-kpi"><span class="sc-kpi-label">CTR (클릭 ÷ 노출)</span><span class="sc-kpi-value" data-draw="kpiCtr">—</span><span class="sc-kpi-cmp" data-draw="kpiCtrCmp">—</span></div>
+    <div class="sc-card sc-kpi"><span class="sc-kpi-label">평균 순위 (낮을수록 좋음)</span><span class="sc-kpi-value" data-draw="kpiPos">—</span><span class="sc-kpi-cmp" data-draw="kpiPosCmp">—</span></div>
+  </div>
+
+  <section class="sc-card" id="sc-daily">
+    <h2>일별 클릭</h2>
+    <div class="sc-legend"><span><i style="background:var(--sc-site)"></i>선택 기간</span><span><i style="background:var(--cds-chart-muted)"></i>비교 기간(직전 같은 길이)</span><span><i style="background:var(--color-border-line)"></i>그 외</span><span><i style="background:var(--color-fg);height:2px"></i>7일 이동평균</span><span>· 막대에 마우스를 올리면 노출·CTR·순위가 보여요</span></div>
+    <div class="sc-chartbox" data-draw="dailyChart" data-source="gsc_daily"></div>
+  </section>
+
+  <section class="sc-card" id="sc-checks">
+    <div class="sc-card-head"><h2>서치콘솔 점검 · 개선 사항</h2><button class="sc-btn" type="button" data-copy="tbl-checks">표 복사</button></div>
+    <p class="sc-note">사이트맵 API와 최근 28일 호스트·페이지별 노출로 찾은 항목이에요. Core Web Vitals·HTTPS·구조화 데이터는 API로 볼 수 없어서 서치콘솔 화면에서 확인해야 해요.</p>
+    <div class="sc-tablewrap sc-short"><table id="tbl-checks" data-source="sc_checks" data-row-key="site,no">
+      <thead><tr><th data-field="level">구분</th><th data-field="item">항목</th><th data-field="target">대상</th><th data-field="action">권장 조치</th></tr></thead>
+      <tbody data-draw="checks"></tbody>
+    </table></div>
+  </section>
+
+  <div class="sc-two">
+    <section class="sc-card" id="sc-queries">
+      <div class="sc-card-head"><h2>검색어 상위</h2><button class="sc-btn" type="button" data-copy="tbl-q">표 복사</button></div>
+      <p class="sc-note">최근 28일 클릭 순. 변화는 직전 28일 대비 클릭 증감이고, 직전 상위 기록에 없으면 —예요.</p>
+      <label class="sc-filter" for="sc-qpage">랜딩 페이지
+        <select class="dash-select" id="sc-qpage" data-draw="qpageOptions" data-source="gsc_query_page"></select>
+      </label>
+      <div class="sc-tablewrap">
+        <table id="tbl-q" data-source="gsc_queries" data-row-key="site,query">
+          <thead><tr><th data-field="query">검색어</th><th class="num" data-field="impressions">노출</th><th class="num" data-field="clicks">클릭</th><th class="num">변화</th><th class="num" data-field="ctr">CTR</th><th class="num" data-field="position">순위</th></tr></thead>
+          <tbody data-draw="queries"></tbody>
+        </table>
+        <table id="tbl-qp" data-source="gsc_query_page" data-row-key="site,query,page" hidden>
+          <thead><tr><th data-field="query">검색어</th><th class="num" data-field="impressions">노출</th><th class="num" data-field="clicks">클릭</th><th class="num" data-field="ctr">CTR</th><th class="num" data-field="position">순위</th></tr></thead>
+          <tbody data-draw="queriesByPage"></tbody>
+        </table>
+      </div>
+      <div class="sc-foot"><button class="sc-btn" type="button" data-more="q">더 보기 (100개)</button></div>
+    </section>
+
+    <section class="sc-card" id="sc-pages">
+      <div class="sc-card-head"><h2>페이지 상위</h2><button class="sc-btn" type="button" data-copy="tbl-p">표 복사</button></div>
+      <p class="sc-note">최근 28일 클릭 순. 제목 아래는 주소와 그 페이지에 클릭이 가장 많은 검색어예요.</p>
+      <div class="sc-tablewrap">
+        <table id="tbl-p" data-source="gsc_pages" data-row-key="site,page">
+          <thead><tr><th data-field="title">페이지</th><th class="num" data-field="impressions">노출</th><th class="num" data-field="clicks">클릭</th><th class="num">변화</th><th class="num" data-field="ctr">CTR</th><th class="num" data-field="position">순위</th></tr></thead>
+          <tbody data-draw="pages"></tbody>
+        </table>
+      </div>
+      <div class="sc-foot"><button class="sc-btn" type="button" data-more="p">더 보기 (100개)</button></div>
+    </section>
+  </div>
+
+  <section class="sc-card sc-warm" id="sc-ga4">
+    <div class="sc-card-head"><h2>콘텐츠 유입 후 성과 (GA4)</h2><button class="sc-btn" type="button" data-copy="tbl-ga">표 복사</button></div>
+    <p class="sc-note">GA4 자연검색(Organic Search) 세션 기준, 서치콘솔과 같은 최근 28일 랜딩 페이지별이에요. 로그인·마이페이지·결제 화면은 뺐어요. 진단: 세션 50 이상이면서 참여율 50% 미만은 이탈 높음, 참여율 70% 이상이면서 평균 60초 이상은 잘 읽힘, 나머지는 보통.</p>
+    <label class="sc-filter" for="sc-diag">진단
+      <select class="dash-select" id="sc-diag"><option value="">전체</option><option value="이탈 높음">이탈 높음</option><option value="잘 읽힘">잘 읽힘</option><option value="보통">보통</option></select>
+    </label>
+    <div class="sc-tablewrap">
+      <table id="tbl-ga" data-source="ga4_landing" data-row-key="site,url">
+        <thead><tr><th data-field="url">페이지</th><th data-field="diag">진단</th><th class="num" data-field="sessions">자연검색 세션</th><th class="num" data-field="engagement_rate">참여율</th><th class="num" data-field="avg_engagement_sec">평균 참여 시간</th><th class="num" data-field="naver_share">네이버 비중</th></tr></thead>
+        <tbody data-draw="ga4"></tbody>
+      </table>
+    </div>
+    <div class="sc-foot"><button class="sc-btn" type="button" data-more="ga">더 보기 (100개)</button></div>
+  </section>
+
+  <section class="sc-card" id="sc-content">
+    <div class="sc-card-head"><h2>콘텐츠 검색</h2><button class="sc-btn" type="button" data-copy="tbl-cs">표 복사</button></div>
+    <p class="sc-note">제목이나 주소로 찾아요(여러 단어는 모두 포함). 행을 누르면 월별 통계·유입 경로·유입 키워드가 나와요. 세션·참여율은 GA4 최근 완료 6개월(5~10월), 클릭·노출은 서치콘솔 최근 180일이에요. 6개월 세션 50 미만이면서 클릭 10 미만인 페이지와 로그인 후 화면은 뺐어요.</p>
+    <input class="sc-search" id="sc-term" type="search" placeholder="예: 쿠팡, 네이버 광고, /customer/faq" aria-label="콘텐츠 제목·주소 검색">
+    <div class="sc-tablewrap sc-short">
+      <table id="tbl-cs" data-source="content_join" data-row-key="site,url">
+        <thead><tr><th data-field="title">페이지</th><th class="num" data-field="sessions">세션</th><th class="num" data-field="engagement_rate">참여율</th><th class="num" data-field="clicks">클릭</th><th class="num" data-field="impressions">노출</th><th class="num" data-field="ctr">CTR</th></tr></thead>
+        <tbody data-draw="contentList"></tbody>
+      </table>
+    </div>
+    <div class="sc-foot"><button class="sc-btn" type="button" data-more="cs">더 보기 (100개)</button></div>
+    <div class="sc-detail" id="sc-content-detail" data-draw="contentDetail" data-source="content_join ga4_monthly ga4_sources_6m gsc_query_page_180"></div>
+  </section>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+window.dash = (() => {
+  const src = {}, calcs = {}, draws = {}, cache = {};
+  const get = (id) => {
+    if (src[id]) return { status: 'ok', data: src[id], columns: src[id].columns };
+    const c = calcs[id]; if (!c) return { status: 'loading', data: [] };
+    if (cache[id]) return cache[id];
+    const ins = c.inputs.map((i) => get(i));
+    if (ins.some((x) => x.status !== 'ok')) return { status: 'loading', data: null };
+    return (cache[id] = { status: 'ok', data: c.fn(...ins.map((x) => x.data)) });
+  };
+  const run = (name) => { for (const el of document.querySelectorAll(`[data-draw="${name}"]`)) { try { draws[name](el); } catch (e) { console.error(name, e); } } };
+  return {
+    _load(id, rows) { src[id] = rows; for (const k in cache) delete cache[k]; },
+    _all() { for (const n in draws) run(n); },
+    data: get, calc(id, o) { calcs[id] = o; },
+    draw(name, fn) { if (fn) { draws[name] = fn; run(name); } else if (draws[name]) run(name); },
+    onData(fn) { try { fn(); } catch (e) { console.error(e); } }, params: () => ({}), setParams() {}, resetParams() {}, setLink() {}, refresh() {},
+    colors: ['#2f6fdb', '#e8590c', '#0e9384', '#7a5af8', '#c0392b', '#b7791f'],
+  };
+})();
+</script>
+<script>
+window.SC = window.SC || { site: 'gabiacns', range: '28', start: '', end: '', more: {}, qpage: '', diag: '', term: '', sel: '' };
+window.scFmt = {
+  n: (v) => (v == null || v === '' || isNaN(+v)) ? '—' : d3.format(',')(Math.round(+v)),
+  pct: (v, d = 2) => (v == null || v === '' || isNaN(+v)) ? '—' : (+v).toFixed(d) + '%',
+  pos: (v) => (v == null || v === '' || isNaN(+v)) ? '—' : (+v).toFixed(1),
+};
+window.scRedraw = (names) => { for (const n of names) dash.draw(n); };
+window.scAllDraws = ['summary', 'rangeText', 'kpiImpr', 'kpiImprCmp', 'kpiClicks', 'kpiClicksCmp', 'kpiCtr', 'kpiCtrCmp', 'kpiPos', 'kpiPosCmp', 'dailyChart', 'insights', 'checks', 'qpageOptions', 'queries', 'queriesByPage', 'pages', 'ga4', 'contentList', 'contentDetail'];
+
+dash.calc('kpi', {
+  title: '사이트·기간별 KPI',
+  description: '사이트마다 일별 서치콘솔 데이터를 기간(7·14·28·90·365일)별로 합산하고, 직전 같은 길이 기간과 작년 같은 기간 대비 변화를 계산해요.',
+  inputs: ['gsc_daily'],
+  fn: (daily) => {
+    const day = 86400000, out = [];
+    const sites = [...new Set(daily.map((r) => r.site))];
+    for (const site of sites) {
+      const rows = daily.filter((r) => r.site === site);
+      const by = new Map(rows.map((r) => [r.date, r]));
+      const dates = rows.map((r) => r.date).sort();
+      const first = Date.parse(dates[0] + 'T00:00:00Z'), last = Date.parse(dates[dates.length - 1] + 'T00:00:00Z');
+      const iso = (t) => new Date(t).toISOString().slice(0, 10);
+      const sum = (endT, n) => {
+        const s = endT - (n - 1) * day; if (s < first) return null;
+        let c = 0, i = 0, pw = 0;
+        for (let t = s; t <= endT; t += day) { const r = by.get(iso(t)); if (r) { c += +r.clicks; i += +r.impressions; pw += +r.position * +r.impressions; } }
+        return { start: iso(s), end: iso(endT), clicks: c, impressions: i, ctr: i ? c / i * 100 : 0, position: i ? pw / i : null };
+      };
+      const ch = (a, b) => (b == null || !b) ? null : (a - b) / b * 100;
+      for (const n of [7, 14, 28, 90, 365]) {
+        const cur = sum(last, n), prev = sum(last - n * day, n), yoy = sum(last - 365 * day, n);
+        out.push({
+          site, range: String(n), start: cur.start, end: cur.end, clicks: cur.clicks, impressions: cur.impressions, ctr: cur.ctr, position: cur.position,
+          prev_start: prev ? prev.start : null, prev_end: prev ? prev.end : null, prev_ctr: prev ? prev.ctr : null,
+          clicks_vs_prev: prev ? ch(cur.clicks, prev.clicks) : null, impressions_vs_prev: prev ? ch(cur.impressions, prev.impressions) : null,
+          ctr_vs_prev_pp: prev ? cur.ctr - prev.ctr : null, position_vs_prev: prev ? cur.position - prev.position : null,
+          clicks_vs_yoy: yoy ? ch(cur.clicks, yoy.clicks) : null, impressions_vs_yoy: yoy ? ch(cur.impressions, yoy.impressions) : null,
+          ctr_vs_yoy_pp: yoy ? cur.ctr - yoy.ctr : null, position_vs_yoy: yoy ? cur.position - yoy.position : null,
+        });
+      }
+    }
+    return out;
+  },
+});
+
+dash.calc('ga4_landing', {
+  title: 'GA4 자연검색 랜딩 페이지 (최근 28일)',
+  description: '사이트별 GA4 자연검색 세션을 랜딩 페이지로 합치고 참여율, 평균 참여 시간, 네이버 비중, 진단을 계산해요. 로그인·마이페이지·결제 화면은 빼요.',
+  inputs: ['ga4_organic'],
+  fn: (organic) => {
+    const skip = (p) => p === '(not set)' || p === '' || /^\/(my|mypage|myshop|login|member|order|payment|payment_firstmall|cart|billing|register|services|sms)(\/|$)/.test(p);
+    const m = new Map();
+    for (const r of organic) {
+      const p = String(r.landing_page || '').split(/[?#]/)[0];
+      if (skip(p) || !r.host) continue;
+      const url = (p === '/' ? r.host : (r.host + p).replace(/\/+$/, ''));
+      const k = r.site + '\u0001' + url;
+      const x = m.get(k) || { site: r.site, url, sessions: 0, engaged: 0, sec: 0, naver: 0 };
+      x.sessions += +r.sessions; x.engaged += +r.engaged_sessions; x.sec += +r.engagement_seconds;
+      if (/naver/.test(r.source)) x.naver += +r.sessions;
+      m.set(k, x);
+    }
+    return [...m.values()].map((x) => {
+      const rate = x.sessions ? x.engaged / x.sessions * 100 : 0, avg = x.sessions ? x.sec / x.sessions : 0;
+      return { site: x.site, url: x.url, diag: (x.sessions >= 50 && rate < 50) ? '이탈 높음' : (rate >= 70 && avg >= 60) ? '잘 읽힘' : '보통',
+        sessions: x.sessions, engagement_rate: Math.round(rate * 10) / 10, avg_engagement_sec: Math.round(avg), naver_share: Math.round((x.sessions ? x.naver / x.sessions * 100 : 0) * 10) / 10 };
+    }).sort((a, b) => b.sessions - a.sessions);
+  },
+});
+
+dash.calc('content_join', {
+  title: '콘텐츠별 6개월 성과',
+  description: 'GA4 최근 완료 6개월 세션·참여 세션(전체 채널, 랜딩 기준)과 서치콘솔 최근 180일 클릭·노출을 주소로 합쳐요. 로그인 후 화면과, 세션 50 미만이면서 클릭 10 미만인 페이지는 빼요.',
+  inputs: ['ga4_monthly', 'gsc_pages_180', 'page_titles'],
+  fn: (monthly, pages180, titles) => {
+    const t = new Map(titles.map((r) => [r.url, r.title]));
+    const m = new Map();
+    const get = (site, url) => { const k = site + '\u0001' + url; if (!m.has(k)) m.set(k, { site, url, title: t.get(url) || '', sessions: 0, engaged: 0, clicks: 0, impressions: 0 }); return m.get(k); };
+    for (const r of monthly) { const x = get(r.site, r.url); x.sessions += +r.sessions; x.engaged += +r.engaged_sessions; }
+    for (const r of pages180) { const x = get(r.site, r.page); x.clicks += +r.clicks; x.impressions += +r.impressions; }
+    return [...m.values()]
+      .filter((x) => !/\/(my|mypage|myshop|services|payment|register|login)(\/|$)/.test(x.url.slice(x.url.indexOf('/'))) && !(x.sessions < 50 && x.clicks < 10))
+      .map((x) => ({ site: x.site, url: x.url, title: x.title, sessions: x.sessions, engagement_rate: x.sessions ? Math.round(x.engaged / x.sessions * 1000) / 10 : null,
+        clicks: x.clicks, impressions: x.impressions, ctr: x.impressions ? Math.round(x.clicks / x.impressions * 10000) / 100 : 0 }))
+      .sort((a, b) => (b.sessions - a.sessions) || (b.clicks - a.clicks));
+  },
+});
+
+dash.calc('page_monthly', {
+  title: '페이지별 월별 세션',
+  description: 'GA4 랜딩 페이지 월별 세션과 참여율(전체 채널)이에요.',
+  inputs: ['ga4_monthly'],
+  fn: (monthly) => monthly.map((r) => ({ site: r.site, url: r.url, month: r.month, sessions: +r.sessions, engagement_rate: +r.sessions ? Math.round(+r.engaged_sessions / +r.sessions * 1000) / 10 : 0 })),
+});
+
+/* 컨트롤: 듣기만 */
+/* 화면 모드: 기본 라이트 */
+const scTheme = (dark) => {
+  for (const r of document.querySelectorAll('#sc-root')) r.classList.toggle('sc-dark', dark);
+  for (const b of document.querySelectorAll('[data-theme-opt]')) b.setAttribute('aria-pressed', String((b.dataset.themeOpt === 'dark') === dark));
+  try { localStorage.setItem('sc-theme', dark ? 'dark' : 'light'); } catch (e) {}
+};
+let scDark = false; try { scDark = localStorage.getItem('sc-theme') === 'dark'; } catch (e) {}
+scTheme(scDark);
+for (const b of document.querySelectorAll('[data-theme-opt]')) b.addEventListener('click', () => { scDark = b.dataset.themeOpt === 'dark'; scTheme(scDark); scRedraw(scAllDraws); });
+
+const sync = () => {
+  for (const o of document.querySelectorAll('#sc-presets [data-range]')) o.setAttribute('aria-pressed', String(o.dataset.range === SC.range));
+  for (const t of document.querySelectorAll('.sc-tab')) t.setAttribute('aria-selected', String(t.dataset.site === SC.site));
+  for (const r of document.querySelectorAll('#sc-root')) r.dataset.site = SC.site;
+};
+for (const b of document.querySelectorAll('#sc-presets [data-range]')) b.addEventListener('click', () => { SC.range = b.dataset.range; SC.start = ''; SC.end = ''; for (const i of document.querySelectorAll('.sc-date')) i.value = ''; sync(); scRedraw(scAllDraws.slice(0, 11)); });
+for (const i of document.querySelectorAll('.sc-date')) i.addEventListener('change', () => {
+  const s = document.getElementById('sc-start'), e = document.getElementById('sc-end');
+  if (s && e && s.value && e.value && s.value <= e.value) { SC.range = 'custom'; SC.start = s.value; SC.end = e.value; sync(); scRedraw(scAllDraws.slice(0, 11)); }
+});
+for (const b of document.querySelectorAll('#sc-reset')) b.addEventListener('click', () => { SC.range = '28'; SC.start = ''; SC.end = ''; for (const i of document.querySelectorAll('.sc-date')) i.value = ''; sync(); scRedraw(scAllDraws.slice(0, 11)); });
+for (const t of document.querySelectorAll('.sc-tab')) t.addEventListener('click', () => {
+  SC.site = t.dataset.site; SC.qpage = ''; SC.sel = ''; SC.more = {};
+  for (const b of document.querySelectorAll('[data-more]')) b.hidden = false;
+  for (const x of document.querySelectorAll('#tbl-q')) x.hidden = false;
+  for (const x of document.querySelectorAll('#tbl-qp')) x.hidden = true;
+  sync(); scRedraw(scAllDraws);
+});
+for (const b of document.querySelectorAll('[data-more]')) b.addEventListener('click', () => {
+  SC.more[b.dataset.more] = true; b.hidden = true;
+  scRedraw({ q: ['queries', 'queriesByPage'], p: ['pages'], ga: ['ga4'], cs: ['contentList'] }[b.dataset.more] || []);
+});
+for (const s of document.querySelectorAll('#sc-qpage')) s.addEventListener('change', () => {
+  SC.qpage = s.value;
+  for (const x of document.querySelectorAll('#tbl-q')) x.hidden = !!SC.qpage;
+  for (const x of document.querySelectorAll('#tbl-qp')) x.hidden = !SC.qpage;
+  dash.draw('queriesByPage');
+});
+for (const s of document.querySelectorAll('#sc-diag')) s.addEventListener('change', () => { SC.diag = s.value; dash.draw('ga4'); });
+for (const i of document.querySelectorAll('#sc-term')) i.addEventListener('input', () => { SC.term = i.value; dash.draw('contentList'); });
+for (const b of document.querySelectorAll('[data-copy]')) b.addEventListener('click', () => {
+  let t = document.getElementById(b.dataset.copy); if (!t) return;
+  if (t.id === 'tbl-q' && t.hidden) t = document.getElementById('tbl-qp');
+  const text = [...t.querySelectorAll('tr')].map((tr) => [...tr.children].map((c) => (c.getAttribute('title') || c.textContent).trim().replace(/\s+/g, ' ')).join('\t')).join('\n');
+  const fallback = () => { const r = document.createRange(); r.selectNodeContents(t); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); };
+  try { navigator.clipboard.writeText(text).then(() => { b.setAttribute('aria-label', '복사됨'); b.classList.add('sc-copied'); setTimeout(() => { b.classList.remove('sc-copied'); b.removeAttribute('aria-label'); }, 1500); }, fallback); } catch (e) { fallback(); }
+});
+</script>
+
+<script>
+const F = window.scFmt, nf = d3.format(',');
+const enc = (v) => encodeURIComponent(v);
+const titleMap = () => { const d = dash.data('page_titles'); return new Map(d.status === 'ok' ? d.data.map((r) => [r.url, r.title]) : []); };
+const sign = (v, unit, digits, goodUp = true) => {
+  if (v == null || v === '' || isNaN(v)) return { t: '—', c: 'sc-flat' };
+  const s = (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(v).toFixed(digits) + unit;
+  return { t: s, c: Math.abs(v) < 1e-9 ? 'sc-flat' : ((goodUp ? v > 0 : v < 0) ? 'sc-up' : 'sc-down') };
+};
+const siteDaily = () => { const d = dash.data('gsc_daily'); return d.status === 'ok' ? d.data.filter((r) => r.site === SC.site) : []; };
+/* 선택 기간 KPI: 프리셋은 kpi 계산값, 직접 고른 기간은 일별 데이터에서 합산 */
+const customAgg = (rows, s, e) => {
+  const w = rows.filter((r) => r.date >= s && r.date <= e); if (!w.length) return null;
+  const c = d3.sum(w, (r) => +r.clicks), i = d3.sum(w, (r) => +r.impressions), pw = d3.sum(w, (r) => +r.position * +r.impressions);
+  return { clicks: c, impressions: i, ctr: i ? c / i * 100 : 0, position: i ? pw / i : null, days: w.length };
+};
+const shift = (iso, days) => new Date(Date.parse(iso + 'T00:00:00Z') + days * 86400000).toISOString().slice(0, 10);
+const cur = () => {
+  if (SC.range !== 'custom') { const k = dash.data('kpi'); return k.status === 'ok' ? (k.data || []).find((r) => r.site === SC.site && r.range === SC.range) : null; }
+  const rows = siteDaily(); const a = customAgg(rows, SC.start, SC.end); if (!a) return null;
+  const n = Math.round((Date.parse(SC.end) - Date.parse(SC.start)) / 86400000) + 1;
+  const ps = shift(SC.start, -n), pe = shift(SC.start, -1), p = customAgg(rows, ps, pe), y = customAgg(rows, shift(SC.start, -365), shift(SC.end, -365));
+  const ch = (x, b) => (b && b.clicks != null && x != null) ? x : null;
+  return { custom: true, start: SC.start, end: SC.end, prev_start: ps, prev_end: pe, ...a, prev_ctr: p ? p.ctr : null,
+    clicks_vs_prev: p && p.clicks ? (a.clicks - p.clicks) / p.clicks * 100 : null, impressions_vs_prev: p && p.impressions ? (a.impressions - p.impressions) / p.impressions * 100 : null,
+    ctr_vs_prev_pp: p ? a.ctr - p.ctr : null, position_vs_prev: p ? a.position - p.position : null,
+    clicks_vs_yoy: y && y.clicks ? (a.clicks - y.clicks) / y.clicks * 100 : null, impressions_vs_yoy: y && y.impressions ? (a.impressions - y.impressions) / y.impressions * 100 : null,
+    ctr_vs_yoy_pp: y ? a.ctr - y.ctr : null, position_vs_yoy: y ? a.position - y.position : null };
+};
+const mark = (el, field) => {
+  if (SC.range === 'custom') { el.setAttribute('data-source', 'gsc_daily'); el.removeAttribute('data-field'); el.removeAttribute('data-where'); return; }
+  el.setAttribute('data-source', 'kpi'); el.setAttribute('data-field', field); el.setAttribute('data-where', 'site=' + SC.site + '&range=' + SC.range);
+};
+const span = (o, field) => { const s = document.createElement('span'); s.className = o.c; s.textContent = o.t; mark(s, field); return s; };
+const cmpLine = (el, pf, yf, unit, digits, goodUp) => {
+  const r = cur(); if (!r) { el.textContent = '—'; return; }
+  const l1 = document.createElement('span'); l1.append('이전 같은 기간 대비 ', span(sign(r[pf], unit, digits, goodUp), pf));
+  const l2 = document.createElement('span'); l2.append('작년 같은 기간 대비 ', span(sign(r[yf], unit, digits, goodUp), yf));
+  el.replaceChildren(l1, l2);
+};
+
+dash.draw('dataRange', (el) => { const r = siteDaily(); if (!r.length) { el.textContent = '—'; return; } const ds = r.map((x) => x.date).sort(); el.textContent = ds[0] + ' ~ ' + ds[ds.length - 1]; });
+dash.draw('rangeText', (el) => { const r = cur(); el.textContent = r ? `선택 ${r.start} ~ ${r.end} · 비교 ${r.prev_start || '—'} ~ ${r.prev_end || '—'}${r.custom ? ' · 직접 고른 기간' : ''}` : '—'; });
+dash.draw('summary', (el) => {
+  const r = cur(); if (!r) { el.textContent = '—'; return; }
+  const b = (o, field) => { const x = document.createElement('b'); x.className = o.c || ''; x.textContent = o.t; mark(x, field); return x; };
+  el.replaceChildren('선택 기간 클릭 ', b({ t: F.n(r.clicks) + '회' }, 'clicks'), ', 이전 같은 기간 대비 ', b(sign(r.clicks_vs_prev, '%', 1), 'clicks_vs_prev'),
+    ', 작년 같은 기간 대비 ', b(sign(r.clicks_vs_yoy, '%', 1), 'clicks_vs_yoy'), '. CTR은 ', b({ t: F.pct(r.prev_ctr) }, 'prev_ctr'), '에서 ', b({ t: F.pct(r.ctr) }, 'ctr'), '로 바뀌었어요.');
+});
+dash.draw('kpiImpr', (el) => { const r = cur(); el.textContent = r ? F.n(r.impressions) : '—'; if (r) mark(el, 'impressions'); });
+dash.draw('kpiClicks', (el) => { const r = cur(); el.textContent = r ? F.n(r.clicks) : '—'; if (r) mark(el, 'clicks'); });
+dash.draw('kpiCtr', (el) => { const r = cur(); el.textContent = r ? F.pct(r.ctr) : '—'; if (r) mark(el, 'ctr'); });
+dash.draw('kpiPos', (el) => { const r = cur(); el.textContent = r ? F.pos(r.position) : '—'; if (r) mark(el, 'position'); });
+dash.draw('kpiImprCmp', (el) => cmpLine(el, 'impressions_vs_prev', 'impressions_vs_yoy', '%', 1, true));
+dash.draw('kpiClicksCmp', (el) => cmpLine(el, 'clicks_vs_prev', 'clicks_vs_yoy', '%', 1, true));
+dash.draw('kpiCtrCmp', (el) => cmpLine(el, 'ctr_vs_prev_pp', 'ctr_vs_yoy_pp', '%p', 2, true));
+dash.draw('kpiPosCmp', (el) => cmpLine(el, 'position_vs_prev', 'position_vs_yoy', '', 1, false));
+
+/* 인사이트: 증감은 색, 숫자는 굵게 */
+dash.draw('insights', (el) => {
+  const d = dash.data('sc_insights'); if (d.status !== 'ok') { el.replaceChildren(); return; }
+  const tone = { '하락': 'bad', '성장': 'ok', '신규 유입': 'ok', '브랜드': 'ok', '개선 여지': 'warn', '전체': '' };
+  const rich = (text) => {
+    const frag = document.createDocumentFragment(); const re = /([+\-−]\d[\d,.]*%p?)|(\d[\d,.]*(?:회|%|초)?)(?![\d일개월년])/g; let last = 0, m;
+    while ((m = re.exec(text))) {
+      frag.append(text.slice(last, m.index));
+      const b = document.createElement('b'); b.textContent = m[0];
+      if (m[1]) b.className = /^[\-−]/.test(m[1]) ? 'sc-down' : 'sc-up';
+      frag.append(b); last = re.lastIndex;
+    }
+    frag.append(text.slice(last)); return frag;
+  };
+  const rows = d.data.map((r, i) => ({ r, i })).filter((x) => x.r.site === SC.site);
+  el.replaceChildren(...rows.map(({ r, i }) => {
+    const li = document.createElement('li');
+    const t = document.createElement('span'); t.className = 'sc-tag'; t.dataset.tone = tone[r.tag] || ''; t.textContent = r.tag;
+    const s = document.createElement('span'); s.append(rich(r.text)); s.setAttribute('data-source', 'sc_insights'); s.setAttribute('data-field', 'text'); s.setAttribute('data-row', String(i));
+    li.append(t, s); return li;
+  }));
+});
+
+dash.draw('dailyChart', (el) => {
+  const all = siteDaily().map((r) => ({ date: r.date, t: Date.parse(r.date + 'T00:00:00Z'), clicks: +r.clicks, impressions: +r.impressions, position: +r.position })).sort((a, b) => a.t - b.t);
+  if (!all.length) { el.replaceChildren(); return; }
+  const r0 = cur();
+  const selS = r0 ? Date.parse(r0.start + 'T00:00:00Z') : 0, selE = r0 ? Date.parse(r0.end + 'T00:00:00Z') : 0;
+  const cmpS = r0 && r0.prev_start ? Date.parse(r0.prev_start + 'T00:00:00Z') : selS;
+  const startT = Math.min(cmpS, all[all.length - 1].t - 179 * 86400000);
+  const rows = all.filter((r) => r.t >= startT);
+  const idx = new Map(all.map((r, i) => [r.date, i]));
+  const ma = rows.map((r) => { const i = idx.get(r.date); const w = all.slice(Math.max(0, i - 6), i + 1); return d3.mean(w, (x) => x.clicks); });
+  const W = Math.max(280, el.clientWidth), H = 250, m = { t: 10, r: 6, b: 24, l: 36 };
+  const y = d3.scaleLinear().domain([0, d3.max(rows, (r) => r.clicks) || 1]).nice().range([H - m.b, m.t]);
+  const x = d3.scaleBand().domain(rows.map((r) => r.date)).range([m.l, W - m.r]).padding(rows.length > 200 ? 0.05 : 0.15);
+  const svg = d3.create('svg').attr('class', 'sc-chart').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', '일별 클릭 막대와 7일 이동평균 선');
+  const ticks = y.ticks(4);
+  svg.append('g').selectAll('line').data(ticks).join('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', (v) => y(v)).attr('y2', (v) => y(v)).style('stroke', 'var(--cds-chart-grid)');
+  svg.append('g').selectAll('text').data(ticks).join('text').text((v) => nf(v)).attr('x', m.l - 6).attr('y', (v) => y(v) + 4).attr('text-anchor', 'end');
+  const color = (r) => (r.t >= selS && r.t <= selE) ? 'var(--sc-site)' : (r.t >= cmpS && r.t < selS) ? 'var(--cds-chart-muted)' : 'var(--color-border-line)';
+  svg.append('g').selectAll('rect').data(rows).join('rect').attr('x', (r) => x(r.date)).attr('width', Math.max(1, x.bandwidth())).attr('y', (r) => y(r.clicks)).attr('height', (r) => y(0) - y(r.clicks)).style('fill', color);
+  svg.append('path').datum(rows).attr('d', d3.line().x((r) => x(r.date) + x.bandwidth() / 2).y((r, i) => y(ma[i]))).style('fill', 'none').style('stroke', 'var(--color-fg)').style('stroke-width', 1.4);
+  const months = rows.filter((r) => r.date.endsWith('-01'));
+  const step = Math.ceil(months.length / Math.max(1, Math.floor((W - m.l) / 46)));
+  svg.append('g').selectAll('text').data(months.filter((_, i) => i % step === 0)).join('text').text((r) => (+r.date.slice(5, 7)) + '월').attr('x', (r) => x(r.date)).attr('y', H - 7);
+  const tip = document.createElement('div'); tip.className = 'sc-tip'; tip.hidden = true;
+  svg.append('rect').attr('x', m.l).attr('y', m.t).attr('width', W - m.l - m.r).attr('height', H - m.t - m.b).style('fill', 'transparent')
+    .on('mousemove', (ev) => {
+      const [px] = d3.pointer(ev); const r = rows[Math.max(0, Math.min(rows.length - 1, Math.floor((px - m.l) / x.step())))];
+      tip.textContent = `${r.date} · 클릭 ${nf(r.clicks)} · 노출 ${nf(r.impressions)} · CTR ${(r.impressions ? r.clicks / r.impressions * 100 : 0).toFixed(2)}% · 순위 ${r.position.toFixed(1)}`;
+      tip.hidden = false;
+      const bw = el.clientWidth; tip.style.left = Math.min(bw - tip.offsetWidth - 4, Math.max(4, (x(r.date) / W) * bw - tip.offsetWidth / 2)) + 'px'; tip.style.top = '0px';
+    }).on('mouseleave', () => { tip.hidden = true; });
+  el.replaceChildren(svg.node(), tip);
+});
+
+const rowsTo = (tbody, rows, cells, key) => {
+  tbody.replaceChildren(...rows.map((r) => {
+    const tr = document.createElement('tr'); if (key) tr.setAttribute('data-key', key(r));
+    for (const [v, cls, tip] of cells(r)) { const td = document.createElement('td'); if (cls) td.className = cls; if (tip) td.setAttribute('title', tip); if (v instanceof Node) td.append(v); else td.textContent = v; tr.append(td); }
+    return tr;
+  }));
+};
+const clip = (main, sub, href) => {
+  const box = document.createElement('div');
+  const a = document.createElement(href ? 'a' : 'span'); if (href) { a.href = href; a.target = '_blank'; a.rel = 'noopener'; } a.className = 'clip-t'; a.textContent = main; box.append(a);
+  for (const s of [].concat(sub || [])) { if (!s) continue; const d = document.createElement('span'); d.className = 'clip-t sub'; d.textContent = s; box.append(d); }
+  return box;
+};
+const change = (curv, prev) => {
+  const s = document.createElement('span');
+  if (prev === '' || prev == null) { s.textContent = '—'; s.className = 'sc-flat'; return s; }
+  const p = +prev, c = +curv;
+  if (p === 0) { s.textContent = c > 0 ? '신규' : '—'; s.className = c > 0 ? 'sc-up' : 'sc-flat'; return s; }
+  const o = sign((c - p) / p * 100, '%', 1); s.textContent = o.t; s.className = o.c; return s;
+};
+const pathOf = (url) => { const i = url.indexOf('/'); return i < 0 ? url + '/' : url; };
+
+dash.draw('checks', (tb) => {
+  const d = dash.data('sc_checks'); if (d.status !== 'ok') { tb.replaceChildren(); return; }
+  const tone = { '오류': 'sc-down', '경고': 'sc-down', '정리': 'sc-flat', '권장': 'sc-up' };
+  rowsTo(tb, d.data.filter((r) => r.site === SC.site), (r) => { const p = document.createElement('span'); p.className = 'sc-pill ' + (tone[r.level] || ''); p.textContent = r.level; return [[p], [r.item, 'wrap'], [r.target, 'wrap'], [r.action, 'wrap']]; },
+    (r) => enc(r.site) + ',' + enc(r.no));
+});
+
+dash.draw('qpageOptions', (sel) => {
+  const d = dash.data('gsc_query_page'), T = titleMap();
+  const pages = d.status === 'ok' ? d3.rollups(d.data.filter((r) => r.site === SC.site), (v) => d3.sum(v, (r) => +r.clicks), (r) => r.page).sort((a, b) => b[1] - a[1]).slice(0, 80) : [];
+  sel.replaceChildren(new Option('전체', ''), ...pages.map(([p, c]) => new Option(`${T.get(p) || pathOf(p)} (${nf(c)})`, p)));
+  sel.value = SC.qpage;
+});
+dash.draw('queries', (tb) => {
+  const d = dash.data('gsc_queries'); if (d.status !== 'ok') { tb.replaceChildren(); return; }
+  const rows = d.data.filter((r) => r.site === SC.site).slice(0, SC.more.q ? 100 : 20);
+  rowsTo(tb, rows, (r) => [[r.query, 'clip', r.query], [F.n(r.impressions), 'num'], [F.n(r.clicks), 'num'], [change(r.clicks, r.prev_clicks), 'num'], [F.pct(r.ctr), 'num'], [F.pos(r.position), 'num']],
+    (r) => enc(r.site) + ',' + enc(r.query));
+  for (const td of tb.querySelectorAll('td.clip')) { const s = document.createElement('span'); s.textContent = td.textContent; td.replaceChildren(s); }
+});
+dash.draw('queriesByPage', (tb) => {
+  const d = dash.data('gsc_query_page'); if (d.status !== 'ok' || !SC.qpage) { tb.replaceChildren(); return; }
+  const rows = d.data.filter((r) => r.site === SC.site && r.page === SC.qpage).sort((a, b) => (+b.clicks - +a.clicks) || (+b.impressions - +a.impressions)).slice(0, SC.more.q ? 100 : 20);
+  rowsTo(tb, rows, (r) => [[clip(r.query), 'clip', r.query], [F.n(r.impressions), 'num'], [F.n(r.clicks), 'num'], [F.pct(r.ctr), 'num'], [F.pos(r.position), 'num']],
+    (r) => enc(r.site) + ',' + enc(r.query) + ',' + enc(r.page));
+});
+dash.draw('pages', (tb) => {
+  const d = dash.data('gsc_pages'); if (d.status !== 'ok') { tb.replaceChildren(); return; }
+  const rows = d.data.filter((r) => r.site === SC.site).slice(0, SC.more.p ? 100 : 20);
+  rowsTo(tb, rows, (r) => [[clip(r.title || pathOf(r.page), [r.title ? pathOf(r.page) : '', r.top_query ? '대표 검색어 · ' + r.top_query : ''], 'https://' + r.page), 'clip', (r.title ? r.title + '\n' : '') + r.page],
+    [F.n(r.impressions), 'num'], [F.n(r.clicks), 'num'], [change(r.clicks, r.prev_clicks), 'num'], [F.pct(r.ctr), 'num'], [F.pos(r.position), 'num']],
+    (r) => enc(r.site) + ',' + enc(r.page));
+});
+dash.draw('ga4', (tb) => {
+  const d = dash.data('ga4_landing'), T = titleMap(); if (d.status !== 'ok') { tb.replaceChildren(); return; }
+  const tone = { '이탈 높음': 'sc-down', '잘 읽힘': 'sc-up', '보통': 'sc-flat' };
+  const rows = d.data.filter((r) => r.site === SC.site && (!SC.diag || r.diag === SC.diag)).slice(0, SC.more.ga ? 100 : 20);
+  rowsTo(tb, rows, (r) => { const p = document.createElement('span'); p.className = 'sc-pill ' + tone[r.diag]; p.textContent = r.diag;
+    const t = T.get(r.url);
+    return [[clip(t || pathOf(r.url), t ? pathOf(r.url) : '', 'https://' + r.url), 'clip', (t ? t + '\n' : '') + r.url], [p], [F.n(r.sessions), 'num'], [r.engagement_rate.toFixed(1) + '%', 'num'], [r.avg_engagement_sec + '초', 'num'], [r.naver_share.toFixed(1) + '%', 'num']]; },
+    (r) => enc(r.site) + ',' + enc(r.url));
+});
+dash.draw('contentList', (tb) => {
+  const d = dash.data('content_join'); if (d.status !== 'ok') { tb.replaceChildren(); return; }
+  const words = SC.term.toLowerCase().split(/\s+/).filter(Boolean);
+  const rows = d.data.filter((r) => r.site === SC.site && words.every((w) => (r.url + ' ' + r.title).toLowerCase().includes(w))).slice(0, SC.more.cs ? 100 : 15);
+  rowsTo(tb, rows, (r) => [[clip(r.title || pathOf(r.url), r.title ? pathOf(r.url) : ''), 'clip', (r.title ? r.title + '\n' : '') + r.url], [F.n(r.sessions), 'num'],
+    [r.engagement_rate == null ? '—' : r.engagement_rate.toFixed(1) + '%', 'num'], [F.n(r.clicks), 'num'], [F.n(r.impressions), 'num'], [F.pct(r.ctr), 'num']],
+    (r) => enc(r.site) + ',' + enc(r.url));
+  rows.forEach((r, i) => {
+    const tr = tb.children[i]; tr.className = 'sc-click'; tr.tabIndex = 0; tr.setAttribute('aria-selected', String(r.url === SC.sel));
+    const pick = () => { SC.sel = r.url; for (const o of tb.querySelectorAll('tr')) o.setAttribute('aria-selected', String(o === tr)); dash.draw('contentDetail'); };
+    tr.onclick = pick; tr.onkeydown = (e) => { if (e.key === 'Enter') pick(); };
+  });
+});
+dash.draw('contentDetail', (el) => {
+  if (!SC.sel) { const p = document.createElement('p'); p.className = 'sc-note'; p.textContent = '위 목록에서 페이지를 누르면 6개월 합계, 월별 통계, 유입 경로, 유입 키워드가 여기에 나와요.'; el.replaceChildren(p); return; }
+  const cj = dash.data('content_join'), mon = dash.data('page_monthly'), src = dash.data('ga4_sources_6m'), kw = dash.data('gsc_query_page_180');
+  const row = cj.status === 'ok' ? cj.data.find((r) => r.site === SC.site && r.url === SC.sel) : null;
+  const head = document.createElement('div');
+  const a = document.createElement('a'); a.href = 'https://' + SC.sel; a.target = '_blank'; a.rel = 'noopener'; a.textContent = (row && row.title) || SC.sel; a.style.fontWeight = '600';
+  const u = document.createElement('div'); u.className = 'sub'; u.textContent = SC.sel; head.append(a, u);
+  const tot = document.createElement('div'); tot.className = 'sc-totals';
+  if (row) {
+    const item = (label, v, field) => { const s = document.createElement('span'); const b = document.createElement('b'); b.textContent = v; b.setAttribute('data-source', 'content_join'); b.setAttribute('data-field', field); b.setAttribute('data-where', 'site=' + enc(row.site) + '&url=' + enc(row.url)); s.append(label + ' ', b); return s; };
+    tot.append(item('세션', F.n(row.sessions), 'sessions'), item('참여율', row.engagement_rate == null ? '—' : row.engagement_rate.toFixed(1) + '%', 'engagement_rate'), item('클릭', F.n(row.clicks), 'clicks'), item('노출', F.n(row.impressions), 'impressions'), item('CTR', F.pct(row.ctr), 'ctr'));
+  }
+  const mk = (title, heads, fields, rows, cells, ds, key) => {
+    const box = document.createElement('div'); box.className = 'sc-card';
+    const h = document.createElement('h2'); h.textContent = title; box.append(h);
+    if (!rows.length) { const p = document.createElement('p'); p.className = 'sc-note'; p.textContent = '데이터가 없어요.'; box.append(p); return box; }
+    const t = document.createElement('table'); t.setAttribute('data-source', ds); t.setAttribute('data-row-key', key);
+    const tr = document.createElement('tr'); heads.forEach((x, i) => { const th = document.createElement('th'); th.textContent = x; if (fields[i]) th.setAttribute('data-field', fields[i]); if (i) th.className = 'num'; tr.append(th); });
+    const thead = document.createElement('thead'); thead.append(tr); const tb = document.createElement('tbody'); t.append(thead, tb);
+    rowsTo(tb, rows, cells, (r) => key.split(',').map((k) => enc(r[k])).join(','));
+    const w = document.createElement('div'); w.className = 'sc-tablewrap sc-short'; w.append(t); box.append(w); return box;
+  };
+  const mRows = mon.status === 'ok' ? mon.data.filter((r) => r.site === SC.site && r.url === SC.sel).sort((a, b) => a.month < b.month ? -1 : 1) : [];
+  const sRows = src.status === 'ok' ? src.data.filter((r) => r.site === SC.site && r.url === SC.sel).sort((a, b) => +b.sessions - +a.sessions).slice(0, 10) : [];
+  const sTot = d3.sum(sRows, (r) => +r.sessions);
+  const kRows = kw.status === 'ok' ? kw.data.filter((r) => r.site === SC.site && r.page === SC.sel).sort((a, b) => (+b.clicks - +a.clicks) || (+b.impressions - +a.impressions)).slice(0, 20) : [];
+  const cols = document.createElement('div'); cols.className = 'sc-detail-cols';
+  cols.append(
+    mk('월별 통계 (GA4)', ['월', '세션', '참여율'], ['month', 'sessions', 'engagement_rate'], mRows, (r) => [[r.month], [F.n(r.sessions), 'num'], [r.engagement_rate.toFixed(1) + '%', 'num']], 'page_monthly', 'site,url,month'),
+    mk('유입 경로 (6개월)', ['소스 / 매체', '세션', '비중'], ['source_medium', 'sessions', null], sRows, (r) => [[r.source_medium], [F.n(r.sessions), 'num'], [sTot ? (r.sessions / sTot * 100).toFixed(1) + '%' : '—', 'num']], 'ga4_sources_6m', 'site,url,source_medium'),
+    mk('유입 키워드 (180일)', ['검색어', '클릭', '노출', '순위'], ['query', 'clicks', 'impressions', 'position'], kRows, (r) => [[r.query, 'wrap'], [F.n(r.clicks), 'num'], [F.n(r.impressions), 'num'], [F.pos(r.position), 'num']], 'gsc_query_page_180', 'site,query,page'));
+  const note = document.createElement('p'); note.className = 'sc-note'; note.textContent = '월별 통계는 GA4 세션 5회 이상인 달만 보여요. 서치콘솔은 월 단위 조회가 안 돼서 클릭·노출은 180일 합계로 보여줘요.';
+  el.replaceChildren(head, tot, cols, note);
+});
+</script>
+<script>
+Promise.all(["ga4_monthly", "ga4_organic", "ga4_sources_6m", "gsc_daily", "gsc_pages", "gsc_pages_180", "gsc_queries", "gsc_query_page", "gsc_query_page_180", "page_titles", "sc_checks", "sc_insights"].map((id) => fetch(`data/${id}.csv?v=${Date.now()}`).then((r) => r.text()).then((t) => [id, d3.csvParse(t, (r) => { for (const k in r) if (r[k] === '') r[k] = null; return r; })])))
+  .then((all) => { for (const [id, rows] of all) dash._load(id, rows); dash._all(); })
+  .catch((e) => console.error(e));
+let pubRt; window.addEventListener('resize', () => { clearTimeout(pubRt); pubRt = setTimeout(() => dash._all(), 150); });
+</script>
+
+</body>
+</html>

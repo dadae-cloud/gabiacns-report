@@ -1,0 +1,4 @@
+event_id,name,category,host,path,start,end,campaign,apply_url,cta_label,period_label,has_apps,ongoing,property,data_as_of
+startup,2027 창업지원센터 입주자 모집,창업지원센터,www.gabiacns.com,/startup,2026-11-17,2026-11-30,2027startup,https://walla.my/v/2GAp6oPV8LamvUjybBsP,왈라 신청서,모집 기간,1,0,262842655,2026-11-26 11:00
+skinopen,퍼스트몰 신규 디자인 20종 + 퍼드림,퍼스트몰,www.firstmall.kr,/event/202610/skinopen,2026-11-01,2026-11-30,2611skin,https://www.gabiacns.com/service/firstmall/request/standalone,쇼핑몰 신청,이벤트 기간,0,0,321979558,2026-11-26 11:00
+php,"PHP 보안 취약점, 확인부터 조치까지",라이브러리 콘텐츠,www.gabiacns.com,/cms/library/1099713909,2026-10-23,2026-11-26,phpupgrade · 2610,,,게시 이후,0,1,262842655,2026-11-26 11:00

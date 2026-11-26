@@ -1,0 +1,829 @@
+event_id,date,hour,group,channel,device,sessions
+startup,2026-11-17,16,UTM 캠페인,카카오,mobile,42
+startup,2026-11-17,17,UTM 캠페인,카카오,mobile,18
+startup,2026-11-17,19,직접,직접 유입,desktop,17
+startup,2026-11-17,23,직접,직접 유입,desktop,15
+startup,2026-11-17,17,직접,직접 유입,desktop,13
+startup,2026-11-18,8,직접,직접 유입,desktop,13
+startup,2026-11-17,21,직접,직접 유입,desktop,12
+startup,2026-11-17,22,직접,직접 유입,desktop,11
+startup,2026-11-17,16,직접,직접 유입,desktop,10
+startup,2026-11-17,20,직접,직접 유입,desktop,10
+startup,2026-11-18,0,직접,직접 유입,desktop,10
+startup,2026-11-18,1,직접,직접 유입,desktop,10
+startup,2026-11-18,9,직접,직접 유입,desktop,10
+startup,2026-11-17,16,UTM 캠페인,카카오,desktop,9
+startup,2026-11-17,18,직접,직접 유입,desktop,8
+startup,2026-11-18,11,직접,직접 유입,desktop,7
+startup,2026-11-18,10,직접,직접 유입,desktop,6
+startup,2026-11-17,22,UTM 캠페인,카카오,mobile,5
+startup,2026-11-18,18,직접,직접 유입,desktop,5
+startup,2026-11-17,15,UTM 캠페인,유튜브,desktop,4
+startup,2026-11-17,21,UTM 캠페인,카카오,mobile,4
+startup,2026-11-18,14,직접,직접 유입,desktop,4
+startup,2026-11-23,14,UTM 캠페인,가비아 배너,desktop,4
+startup,2026-11-17,15,UTM 캠페인,가비아 배너,desktop,3
+startup,2026-11-17,20,UTM 캠페인,카카오,mobile,3
+startup,2026-11-17,22,직접,직접 유입,mobile,3
+startup,2026-11-17,23,직접,직접 유입,mobile,3
+startup,2026-11-18,7,직접,직접 유입,desktop,3
+startup,2026-11-18,12,직접,직접 유입,desktop,3
+startup,2026-11-18,15,직접,직접 유입,desktop,3
+startup,2026-11-19,7,직접,직접 유입,desktop,3
+startup,2026-11-23,21,UTM 캠페인,가비아 배너,desktop,3
+startup,2026-11-17,17,UTM 캠페인,가비아 배너,desktop,2
+startup,2026-11-17,19,직접,직접 유입,mobile,2
+startup,2026-11-17,19,UTM 캠페인,카카오,desktop,2
+startup,2026-11-17,22,UTM 캠페인,가비아 배너,desktop,2
+startup,2026-11-17,23,UTM 캠페인,카카오,mobile,2
+startup,2026-11-18,2,직접,직접 유입,desktop,2
+startup,2026-11-18,3,직접,직접 유입,desktop,2
+startup,2026-11-18,5,UTM 캠페인,카카오,mobile,2
+startup,2026-11-18,10,UTM 캠페인,카카오,mobile,2
+startup,2026-11-18,11,직접,직접 유입,mobile,2
+startup,2026-11-18,11,UTM 캠페인,가비아 배너,desktop,2
+startup,2026-11-18,12,직접,직접 유입,mobile,2
+startup,2026-11-18,12,UTM 캠페인,가비아 배너,desktop,2
+startup,2026-11-18,13,직접,직접 유입,desktop,2
+startup,2026-11-18,13,UTM 캠페인,가비아 배너,desktop,2
+startup,2026-11-18,14,UTM 캠페인,가비아 배너,desktop,2
+startup,2026-11-18,17,UTM 캠페인,가비아 배너,desktop,2
+startup,2026-11-18,19,직접,직접 유입,desktop,2
+startup,2026-11-18,20,직접,직접 유입,mobile,2
+startup,2026-11-18,21,직접,직접 유입,desktop,2
+startup,2026-11-19,1,직접,직접 유입,desktop,2
+startup,2026-11-19,8,직접,직접 유입,desktop,2
+startup,2026-11-19,10,UTM 캠페인,퍼스트몰 배너,desktop,2
+startup,2026-11-19,13,직접,직접 유입,desktop,2
+startup,2026-11-19,17,UTM 캠페인,가비아 배너,desktop,2
+startup,2026-11-19,23,UTM 캠페인,가비아 배너,desktop,2
+startup,2026-11-23,11,UTM 캠페인,가비아 배너,desktop,2
+startup,2026-11-23,12,UTM 캠페인,가비아 배너,desktop,2
+startup,2026-11-23,20,UTM 캠페인,가비아 배너,desktop,2
+startup,2026-11-24,10,UTM 캠페인,가비아 배너,desktop,2
+startup,2026-11-24,23,UTM 캠페인,가비아 배너,desktop,2
+startup,2026-11-25,14,UTM 캠페인,클릭엔,desktop,2
+startup,2026-11-25,16,UTM 캠페인,가비아 배너,desktop,2
+startup,2026-11-17,11,검색,네이버 (광고·블로그·검색),desktop,1
+startup,2026-11-17,12,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-17,12,UTM 캠페인,가비아 배너,mobile,1
+startup,2026-11-17,13,직접,직접 유입,mobile,1
+startup,2026-11-17,13,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-17,14,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-17,14,UTM 캠페인,카카오,mobile,1
+startup,2026-11-17,16,UTM 캠페인,클릭엔,desktop,1
+startup,2026-11-17,16,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-17,16,검색,구글 검색,desktop,1
+startup,2026-11-17,16,검색,네이버 (광고·블로그·검색),desktop,1
+startup,2026-11-17,17,직접,직접 유입,mobile,1
+startup,2026-11-17,17,UTM 캠페인,인스타그램,mobile,1
+startup,2026-11-17,17,UTM 캠페인,카카오,desktop,1
+startup,2026-11-17,18,UTM 캠페인,카카오,mobile,1
+startup,2026-11-17,18,검색,네이버 (광고·블로그·검색),desktop,1
+startup,2026-11-17,19,UTM 캠페인,카카오,mobile,1
+startup,2026-11-17,20,직접,직접 유입,mobile,1
+startup,2026-11-17,20,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-17,21,직접,직접 유입,mobile,1
+startup,2026-11-17,21,UTM 캠페인,카카오,desktop,1
+startup,2026-11-17,22,UTM 캠페인,클릭엔,desktop,1
+startup,2026-11-17,22,검색,구글 검색,desktop,1
+startup,2026-11-17,22,UTM 캠페인,카카오,desktop,1
+startup,2026-11-17,23,UTM 캠페인,클릭엔,desktop,1
+startup,2026-11-17,23,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-17,23,UTM 캠페인,가비아 배너,mobile,1
+startup,2026-11-18,0,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-18,0,UTM 캠페인,카카오,mobile,1
+startup,2026-11-18,1,기타 추천,ChatGPT,desktop,1
+startup,2026-11-18,2,UTM 캠페인,이셀러스,mobile,1
+startup,2026-11-18,2,검색,구글 검색,desktop,1
+startup,2026-11-18,3,직접,직접 유입,mobile,1
+startup,2026-11-18,4,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-18,4,UTM 캠페인,가비아 배너,mobile,1
+startup,2026-11-18,5,직접,직접 유입,desktop,1
+startup,2026-11-18,6,직접,직접 유입,desktop,1
+startup,2026-11-18,6,검색,구글 검색,desktop,1
+startup,2026-11-18,6,UTM 캠페인,카카오,mobile,1
+startup,2026-11-18,9,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-18,10,직접,직접 유입,mobile,1
+startup,2026-11-18,10,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-18,10,UTM 캠페인,가비아 배너,tablet,1
+startup,2026-11-18,11,검색,구글 검색,desktop,1
+startup,2026-11-18,14,검색,네이버 (광고·블로그·검색),desktop,1
+startup,2026-11-18,15,검색,구글 검색,desktop,1
+startup,2026-11-18,16,직접,직접 유입,desktop,1
+startup,2026-11-18,16,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-18,17,직접,직접 유입,desktop,1
+startup,2026-11-18,17,UTM 캠페인,클릭엔,desktop,1
+startup,2026-11-18,17,UTM 캠페인,이셀러스,desktop,1
+startup,2026-11-18,17,검색,구글 검색,desktop,1
+startup,2026-11-18,17,UTM 캠페인,카카오,tablet,1
+startup,2026-11-18,18,UTM 캠페인,클릭엔,desktop,1
+startup,2026-11-18,18,UTM 캠페인,카카오,mobile,1
+startup,2026-11-18,19,UTM 캠페인,클릭엔,desktop,1
+startup,2026-11-18,20,직접,직접 유입,desktop,1
+startup,2026-11-18,20,검색,구글 검색,desktop,1
+startup,2026-11-18,21,UTM 캠페인,클릭엔,desktop,1
+startup,2026-11-18,21,UTM 캠페인,이셀러스,desktop,1
+startup,2026-11-18,21,검색,구글 검색,desktop,1
+startup,2026-11-18,22,직접,직접 유입,desktop,1
+startup,2026-11-18,22,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-18,23,직접,직접 유입,desktop,1
+startup,2026-11-18,23,UTM 캠페인,카카오,mobile,1
+startup,2026-11-19,0,직접,직접 유입,desktop,1
+startup,2026-11-19,0,UTM 캠페인,클릭엔,desktop,1
+startup,2026-11-19,2,직접,직접 유입,mobile,1
+startup,2026-11-19,3,UTM 캠페인,카카오,mobile,1
+startup,2026-11-19,4,UTM 캠페인,클릭엔,desktop,1
+startup,2026-11-19,4,UTM 캠페인,카카오,mobile,1
+startup,2026-11-19,6,직접,직접 유입,desktop,1
+startup,2026-11-19,7,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-19,8,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-19,8,기타 추천,irounspace.com,desktop,1
+startup,2026-11-19,9,직접,직접 유입,desktop,1
+startup,2026-11-19,11,직접,직접 유입,desktop,1
+startup,2026-11-19,12,UTM 캠페인,이셀러스,desktop,1
+startup,2026-11-19,14,직접,직접 유입,desktop,1
+startup,2026-11-19,15,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-19,17,직접,직접 유입,desktop,1
+startup,2026-11-19,19,직접,직접 유입,desktop,1
+startup,2026-11-19,22,직접,직접 유입,desktop,1
+startup,2026-11-19,22,직접,직접 유입,mobile,1
+startup,2026-11-19,22,검색,네이버 (광고·블로그·검색),desktop,1
+startup,2026-11-20,9,직접,직접 유입,desktop,1
+startup,2026-11-20,9,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-20,10,UTM 캠페인,이셀러스,desktop,1
+startup,2026-11-20,11,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-20,12,직접,직접 유입,desktop,1
+startup,2026-11-20,12,UTM 캠페인,카카오,mobile,1
+startup,2026-11-20,13,직접,직접 유입,desktop,1
+startup,2026-11-20,13,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-20,14,직접,직접 유입,mobile,1
+startup,2026-11-20,14,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-20,15,직접,직접 유입,mobile,1
+startup,2026-11-20,15,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-20,17,직접,직접 유입,mobile,1
+startup,2026-11-20,20,직접,직접 유입,desktop,1
+startup,2026-11-20,21,UTM 캠페인,카카오,mobile,1
+startup,2026-11-21,5,직접,직접 유입,mobile,1
+startup,2026-11-21,6,직접,직접 유입,desktop,1
+startup,2026-11-21,6,UTM 캠페인,카카오,tablet,1
+startup,2026-11-21,11,직접,직접 유입,desktop,1
+startup,2026-11-21,14,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-21,16,직접,직접 유입,desktop,1
+startup,2026-11-21,17,직접,직접 유입,desktop,1
+startup,2026-11-21,19,직접,직접 유입,desktop,1
+startup,2026-11-21,19,직접,직접 유입,mobile,1
+startup,2026-11-21,19,UTM 캠페인,카카오,mobile,1
+startup,2026-11-21,20,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-21,20,UTM 캠페인,카카오,tablet,1
+startup,2026-11-21,22,UTM 캠페인,클릭엔,desktop,1
+startup,2026-11-22,3,UTM 캠페인,가비아 배너,mobile,1
+startup,2026-11-22,5,직접,직접 유입,mobile,1
+startup,2026-11-22,9,UTM 캠페인,카카오,mobile,1
+startup,2026-11-22,10,UTM 캠페인,카카오,mobile,1
+startup,2026-11-22,14,UTM 캠페인,클릭엔,desktop,1
+startup,2026-11-22,14,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-22,15,UTM 캠페인,클릭엔,desktop,1
+startup,2026-11-22,17,UTM 캠페인,가비아 배너,mobile,1
+startup,2026-11-22,19,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-22,20,직접,직접 유입,mobile,1
+startup,2026-11-22,20,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-22,21,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-22,22,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-22,23,검색,네이버 (광고·블로그·검색),desktop,1
+startup,2026-11-23,2,UTM 캠페인,클릭엔,desktop,1
+startup,2026-11-23,6,UTM 캠페인,가비아 배너,mobile,1
+startup,2026-11-23,8,UTM 캠페인,카카오,mobile,1
+startup,2026-11-23,9,직접,직접 유입,desktop,1
+startup,2026-11-23,11,기타 추천,bing,desktop,1
+startup,2026-11-23,12,직접,직접 유입,desktop,1
+startup,2026-11-23,15,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-23,16,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-23,17,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-23,18,UTM 캠페인,퍼스트몰 배너,desktop,1
+startup,2026-11-23,21,기타 추천,bing,desktop,1
+startup,2026-11-23,21,검색,구글 검색,desktop,1
+startup,2026-11-24,0,검색,네이버 (광고·블로그·검색),mobile,1
+startup,2026-11-24,6,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-24,7,UTM 캠페인,가비아 배너,mobile,1
+startup,2026-11-24,8,직접,직접 유입,mobile,1
+startup,2026-11-24,10,직접,직접 유입,desktop,1
+startup,2026-11-24,10,UTM 캠페인,가비아 배너,mobile,1
+startup,2026-11-24,11,UTM 캠페인,퍼스트몰 배너,desktop,1
+startup,2026-11-24,12,직접,직접 유입,desktop,1
+startup,2026-11-24,13,직접,직접 유입,desktop,1
+startup,2026-11-24,13,UTM 캠페인,클릭엔,desktop,1
+startup,2026-11-24,13,UTM 캠페인,가비아 배너,mobile,1
+startup,2026-11-24,14,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-24,15,직접,직접 유입,desktop,1
+startup,2026-11-24,15,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-24,16,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-24,17,직접,직접 유입,mobile,1
+startup,2026-11-24,17,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-24,18,UTM 캠페인,클릭엔,desktop,1
+startup,2026-11-24,18,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-25,2,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-25,6,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-25,9,UTM 캠페인,퍼스트몰 배너,desktop,1
+startup,2026-11-25,9,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-25,10,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-25,14,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-25,15,UTM 캠페인,가비아 배너,desktop,1
+startup,2026-11-25,16,UTM 캠페인,클릭엔,desktop,1
+startup,2026-11-25,16,UTM 캠페인,퍼스트몰 배너,desktop,1
+startup,2026-11-25,17,직접,직접 유입,mobile,1
+startup,2026-11-25,20,직접,직접 유입,desktop,1
+startup,2026-11-26,5,직접,직접 유입,desktop,1
+startup,2026-11-26,5,UTM 캠페인,가비아 배너,desktop,1
+skinopen,2026-11-10,17,UTM 캠페인,카카오,mobile,9
+skinopen,2026-11-10,17,UTM 캠페인,카카오,desktop,5
+skinopen,2026-11-10,17,UTM 캠페인,유튜브,desktop,4
+skinopen,2026-11-10,18,UTM 캠페인,카카오,mobile,3
+skinopen,2026-11-02,11,UTM 캠페인,퍼스트몰 배너,desktop,2
+skinopen,2026-11-02,16,검색,네이버 (광고·블로그·검색),desktop,2
+skinopen,2026-11-10,21,UTM 캠페인,카카오,mobile,2
+skinopen,2026-11-02,9,UTM 캠페인,퍼스트몰 배너,desktop,1
+skinopen,2026-11-02,10,직접,직접 유입,desktop,1
+skinopen,2026-11-02,10,직접,직접 유입,mobile,1
+skinopen,2026-11-02,10,UTM 캠페인,퍼스트몰 배너,desktop,1
+skinopen,2026-11-02,14,UTM 캠페인,이셀러스,desktop,1
+skinopen,2026-11-02,15,UTM 캠페인,이셀러스,desktop,1
+skinopen,2026-11-02,18,UTM 캠페인,가비아CNS 배너,desktop,1
+skinopen,2026-11-02,20,UTM 캠페인,가비아CNS 배너,desktop,1
+skinopen,2026-11-03,9,UTM 캠페인,가비아CNS 배너,desktop,1
+skinopen,2026-11-03,10,UTM 캠페인,이셀러스,desktop,1
+skinopen,2026-11-03,23,UTM 캠페인,가비아CNS 배너,desktop,1
+skinopen,2026-11-04,17,UTM 캠페인,이셀러스,desktop,1
+skinopen,2026-11-04,18,UTM 캠페인,이셀러스,desktop,1
+skinopen,2026-11-06,17,UTM 캠페인,가비아CNS 배너,desktop,1
+skinopen,2026-11-07,16,UTM 캠페인,가비아CNS 배너,mobile,1
+skinopen,2026-11-07,21,기타 추천,m.search.naver.com,mobile,1
+skinopen,2026-11-08,15,검색,네이버 (광고·블로그·검색),desktop,1
+skinopen,2026-11-08,16,UTM 캠페인,가비아CNS 배너,mobile,1
+skinopen,2026-11-10,17,UTM 캠페인,가비아CNS 배너,desktop,1
+skinopen,2026-11-11,7,UTM 캠페인,카카오,mobile,1
+skinopen,2026-11-11,10,UTM 캠페인,가비아CNS 배너,desktop,1
+skinopen,2026-11-12,6,UTM 캠페인,카카오,mobile,1
+skinopen,2026-11-12,14,UTM 캠페인,카카오,mobile,1
+skinopen,2026-11-12,15,기타 추천,customer.gabiacns.com,desktop,1
+skinopen,2026-11-12,19,UTM 캠페인,카카오,mobile,1
+skinopen,2026-11-13,16,UTM 캠페인,가비아CNS 배너,mobile,1
+skinopen,2026-11-13,20,UTM 캠페인,이셀러스,desktop,1
+skinopen,2026-11-16,0,UTM 캠페인,가비아CNS 배너,mobile,1
+skinopen,2026-11-16,11,UTM 캠페인,가비아CNS 배너,desktop,1
+skinopen,2026-11-18,16,직접,직접 유입,desktop,1
+skinopen,2026-11-23,15,기타 추천,neoems.gabia.com,desktop,1
+skinopen,2026-11-23,18,직접,직접 유입,desktop,1
+php,2026-10-29,15,직접,직접 유입,desktop,14
+php,2026-10-29,16,직접,직접 유입,desktop,14
+php,2026-10-29,14,직접,직접 유입,desktop,13
+php,2026-10-29,19,직접,직접 유입,desktop,10
+php,2026-10-29,17,직접,직접 유입,desktop,7
+php,2026-10-29,23,직접,직접 유입,desktop,7
+php,2026-10-30,10,직접,직접 유입,desktop,5
+php,2026-11-12,14,기타 추천,EMS 이메일 (메일 링크),desktop,5
+php,2026-10-29,18,직접,직접 유입,desktop,4
+php,2026-10-29,22,직접,직접 유입,desktop,4
+php,2026-10-30,9,직접,직접 유입,desktop,4
+php,2026-11-18,15,UTM 캠페인,유튜브,desktop,4
+php,2026-10-23,14,직접,직접 유입,desktop,3
+php,2026-10-23,18,검색,네이버 (광고·블로그·검색),mobile,3
+php,2026-10-26,10,검색,구글 검색,desktop,3
+php,2026-10-27,16,검색,네이버 (광고·블로그·검색),mobile,3
+php,2026-10-28,20,검색,네이버 (광고·블로그·검색),mobile,3
+php,2026-10-30,0,직접,직접 유입,desktop,3
+php,2026-10-30,7,직접,직접 유입,desktop,3
+php,2026-10-30,8,직접,직접 유입,desktop,3
+php,2026-10-30,9,기타 추천,br.nate.com,desktop,3
+php,2026-11-02,16,직접,직접 유입,desktop,3
+php,2026-11-03,10,직접,직접 유입,desktop,3
+php,2026-11-05,15,UTM 캠페인,가비아 배너,desktop,3
+php,2026-11-09,9,UTM 캠페인,가비아 배너,desktop,3
+php,2026-11-11,12,직접,직접 유입,desktop,3
+php,2026-11-11,12,UTM 캠페인,가비아 배너,desktop,3
+php,2026-10-23,14,직접,직접 유입,mobile,2
+php,2026-10-23,17,직접,직접 유입,desktop,2
+php,2026-10-23,17,검색,네이버 (광고·블로그·검색),desktop,2
+php,2026-10-23,19,검색,네이버 (광고·블로그·검색),mobile,2
+php,2026-10-24,3,직접,직접 유입,desktop,2
+php,2026-10-24,8,검색,네이버 (광고·블로그·검색),mobile,2
+php,2026-10-24,9,직접,직접 유입,desktop,2
+php,2026-10-24,9,검색,네이버 (광고·블로그·검색),mobile,2
+php,2026-10-24,11,검색,네이버 (광고·블로그·검색),desktop,2
+php,2026-10-25,15,검색,네이버 (광고·블로그·검색),mobile,2
+php,2026-10-25,20,검색,네이버 (광고·블로그·검색),mobile,2
+php,2026-10-26,3,검색,네이버 (광고·블로그·검색),mobile,2
+php,2026-10-26,8,검색,네이버 (광고·블로그·검색),desktop,2
+php,2026-10-26,9,검색,네이버 (광고·블로그·검색),desktop,2
+php,2026-10-26,10,직접,직접 유입,desktop,2
+php,2026-10-26,14,직접,직접 유입,desktop,2
+php,2026-10-26,14,검색,구글 검색,desktop,2
+php,2026-10-26,14,검색,구글 검색,mobile,2
+php,2026-10-26,14,검색,네이버 (광고·블로그·검색),mobile,2
+php,2026-10-26,16,검색,네이버 (광고·블로그·검색),desktop,2
+php,2026-10-27,0,검색,네이버 (광고·블로그·검색),desktop,2
+php,2026-10-27,8,검색,네이버 (광고·블로그·검색),mobile,2
+php,2026-10-27,9,검색,네이버 (광고·블로그·검색),desktop,2
+php,2026-10-27,9,검색,네이버 (광고·블로그·검색),mobile,2
+php,2026-10-27,10,직접,직접 유입,desktop,2
+php,2026-10-27,13,검색,네이버 (광고·블로그·검색),desktop,2
+php,2026-10-27,14,검색,구글 검색,desktop,2
+php,2026-10-27,16,검색,네이버 (광고·블로그·검색),desktop,2
+php,2026-10-27,17,검색,네이버 (광고·블로그·검색),desktop,2
+php,2026-10-28,10,검색,네이버 (광고·블로그·검색),desktop,2
+php,2026-10-28,14,검색,구글 검색,desktop,2
+php,2026-10-29,9,검색,네이버 (광고·블로그·검색),desktop,2
+php,2026-10-29,15,기타 추천,gabia.com,desktop,2
+php,2026-10-29,15,검색,구글 검색,desktop,2
+php,2026-10-29,17,기타 추천,dns.gabia.com,desktop,2
+php,2026-10-29,20,직접,직접 유입,desktop,2
+php,2026-10-29,21,직접,직접 유입,desktop,2
+php,2026-10-30,11,직접,직접 유입,desktop,2
+php,2026-10-30,12,직접,직접 유입,desktop,2
+php,2026-10-30,13,직접,직접 유입,desktop,2
+php,2026-10-30,17,직접,직접 유입,desktop,2
+php,2026-10-30,22,직접,직접 유입,desktop,2
+php,2026-11-01,15,직접,직접 유입,desktop,2
+php,2026-11-02,11,직접,직접 유입,desktop,2
+php,2026-11-02,11,검색,네이버 (광고·블로그·검색),desktop,2
+php,2026-11-02,12,직접,직접 유입,desktop,2
+php,2026-11-02,14,직접,직접 유입,desktop,2
+php,2026-11-02,16,UTM 캠페인,가비아 배너,desktop,2
+php,2026-11-02,17,UTM 캠페인,가비아 배너,desktop,2
+php,2026-11-02,18,UTM 캠페인,가비아 배너,desktop,2
+php,2026-11-03,11,UTM 캠페인,가비아 배너,desktop,2
+php,2026-11-03,14,검색,네이버 (광고·블로그·검색),desktop,2
+php,2026-11-03,15,직접,직접 유입,desktop,2
+php,2026-11-03,16,직접,직접 유입,desktop,2
+php,2026-11-03,17,직접,직접 유입,desktop,2
+php,2026-11-03,17,UTM 캠페인,가비아 배너,desktop,2
+php,2026-11-04,13,UTM 캠페인,가비아 배너,desktop,2
+php,2026-11-04,15,UTM 캠페인,가비아 배너,mobile,2
+php,2026-11-05,10,UTM 캠페인,가비아 배너,desktop,2
+php,2026-11-06,12,검색,네이버 (광고·블로그·검색),desktop,2
+php,2026-11-09,16,UTM 캠페인,가비아 배너,desktop,2
+php,2026-11-11,16,UTM 캠페인,가비아 배너,desktop,2
+php,2026-11-12,15,기타 추천,EMS 이메일 (메일 링크),desktop,2
+php,2026-11-12,17,직접,직접 유입,desktop,2
+php,2026-11-13,9,기타 추천,EMS 이메일 (메일 링크),desktop,2
+php,2026-11-13,11,UTM 캠페인,가비아 배너,desktop,2
+php,2026-11-13,12,검색,네이버 (광고·블로그·검색),desktop,2
+php,2026-11-13,15,직접,직접 유입,desktop,2
+php,2026-11-16,8,직접,직접 유입,desktop,2
+php,2026-11-17,14,직접,직접 유입,desktop,2
+php,2026-11-18,11,검색,네이버 (광고·블로그·검색),desktop,2
+php,2026-11-19,11,직접,직접 유입,desktop,2
+php,2026-11-19,15,직접,직접 유입,desktop,2
+php,2026-11-19,17,직접,직접 유입,desktop,2
+php,2026-11-22,15,직접,직접 유입,desktop,2
+php,2026-11-23,14,직접,직접 유입,desktop,2
+php,2026-11-24,14,직접,직접 유입,desktop,2
+php,2026-11-25,17,직접,직접 유입,desktop,2
+php,2026-10-23,10,직접,직접 유입,desktop,1
+php,2026-10-23,15,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-10-23,16,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-10-23,16,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-10-23,18,직접,직접 유입,desktop,1
+php,2026-10-23,18,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-10-23,19,직접,직접 유입,desktop,1
+php,2026-10-23,20,직접,직접 유입,desktop,1
+php,2026-10-23,20,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-10-23,21,직접,직접 유입,desktop,1
+php,2026-10-23,22,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-10-23,23,직접,직접 유입,desktop,1
+php,2026-10-24,2,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-10-24,3,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-10-24,3,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-10-24,4,직접,직접 유입,desktop,1
+php,2026-10-24,4,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-10-24,7,직접,직접 유입,desktop,1
+php,2026-10-24,7,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-10-24,8,직접,직접 유입,desktop,1
+php,2026-10-24,10,직접,직접 유입,desktop,1
+php,2026-10-24,11,직접,직접 유입,desktop,1
+php,2026-10-24,11,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-10-25,2,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-10-25,3,직접,직접 유입,desktop,1
+php,2026-10-25,3,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-10-25,4,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-10-25,5,직접,직접 유입,desktop,1
+php,2026-10-25,6,직접,직접 유입,desktop,1
+php,2026-10-25,6,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-10-25,9,직접,직접 유입,desktop,1
+php,2026-10-25,9,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-10-25,11,직접,직접 유입,desktop,1
+php,2026-10-25,11,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-10-25,11,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-10-25,14,직접,직접 유입,desktop,1
+php,2026-10-25,15,직접,직접 유입,desktop,1
+php,2026-10-25,16,직접,직접 유입,desktop,1
+php,2026-10-25,18,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-10-25,19,직접,직접 유입,desktop,1
+php,2026-10-25,19,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-10-25,20,직접,직접 유입,desktop,1
+php,2026-10-25,20,검색,구글 검색,desktop,1
+php,2026-10-25,21,검색,구글 검색,mobile,1
+php,2026-10-25,21,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-10-25,22,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-10-25,23,직접,직접 유입,desktop,1
+php,2026-10-26,3,직접,직접 유입,desktop,1
+php,2026-10-26,4,직접,직접 유입,desktop,1
+php,2026-10-26,5,직접,직접 유입,desktop,1
+php,2026-10-26,5,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-10-26,6,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-10-26,7,직접,직접 유입,desktop,1
+php,2026-10-26,7,검색,구글 검색,desktop,1
+php,2026-10-26,7,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-10-26,8,검색,구글 검색,desktop,1
+php,2026-10-26,8,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-10-26,9,직접,직접 유입,desktop,1
+php,2026-10-26,9,검색,구글 검색,desktop,1
+php,2026-10-26,9,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-10-26,10,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-10-26,11,검색,구글 검색,desktop,1
+php,2026-10-26,12,검색,구글 검색,mobile,1
+php,2026-10-26,12,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-10-26,13,직접,직접 유입,desktop,1
+php,2026-10-26,13,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-10-26,13,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-10-26,14,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-10-26,15,직접,직접 유입,desktop,1
+php,2026-10-26,15,검색,구글 검색,desktop,1
+php,2026-10-26,15,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-10-26,15,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-10-26,16,직접,직접 유입,desktop,1
+php,2026-10-26,16,검색,구글 검색,desktop,1
+php,2026-10-26,16,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-10-26,17,직접,직접 유입,desktop,1
+php,2026-10-26,17,검색,구글 검색,desktop,1
+php,2026-10-26,17,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-10-26,19,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-10-26,20,직접,직접 유입,desktop,1
+php,2026-10-26,20,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-10-27,0,직접,직접 유입,desktop,1
+php,2026-10-27,1,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-10-27,9,직접,직접 유입,desktop,1
+php,2026-10-27,9,검색,구글 검색,desktop,1
+php,2026-10-27,10,기타 추천,firstmall.kr,desktop,1
+php,2026-10-27,10,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-10-27,11,직접,직접 유입,desktop,1
+php,2026-10-27,11,검색,구글 검색,desktop,1
+php,2026-10-27,11,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-10-27,12,검색,구글 검색,desktop,1
+php,2026-10-27,12,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-10-27,13,직접,직접 유입,desktop,1
+php,2026-10-27,13,검색,구글 검색,desktop,1
+php,2026-10-27,13,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-10-27,14,직접,직접 유입,desktop,1
+php,2026-10-27,15,검색,구글 검색,desktop,1
+php,2026-10-27,15,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-10-27,16,직접,직접 유입,desktop,1
+php,2026-10-27,17,직접,직접 유입,desktop,1
+php,2026-10-27,20,검색,구글 검색,mobile,1
+php,2026-10-28,10,직접,직접 유입,desktop,1
+php,2026-10-28,10,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-10-28,11,직접,직접 유입,desktop,1
+php,2026-10-28,11,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-10-28,12,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-10-28,15,직접,직접 유입,desktop,1
+php,2026-10-28,15,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-10-28,16,직접,직접 유입,desktop,1
+php,2026-10-28,17,직접,직접 유입,desktop,1
+php,2026-10-28,17,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-10-28,19,직접,직접 유입,desktop,1
+php,2026-10-28,19,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-10-28,20,직접,직접 유입,desktop,1
+php,2026-10-28,21,직접,직접 유입,desktop,1
+php,2026-10-29,8,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-10-29,9,직접,직접 유입,desktop,1
+php,2026-10-29,10,직접,직접 유입,desktop,1
+php,2026-10-29,14,검색,구글 검색,desktop,1
+php,2026-10-29,14,기타 추천,webmail.inday.co.kr,mobile,1
+php,2026-10-29,14,기타 추천,webmail.lcm21.com,desktop,1
+php,2026-10-29,15,검색,구글 검색,mobile,1
+php,2026-10-29,15,기타 추천,mails.gabiaoffice.hiworks.com,desktop,1
+php,2026-10-29,15,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-10-29,16,직접,직접 유입,mobile,1
+php,2026-10-29,17,기타 추천,mail.bmit.co.kr,desktop,1
+php,2026-10-29,18,직접,직접 유입,mobile,1
+php,2026-10-29,18,UTM 캠페인,가비아 배너,desktop,1
+php,2026-10-29,22,직접,직접 유입,mobile,1
+php,2026-10-30,5,직접,직접 유입,mobile,1
+php,2026-10-30,6,직접,직접 유입,desktop,1
+php,2026-10-30,8,직접,직접 유입,mobile,1
+php,2026-10-30,8,기타 추천,innobiz.or.kr,desktop,1
+php,2026-10-30,8,기타 추천,webmail.workskorea.co.kr,desktop,1
+php,2026-10-30,9,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-10-30,9,기타 추천,webmail.hanbitens.co.kr,desktop,1
+php,2026-10-30,10,기타 추천,diad,desktop,1
+php,2026-10-30,10,기타 추천,gw.verthill.com,desktop,1
+php,2026-10-30,10,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-10-30,11,기타 추천,diad,desktop,1
+php,2026-10-30,11,검색,구글 검색,desktop,1
+php,2026-10-30,11,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-10-30,11,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-10-30,14,검색,구글 검색,desktop,1
+php,2026-10-30,15,직접,직접 유입,desktop,1
+php,2026-10-30,16,직접,직접 유입,desktop,1
+php,2026-10-30,16,직접,직접 유입,mobile,1
+php,2026-10-30,16,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-10-31,7,직접,직접 유입,desktop,1
+php,2026-10-31,8,직접,직접 유입,desktop,1
+php,2026-10-31,9,직접,직접 유입,desktop,1
+php,2026-10-31,9,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-10-31,10,직접,직접 유입,desktop,1
+php,2026-10-31,15,직접,직접 유입,desktop,1
+php,2026-10-31,16,직접,직접 유입,desktop,1
+php,2026-11-01,0,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-11-01,1,직접,직접 유입,desktop,1
+php,2026-11-01,10,직접,직접 유입,desktop,1
+php,2026-11-02,2,직접,직접 유입,desktop,1
+php,2026-11-02,8,직접,직접 유입,desktop,1
+php,2026-11-02,8,기타 추천,accounts.gabia.com,desktop,1
+php,2026-11-02,8,기타 추천,gabia.com,desktop,1
+php,2026-11-02,11,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-02,13,UTM 캠페인,프리홈 배너,desktop,1
+php,2026-11-02,13,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-11-02,15,직접,직접 유입,desktop,1
+php,2026-11-02,15,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-02,15,기타 추천,mail.nagaileben.co.kr,desktop,1
+php,2026-11-02,15,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-11-02,16,검색,구글 검색,desktop,1
+php,2026-11-02,16,기타 추천,mail.nagaileben.co.kr,desktop,1
+php,2026-11-02,16,기타 추천,webmail.designhub.kr,desktop,1
+php,2026-11-02,17,직접,직접 유입,desktop,1
+php,2026-11-02,18,직접,직접 유입,desktop,1
+php,2026-11-03,9,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-03,10,UTM 캠페인,가비아 배너,mobile,1
+php,2026-11-03,11,UTM 캠페인,가비아 배너,mobile,1
+php,2026-11-03,12,UTM 캠페인,가비아 배너,mobile,1
+php,2026-11-03,14,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-03,14,검색,네이버 (광고·블로그·검색),tablet,1
+php,2026-11-03,15,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-03,15,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-11-03,16,기타 추천,domain.gabia.com,desktop,1
+php,2026-11-03,16,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-03,17,기타 추천,gabia.com,desktop,1
+php,2026-11-03,18,기타 추천,firstmall.kr,desktop,1
+php,2026-11-03,19,UTM 캠페인,가비아 배너,mobile,1
+php,2026-11-04,0,UTM 캠페인,가비아 배너,mobile,1
+php,2026-11-04,5,직접,직접 유입,desktop,1
+php,2026-11-04,5,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-11-04,9,직접,직접 유입,desktop,1
+php,2026-11-04,9,UTM 캠페인,프리홈 배너,desktop,1
+php,2026-11-04,9,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-11-04,10,직접,직접 유입,desktop,1
+php,2026-11-04,10,UTM 캠페인,프리홈 배너,desktop,1
+php,2026-11-04,10,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-04,11,UTM 캠페인,프리홈 배너,desktop,1
+php,2026-11-04,11,UTM 캠페인,카카오,mobile,1
+php,2026-11-04,12,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-04,14,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-04,15,직접,직접 유입,desktop,1
+php,2026-11-04,16,직접,직접 유입,desktop,1
+php,2026-11-04,16,UTM 캠페인,가비아 배너,mobile,1
+php,2026-11-04,16,기타 추천,gabia.com,desktop,1
+php,2026-11-04,19,UTM 캠페인,프리홈 배너,desktop,1
+php,2026-11-04,20,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-04,22,직접,직접 유입,desktop,1
+php,2026-11-04,22,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-11-05,7,직접,직접 유입,desktop,1
+php,2026-11-05,9,직접,직접 유입,desktop,1
+php,2026-11-05,9,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-11-05,11,UTM 캠페인,프리홈 배너,desktop,1
+php,2026-11-05,12,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-05,14,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-05,15,직접,직접 유입,desktop,1
+php,2026-11-05,17,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-11-05,18,직접,직접 유입,desktop,1
+php,2026-11-06,5,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-06,8,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-06,9,직접,직접 유입,desktop,1
+php,2026-11-06,10,UTM 캠페인,프리홈 배너,desktop,1
+php,2026-11-06,11,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-06,11,검색,구글 검색,desktop,1
+php,2026-11-06,13,직접,직접 유입,desktop,1
+php,2026-11-06,13,검색,구글 검색,desktop,1
+php,2026-11-06,14,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-06,15,직접,직접 유입,desktop,1
+php,2026-11-06,15,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-06,15,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-11-06,16,직접,직접 유입,desktop,1
+php,2026-11-06,16,UTM 캠페인,가비아CNS 배너,desktop,1
+php,2026-11-06,18,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-07,12,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-11-07,13,직접,직접 유입,desktop,1
+php,2026-11-07,14,UTM 캠페인,가비아 배너,mobile,1
+php,2026-11-07,15,직접,직접 유입,desktop,1
+php,2026-11-07,20,직접,직접 유입,desktop,1
+php,2026-11-07,20,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-11-07,21,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-07,22,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-08,0,직접,직접 유입,desktop,1
+php,2026-11-08,0,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-11-08,7,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-11-08,8,직접,직접 유입,desktop,1
+php,2026-11-08,9,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-11-08,10,직접,직접 유입,desktop,1
+php,2026-11-08,10,UTM 캠페인,가비아 배너,mobile,1
+php,2026-11-08,10,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-11-08,15,직접,직접 유입,desktop,1
+php,2026-11-08,21,UTM 캠페인,프리홈 배너,desktop,1
+php,2026-11-09,0,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-09,8,직접,직접 유입,desktop,1
+php,2026-11-09,12,UTM 캠페인,프리홈 배너,desktop,1
+php,2026-11-09,14,직접,직접 유입,desktop,1
+php,2026-11-09,14,UTM 캠페인,가비아CNS 배너,desktop,1
+php,2026-11-09,15,직접,직접 유입,desktop,1
+php,2026-11-09,15,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-11-09,17,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-09,18,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-09,20,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-09,20,UTM 캠페인,가비아 배너,mobile,1
+php,2026-11-09,20,검색,구글 검색,mobile,1
+php,2026-11-10,5,직접,직접 유입,desktop,1
+php,2026-11-10,6,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-10,10,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-10,11,직접,직접 유입,desktop,1
+php,2026-11-10,11,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-10,12,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-10,13,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-10,13,검색,구글 검색,desktop,1
+php,2026-11-10,14,직접,직접 유입,desktop,1
+php,2026-11-10,14,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-10,14,검색,구글 검색,desktop,1
+php,2026-11-10,15,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-10,15,검색,구글 검색,desktop,1
+php,2026-11-10,16,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-10,17,UTM 캠페인,프리홈 배너,desktop,1
+php,2026-11-10,18,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-10,21,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-11,9,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-11,10,직접,직접 유입,desktop,1
+php,2026-11-11,10,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-11-11,11,직접,직접 유입,desktop,1
+php,2026-11-11,12,직접,직접 유입,mobile,1
+php,2026-11-11,13,UTM 캠페인,프리홈 배너,desktop,1
+php,2026-11-11,13,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-11,13,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-11-11,14,직접,직접 유입,desktop,1
+php,2026-11-11,14,UTM 캠페인,프리홈 배너,desktop,1
+php,2026-11-11,15,직접,직접 유입,desktop,1
+php,2026-11-11,15,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-11,16,직접,직접 유입,desktop,1
+php,2026-11-11,19,직접,직접 유입,desktop,1
+php,2026-11-11,19,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-11-11,21,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-11,21,UTM 캠페인,가비아 배너,mobile,1
+php,2026-11-11,22,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-11,22,검색,구글 검색,desktop,1
+php,2026-11-12,1,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-12,3,UTM 캠페인,프리홈 배너,mobile,1
+php,2026-11-12,9,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-12,10,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-12,11,검색,구글 검색,mobile,1
+php,2026-11-12,12,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-12,13,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-12,13,UTM 캠페인,가비아CNS 배너,desktop,1
+php,2026-11-12,14,UTM 캠페인,프리홈 배너,desktop,1
+php,2026-11-12,14,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-12,15,직접,직접 유입,desktop,1
+php,2026-11-12,16,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-12,16,UTM 캠페인,가비아 배너,mobile,1
+php,2026-11-12,16,기타 추천,EMS 이메일 (메일 링크),desktop,1
+php,2026-11-12,17,기타 추천,EMS 이메일 (메일 링크),desktop,1
+php,2026-11-12,18,직접,직접 유입,desktop,1
+php,2026-11-12,23,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-13,1,UTM 캠페인,가비아 배너,mobile,1
+php,2026-11-13,9,직접,직접 유입,desktop,1
+php,2026-11-13,9,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-13,10,기타 추천,EMS 이메일 (메일 링크),desktop,1
+php,2026-11-13,11,직접,직접 유입,desktop,1
+php,2026-11-13,11,기타 추천,innobiz.or.kr,mobile,1
+php,2026-11-13,11,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-11-13,11,기타 추천,EMS 이메일 (메일 링크),desktop,1
+php,2026-11-13,12,직접,직접 유입,desktop,1
+php,2026-11-13,13,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-13,14,UTM 캠페인,프리홈 배너,desktop,1
+php,2026-11-13,14,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-13,15,UTM 캠페인,프리홈 배너,desktop,1
+php,2026-11-13,15,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-13,15,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-11-13,16,직접,직접 유입,desktop,1
+php,2026-11-13,16,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-11-13,19,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-11-13,20,직접,직접 유입,desktop,1
+php,2026-11-13,21,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-13,22,기타 추천,EMS 이메일 (메일 링크),desktop,1
+php,2026-11-13,22,기타 추천,EMS 이메일 (메일 링크),mobile,1
+php,2026-11-14,0,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-14,1,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-14,2,UTM 캠페인,가비아CNS 배너,tablet,1
+php,2026-11-14,8,UTM 캠페인,가비아 배너,mobile,1
+php,2026-11-14,12,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-14,15,직접,직접 유입,desktop,1
+php,2026-11-14,23,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-11-15,0,직접,직접 유입,desktop,1
+php,2026-11-15,13,직접,직접 유입,desktop,1
+php,2026-11-15,13,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-11-15,15,직접,직접 유입,desktop,1
+php,2026-11-15,16,UTM 캠페인,프리홈 배너,desktop,1
+php,2026-11-15,17,UTM 캠페인,프리홈 배너,desktop,1
+php,2026-11-15,20,직접,직접 유입,desktop,1
+php,2026-11-15,20,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-11-16,8,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-16,10,직접,직접 유입,desktop,1
+php,2026-11-16,10,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-16,10,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-11-16,11,직접,직접 유입,desktop,1
+php,2026-11-16,11,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-16,13,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-16,13,검색,구글 검색,desktop,1
+php,2026-11-16,14,직접,직접 유입,desktop,1
+php,2026-11-16,14,UTM 캠페인,가비아 배너,mobile,1
+php,2026-11-16,15,직접,직접 유입,desktop,1
+php,2026-11-16,15,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-11-16,16,직접,직접 유입,desktop,1
+php,2026-11-16,16,UTM 캠페인,가비아 배너,mobile,1
+php,2026-11-16,16,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-11-16,17,UTM 캠페인,프리홈 배너,desktop,1
+php,2026-11-16,17,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-16,18,UTM 캠페인,프리홈 배너,desktop,1
+php,2026-11-16,18,UTM 캠페인,가비아 배너,mobile,1
+php,2026-11-16,19,UTM 캠페인,가비아 배너,mobile,1
+php,2026-11-16,20,UTM 캠페인,가비아 배너,mobile,1
+php,2026-11-16,21,UTM 캠페인,프리홈 배너,desktop,1
+php,2026-11-17,1,직접,직접 유입,desktop,1
+php,2026-11-17,1,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-17,8,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-17,9,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-11-17,10,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-17,11,직접,직접 유입,desktop,1
+php,2026-11-17,12,UTM 캠페인,가비아 배너,desktop,1
+php,2026-11-17,13,검색,구글 검색,desktop,1
+php,2026-11-17,14,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-11-17,16,UTM 캠페인,프리홈 배너,desktop,1
+php,2026-11-17,17,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-11-17,18,직접,직접 유입,desktop,1
+php,2026-11-18,6,직접,직접 유입,desktop,1
+php,2026-11-18,6,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-11-18,7,직접,직접 유입,desktop,1
+php,2026-11-18,8,직접,직접 유입,desktop,1
+php,2026-11-18,9,검색,구글 검색,desktop,1
+php,2026-11-18,9,기타 추천,EMS 이메일 (메일 링크),desktop,1
+php,2026-11-18,11,직접,직접 유입,desktop,1
+php,2026-11-18,12,기타 추천,EMS 이메일 (메일 링크),mobile,1
+php,2026-11-18,13,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-11-18,14,직접,직접 유입,desktop,1
+php,2026-11-18,15,직접,직접 유입,desktop,1
+php,2026-11-18,15,기타 추천,EMS 이메일 (메일 링크),mobile,1
+php,2026-11-18,18,기타 추천,EMS 이메일 (메일 링크),mobile,1
+php,2026-11-19,9,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-11-19,10,직접,직접 유입,desktop,1
+php,2026-11-19,10,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-11-19,10,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-11-19,15,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-11-19,16,직접,직접 유입,desktop,1
+php,2026-11-19,16,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-11-19,17,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-11-19,23,UTM 캠페인,가비아 배너,mobile,1
+php,2026-11-20,7,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-11-20,9,직접,직접 유입,desktop,1
+php,2026-11-20,13,직접,직접 유입,desktop,1
+php,2026-11-20,13,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-11-20,14,직접,직접 유입,desktop,1
+php,2026-11-20,14,검색,구글 검색,desktop,1
+php,2026-11-20,15,직접,직접 유입,desktop,1
+php,2026-11-20,15,검색,네이버 (광고·블로그·검색),tablet,1
+php,2026-11-20,16,직접,직접 유입,desktop,1
+php,2026-11-20,16,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-11-20,17,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-11-20,21,UTM 캠페인,프리홈 배너,mobile,1
+php,2026-11-20,23,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-11-21,0,직접,직접 유입,desktop,1
+php,2026-11-21,15,직접,직접 유입,desktop,1
+php,2026-11-22,12,UTM 캠페인,프리홈 배너,mobile,1
+php,2026-11-22,15,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-11-23,13,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-11-23,17,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-11-23,18,직접,직접 유입,desktop,1
+php,2026-11-23,20,UTM 캠페인,프리홈 배너,mobile,1
+php,2026-11-24,10,직접,직접 유입,desktop,1
+php,2026-11-24,12,UTM 캠페인,가비아 배너,mobile,1
+php,2026-11-24,13,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-11-24,14,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-11-24,17,UTM 캠페인,가비아 배너,mobile,1
+php,2026-11-24,21,직접,직접 유입,mobile,1
+php,2026-11-24,22,UTM 캠페인,프리홈 배너,desktop,1
+php,2026-11-25,4,직접,직접 유입,mobile,1
+php,2026-11-25,4,UTM 캠페인,가비아CNS 배너,desktop,1
+php,2026-11-25,5,직접,직접 유입,mobile,1
+php,2026-11-25,8,직접,직접 유입,desktop,1
+php,2026-11-25,8,직접,직접 유입,mobile,1
+php,2026-11-25,14,직접,직접 유입,desktop,1
+php,2026-11-25,15,직접,직접 유입,desktop,1
+php,2026-11-25,15,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-11-25,16,직접,직접 유입,desktop,1
+php,2026-11-25,17,검색,네이버 (광고·블로그·검색),desktop,1
+php,2026-11-25,18,검색,네이버 (광고·블로그·검색),mobile,1
+php,2026-11-25,19,직접,직접 유입,desktop,1

@@ -1,0 +1,16 @@
+site,no,level,item,target,action
+gabiacns,1,오류,www 사이트맵 오류 5건,https://www.gabiacns.com/sitemap.xml,"서치콘솔 사이트맵 화면에서 오류 내용을 확인하고 고쳐서 다시 제출해요(제출 70개, 색인 0)."
+gabiacns,2,오류,company 사이트맵 오류 1건,https://company.gabiacns.com/sitemap.xml,오류 주소를 고쳐 다시 제출해요.
+gabiacns,3,경고,company 사이트맵 경고 3건,https://company.gabiacns.com/sitemap.xml,경고 항목을 확인해요(2023년 제출 이후 갱신 없음).
+gabiacns,4,정리,www 사이트맵 30일 넘게 안 읽힘,https://www.gabiacns.com/sitemap.xml,마지막으로 읽힌 날이 2026-06-06이에요. 오류 수정 후 다시 제출해요.
+gabiacns,5,정리,customer 사이트맵 30일 넘게 안 읽힘,https://customer.gabiacns.com/sitemap.xml,마지막으로 읽힌 날이 2025-11-21이에요. 계속 쓸지 정하고 다시 제출하거나 삭제해요.
+gabiacns,8,정리,www 없는 주소 노출,gabiacns.com,"www 없는 주소가 노출 2,248회 잡혔어요. www로 301 리디렉션과 canonical을 확인해요."
+gabiacns,9,권장,사이트맵 없는 서브도메인,homepage.gabiacns.com,노출 130회가 있지만 사이트맵이 없어요. 필요하면 사이트맵을 제출해요.
+gabiacns,10,권장,로그인 페이지 노출,accounts.gabiacns.com,노출 29회가 있어요. 검색에 필요 없으면 noindex를 검토해요.
+firstmall,1,정리,firstmall.kr / www.firstmall.kr 노출 분산,firstmall.kr · www.firstmall.kr,"노출이 firstmall.kr 11,317회, www 9,552회로 나뉘어요. 대표 주소 하나로 리디렉션·canonical을 맞춰요."
+firstmall,2,권장,고객사 쇼핑몰 섞임,sc-domain:firstmall.kr,도메인 속성에 고객사 몰 주소가 섞여 있어 이 보고서는 firstmall.kr·www만 걸러서 봐요.
+firstmall,3,권장,사이트맵 상태 확인,서치콘솔 사이트맵 화면,이 도구로는 사이트맵을 못 읽어요. 서치콘솔 화면에서 직접 확인해요.
+clickn,1,정리,끝 / 중복 주소 노출,/price/ · /ai_editor/ · /ai_assist/ · /template/ · /add/mobile_app/,끝에 /가 붙은 주소 5개가 따로 노출돼요(합계 30회). / 없는 주소로 301 리디렉션해요.
+clickn,2,정리,UTM 붙은 주소 노출,/customer/event/8454270/ongoing?utm_source=esellers…,UTM 붙은 이벤트 주소 2개가 노출 211회 잡혔어요. canonical을 UTM 없는 주소로 지정해요.
+clickn,3,정리,종료 이벤트 노출,/event/2021~2025 이벤트 6개 주소,지난 이벤트 주소가 노출 46회 잡혀요. 종료 안내 후 noindex나 리디렉션을 걸어요.
+clickn,4,권장,사이트맵 상태 확인,서치콘솔 사이트맵 화면,이 도구로는 사이트맵을 못 읽어요. 서치콘솔 화면에서 직접 확인해요.

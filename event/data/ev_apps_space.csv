@@ -1,0 +1,5 @@
+event_id,space,total,new,renew
+startup,1인실,17,13,4
+startup,2인실,17,16,1
+startup,3인실,3,3,0
+startup,4인실,9,8,1

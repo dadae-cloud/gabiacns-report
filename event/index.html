@@ -1,0 +1,904 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>가비아CNS 이벤트 리포트</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+</head>
+<body>
+<style>
+html, body { margin: 0; }
+body { background: #ecebe7; padding: 24px max(16px, env(safe-area-inset-left, 0px)) 40px max(16px, env(safe-area-inset-right, 0px)); }
+body:has(.ev-dark, .sc-dark, .bn-dark) { background: #121211; }
+#ev-root { --cds-radius: 12px; --cds-gap-lg: 16px; --cds-font-weight-medium: 600; --font-anthropic-sans: system-ui; }
+.dash-select { font: inherit; font-size: 12.5px; padding: 5px 8px; border: 1px solid var(--color-border-line); border-radius: 8px; }
+.pub-back { display: inline-block; margin-bottom: 6px; font-size: 12px; color: var(--color-fg-muted); text-decoration: none; }
+.pub-back:hover { text-decoration: underline; }
+
+/* Layout: 머리(이벤트·기간) → KPI → 인사이트 → 점검 → 일별 추이 → 신청 현황 → 채널 → 주간 → 소스/매체 추이 → 시간대 → 사이트 내 유입·페이지 안 행동 → 기준 안내 */
+.ev { --ev-accent: #e8590c; --ev-apply: #2f6fdb; --ev-apply-soft: color-mix(in srgb, var(--ev-apply) 40%, var(--color-panel)); --ev-direct: var(--cds-chart-muted); --ev-search: #0e9384; --ev-other: #7a5af8; --ev-insight: color-mix(in srgb, var(--ev-apply) 7%, var(--color-panel)); --ev-insight-line: color-mix(in srgb, var(--ev-apply) 28%, var(--color-border-line)); display: flex; flex-direction: column; gap: var(--cds-gap-lg); font-family: "Pretendard Variable", Pretendard, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", var(--font-anthropic-sans), sans-serif; color: var(--color-fg); font-size: 13px; letter-spacing: -0.01em; }
+.ev select, .ev button, .ev input { font-family: inherit; }
+.ev h1 { font-weight: 700; font-size: 24px; letter-spacing: -0.02em; margin: 0; text-wrap: balance; }
+.ev h2 { font-size: 15px; font-weight: var(--cds-font-weight-medium); margin: 0; }
+.ev h3 { font-size: 13px; font-weight: var(--cds-font-weight-medium); margin: 0; }
+.ev-note { color: var(--color-fg-muted); font-size: 12px; margin: 0; line-height: 1.55; }
+.ev-top { display: flex; flex-direction: column; gap: 12px; background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: 14px 16px; }
+.ev-row { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+.ev-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.ev-chip { font-size: 11.5px; border-radius: 999px; padding: 3px 10px; border: 1px solid var(--color-border-line); color: var(--color-fg-muted); background: var(--color-bg); }
+.ev-chip[aria-current="true"] { background: var(--ev-accent); border-color: var(--ev-accent); color: #fff; }
+.ev-btn { font: inherit; font-size: 12px; border: 1px solid var(--color-border-line); background: var(--color-panel); color: var(--color-fg); border-radius: 8px; padding: 5px 11px; cursor: pointer; white-space: nowrap; }
+.ev-btn[aria-pressed="true"] { border-color: var(--ev-apply); color: var(--ev-apply); background: color-mix(in srgb, var(--ev-apply) 8%, var(--color-panel)); font-weight: var(--cds-font-weight-medium); }
+.ev-btn:focus-visible, .ev select:focus-visible, .ev summary:focus-visible { outline: 2px solid var(--ev-apply); outline-offset: 2px; }
+.ev-mini { font: inherit; font-size: 11.5px; border: 1px solid var(--color-border-line); background: var(--color-panel); color: var(--color-fg-muted); border-radius: 6px; padding: 3px 9px; cursor: pointer; }
+.ev-mini.ev-done { color: var(--color-ok); border-color: var(--color-ok); }
+.ev-meta { display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 12.5px; }
+.ev-meta b { font-weight: var(--cds-font-weight-medium); }
+.ev-meta a { color: inherit; }
+.ev-dday { display: inline-block; font-size: 11px; border: 1px solid var(--ev-accent); color: var(--ev-accent); border-radius: 999px; padding: 0 8px; margin-left: 6px; }
+.ev-card { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: 16px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.ev-card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.ev-sec-head { display: flex; flex-direction: column; gap: 2px; }
+.ev-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+.ev-kpi { gap: 3px; padding: 13px 15px; }
+.ev-kpi-label { font-size: 12px; color: var(--color-fg-muted); }
+.ev-kpi-value { font-weight: 700; font-size: 26px; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; line-height: 1.25; }
+.ev-kpi-sub { font-size: 11.5px; color: var(--color-fg-muted); font-variant-numeric: tabular-nums; }
+.ev-kpi-cmp { font-size: 11.5px; color: var(--color-fg-muted); border-top: 1px solid var(--color-border-line); padding-top: 5px; margin-top: 3px; font-variant-numeric: tabular-nums; }
+.ev-up { color: var(--color-ok); } .ev-down { color: var(--color-bad); } .ev-flat { color: var(--color-fg-muted); }
+.ev-insight { background: var(--ev-insight); border-color: var(--ev-insight-line); }
+.ev-insight h2 { color: var(--ev-apply); font-size: 13px; }
+.ev-insight ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; line-height: 1.6; list-style: disc outside; }
+.ev-insight li { display: list-item; list-style: inherit; }
+.ev-insight li::marker { color: var(--ev-apply); }
+.ev details ul li { display: list-item; list-style: disc; }
+.ev-howto ol li { display: list-item; list-style: decimal; }
+.ev-two { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: var(--cds-gap-lg); align-items: stretch; }
+.ev-three { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: var(--cds-gap-lg); align-items: start; }
+.ev-chartbox { position: relative; min-height: 240px; }
+.ev-chartbox-sm { min-height: 180px; }
+.ev-mix { display: flex; height: 30px; border-radius: 6px; overflow: hidden; gap: 2px; }
+.ev-mix > div { display: flex; align-items: center; justify-content: center; color: #fff; font-size: 11.5px; font-weight: 600; white-space: nowrap; overflow: hidden; min-width: 0; }
+.ev-apps-sum { margin: 0; font-size: 14px; line-height: 1.6; }
+.ev-apps-sum b { font-weight: 700; font-variant-numeric: tabular-nums; }
+.ev-chart text { fill: var(--cds-text-secondary); font-size: 11px; }
+.ev-tip { position: absolute; pointer-events: none; background: var(--cds-surface-popover); border: 1px solid var(--cds-border); box-shadow: var(--cds-shadow-popover); border-radius: 8px; padding: 6px 10px; font-size: 12px; font-variant-numeric: tabular-nums; z-index: 2; line-height: 1.5; max-width: 280px; }
+.ev-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12px; color: var(--color-fg-muted); }
+.ev-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 4px; vertical-align: -1px; }
+.ev-legend i.ev-line { height: 3px; border-radius: 2px; vertical-align: 2px; width: 14px; }
+.ev-tablewrap { overflow: auto; max-height: 520px; border: 1px solid var(--color-border-line); border-radius: 8px; }
+.ev table { width: 100%; border-collapse: collapse; font-size: 12.5px; font-variant-numeric: tabular-nums; }
+.ev th { text-align: left; font-weight: var(--cds-font-weight-medium); color: var(--color-fg-muted); padding: 8px 10px; border-bottom: 1px solid var(--color-border-line); position: sticky; top: 0; background: var(--color-bg); white-space: nowrap; z-index: 1; font-size: 12px; }
+.ev td { padding: 8px 10px; border-bottom: 1px solid var(--color-border-line); vertical-align: top; }
+.ev tbody tr:last-child td { border-bottom: none; }
+.ev tfoot td { font-weight: var(--cds-font-weight-medium); background: var(--color-bg); border-top: 1px solid var(--color-border-line); border-bottom: none; }
+.ev .num { text-align: right; white-space: nowrap; }
+.ev .sub { display: block; color: var(--color-fg-muted); font-size: 11px; }
+.ev td.wrap { min-width: 180px; max-width: 420px; line-height: 1.5; }
+.ev tr.ev-grp td { background: color-mix(in srgb, var(--color-fg) 3%, transparent); font-weight: var(--cds-font-weight-medium); cursor: pointer; }
+.ev tr.ev-grp td:first-child::before { content: "▾"; display: inline-block; width: 14px; color: var(--color-fg-muted); }
+.ev tr.ev-grp[aria-expanded="false"] td:first-child::before { content: "▸"; }
+.ev tr.ev-child td:first-child { padding-left: 28px; }
+.ev-pill { display: inline-block; font-size: 11px; border: 1px solid currentColor; border-radius: 999px; padding: 0 8px; white-space: nowrap; }
+.ev-pill[data-tone="bad"] { color: var(--color-bad); } .ev-pill[data-tone="warn"] { color: var(--color-warn); } .ev-pill[data-tone="ok"] { color: var(--color-ok); } .ev-pill[data-tone="muted"] { color: var(--color-fg-muted); } .ev-pill[data-tone="info"] { color: var(--ev-apply); }
+.ev-swatch { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; }
+.ev-barcell { display: flex; align-items: center; gap: 6px; justify-content: flex-end; }
+.ev-bar { height: 6px; border-radius: 3px; background: var(--ev-accent); opacity: .75; }
+.ev-bar.ev-apply { background: var(--ev-apply); }
+.ev details.ev-card > summary { cursor: pointer; font-weight: var(--cds-font-weight-medium); }
+.ev details ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 4px; line-height: 1.55; color: var(--color-fg-muted); font-size: 12px; }
+.ev-howto ol { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 4px; line-height: 1.55; }
+.ev code { font-size: 11.5px; background: var(--color-bg); border: 1px solid var(--color-border-line); border-radius: 4px; padding: 0 4px; word-break: break-all; }
+/* 테마: 기본은 라이트, .ev-dark면 다크 — 대시보드 토큰을 이 페이지 안에서 덮어써요 */
+.ev { --color-fg: #1f1e1c; --color-fg-muted: #6b6a66; --color-bg: #f6f5f2; --color-panel: #ffffff; --color-border-line: #e4e2dc; --color-ok: #2e7d4f; --color-warn: #b7791f; --color-bad: #c0392b;
+  --cds-chart-grid: #ecebe7; --cds-chart-muted: #9aa6b8; --cds-text-secondary: #6b6a66; --cds-surface-popover: #ffffff; --cds-border: #dddbd5; --cds-shadow-popover: 0 4px 14px rgba(0,0,0,.12);
+  background: var(--color-bg); color-scheme: light; border-radius: var(--cds-radius); padding: 16px; max-width: 1080px; margin: 0 auto; box-sizing: border-box; width: 100%; }
+.ev.ev-dark { --color-fg: #ecebe8; --color-fg-muted: #a3a19c; --color-bg: #1b1b1a; --color-panel: #262624; --color-border-line: #3a3936; --color-ok: #5cbf86; --color-warn: #e0a84a; --color-bad: #ef7466;
+  --cds-chart-grid: #34332f; --cds-chart-muted: #7b8596; --cds-text-secondary: #a3a19c; --cds-surface-popover: #2f2f2c; --cds-border: #45443f; --cds-shadow-popover: 0 4px 14px rgba(0,0,0,.5);
+  --ev-apply: #6f9bff; color-scheme: dark; }
+.ev .dash-select { background-color: var(--color-panel); color: var(--color-fg); border-color: var(--color-border-line); }
+.ev-theme { margin-left: auto; gap: 4px; }
+[data-dash-source-state=refreshing] { opacity: .5; }
+</style>
+
+<div class="ev" id="ev-root">
+  <header class="ev-top" id="ev-top">
+    <div class="ev-row" style="align-items:flex-start">
+      <div style="flex:1;min-width:0">
+      <a class="pub-back" href="../">← 리포트 허브</a>
+<h1>가비아CNS 이벤트 리포트</h1>
+      <p class="ev-note">랜딩 세션 = 이 페이지로 사이트에 처음 들어온 방문(GA4) · 오늘 숫자는 하루가 끝나야 확정돼요</p>
+      </div>
+      <div class="ev-row ev-theme" role="group" aria-label="화면 모드"><button class="ev-btn" type="button" data-theme-opt="light" aria-pressed="true">라이트</button><button class="ev-btn" type="button" data-theme-opt="dark" aria-pressed="false">다크</button></div>
+    </div>
+    <div class="ev-row">
+      <select class="dash-select" id="ev-select" aria-label="이벤트" data-draw="evSelect" data-source="ev_events"></select>
+      <div class="ev-chips" id="ev-chips" data-draw="evChips" data-source="ev_events"></div>
+    </div>
+    <div class="ev-row" id="ev-presets" role="group" aria-label="기간">
+      <button class="ev-btn" type="button" data-preset="all" aria-pressed="true">전체 기간</button>
+      <button class="ev-btn" type="button" data-preset="7" aria-pressed="false">최근 7일</button>
+      <button class="ev-btn" type="button" data-preset="1" aria-pressed="false">어제</button>
+      <span class="ev-note" data-draw="rangeText">—</span>
+    </div>
+    <div class="ev-meta" id="ev-meta" data-draw="evMeta" data-source="ev_events"></div>
+  </header>
+
+  <section class="ev-kpis" id="ev-kpis">
+    <div class="ev-card ev-kpi" id="kpi-sessions"><span class="ev-kpi-label">랜딩 유입 (세션)</span><span class="ev-kpi-value" data-draw="kSessions">—</span><span class="ev-kpi-sub" data-draw="kSessionsSub">—</span><span class="ev-kpi-cmp" data-draw="kSessionsCmp">—</span></div>
+    <div class="ev-card ev-kpi" id="kpi-new"><span class="ev-kpi-label">신규 사용자</span><span class="ev-kpi-value" data-draw="kNew">—</span><span class="ev-kpi-sub" data-draw="kNewSub">—</span><span class="ev-kpi-cmp" data-draw="kNewCmp">—</span></div>
+    <div class="ev-card ev-kpi" id="kpi-utm"><span class="ev-kpi-label">UTM 캠페인 유입 비중</span><span class="ev-kpi-value" data-draw="kUtm">—</span><span class="ev-kpi-sub" data-draw="kUtmSub">—</span><span class="ev-kpi-cmp" data-draw="kUtmCmp">—</span></div>
+    <div class="ev-card ev-kpi" id="kpi-eng"><span class="ev-kpi-label">참여율</span><span class="ev-kpi-value" data-draw="kEng">—</span><span class="ev-kpi-sub" data-draw="kEngSub">—</span><span class="ev-kpi-cmp" data-draw="kEngCmp">—</span></div>
+    <div class="ev-card ev-kpi" id="kpi-apps"><span class="ev-kpi-label">신청 건수</span><span class="ev-kpi-value" data-draw="kApps">—</span><span class="ev-kpi-sub" data-draw="kAppsSub">—</span><span class="ev-kpi-cmp" data-draw="kAppsCmp">—</span></div>
+    <div class="ev-card ev-kpi" id="kpi-apply" style="display:none"><span class="ev-kpi-label">신청하기 클릭</span><span class="ev-kpi-value" data-draw="kApply">—</span><span class="ev-kpi-sub" data-draw="kApplySub">—</span><span class="ev-kpi-cmp">GTM apply_click 기준</span></div>
+  </section>
+
+  <section class="ev-card ev-insight" id="ev-insights">
+    <h2>인사이트 · 전체 기간</h2>
+    <ul data-draw="insights" data-source="ev_insights"></ul>
+  </section>
+
+
+  <section class="ev-card" id="ev-apps">
+    <div class="ev-card-head">
+      <div class="ev-sec-head"><h2>접수 현황</h2></div>
+      <button class="ev-mini" type="button" data-copyimg="ev-apps-chart">이미지 복사</button>
+    </div>
+    <p class="ev-apps-sum" data-draw="appsSummary" data-source="ev_apps_daily">—</p>
+    <div class="ev-legend"><span><i style="background:var(--ev-apply)"></i>신규 신청</span><span><i style="background:var(--ev-apply-soft)"></i>기존 입주자 재신청</span><span><i class="ev-line" style="background:var(--ev-accent)"></i>누적 접수 (오른쪽 축)</span></div>
+    <div class="ev-chartbox" id="ev-apps-chart" data-draw="appsChart" data-source="ev_apps_daily ev_events"></div>
+    <div class="ev-two">
+      <div class="ev-sec-head" style="gap:8px">
+        <h3>신청자가 고른 유입 출처</h3>
+        <div class="ev-chartbox ev-chartbox-sm" id="ev-src-bars" data-draw="appsSrcChart" data-source="ev_apps_compare"></div>
+      </div>
+      <div class="ev-sec-head" style="gap:8px">
+        <h3>희망 공간</h3>
+        <div class="ev-chartbox ev-chartbox-sm" id="ev-space-bars" data-draw="appsSpaceChart" data-source="ev_apps_space"></div>
+      </div>
+    </div>
+    <div class="ev-sec-head" style="gap:8px">
+        <div class="ev-card-head"><h3>신청자가 고른 유입 출처 vs GA4 유입</h3><button class="ev-mini" type="button" data-copy="tbl-apps-src">표 복사</button></div>
+        <div class="ev-tablewrap">
+          <table id="tbl-apps-src" data-source="ev_apps_compare" data-row-key="event_id,source">
+            <thead><tr><th>유입 출처 (자가응답)</th><th class="num">신청</th><th class="num">GA4 세션</th><th class="num">신청/세션</th></tr></thead>
+            <tbody data-draw="appsSource"></tbody>
+          </table>
+        </div>
+        <p class="ev-note">GA4 세션은 같은 출처로 보이는 채널의 모집 기간 랜딩 세션이에요. 이메일(EMS)은 이벤트 페이지를 거치지 않고 왈라 신청서로 바로 연결돼 GA4 세션이 없어요.</p>
+    </div>
+    </section>
+
+  <section class="ev-card" id="ev-daily">
+    <div class="ev-card-head">
+      <div class="ev-sec-head"><h2>이벤트 페이지 유입 추이</h2><p class="ev-note">일별 랜딩 세션(막대, 유입 유형별)과 신청 건수(선, 오른쪽 축)</p></div>
+      <button class="ev-mini" type="button" data-copyimg="ev-daily-chart">이미지 복사</button>
+    </div>
+    <div class="ev-legend"><span><i style="background:var(--ev-accent)"></i>UTM 캠페인</span><span><i style="background:var(--ev-search)"></i>검색</span><span><i style="background:var(--ev-other)"></i>기타 추천</span><span><i style="background:var(--ev-direct)"></i>직접</span><span><i class="ev-line" style="background:var(--ev-apply)"></i>신청 건수</span></div>
+    <div class="ev-chartbox" id="ev-daily-chart" data-draw="dailyChart" data-source="ev_sessions ev_apps_daily"></div>
+  </section>
+
+
+  <section class="ev-card" id="ev-channels">
+    <div class="ev-card-head">
+      <div class="ev-sec-head"><h2>유입 비중 · 경로별 성과</h2><p class="ev-note">utm_source / utm_medium 기준 · 선택한 기간 · 표의 유형을 누르면 접혀요</p></div>
+      <div class="ev-row" style="gap:6px"><button class="ev-mini" type="button" data-copyimg="ev-ch-bars">이미지 복사</button><button class="ev-mini" type="button" data-copy="tbl-channels">표 복사</button></div>
+    </div>
+    <div class="ev-mix" data-draw="mixBar" data-source="ev_channels"></div>
+    <div class="ev-legend"><span><i style="background:var(--ev-accent)"></i>UTM 캠페인</span><span><i style="background:var(--ev-search)"></i>검색</span><span><i style="background:var(--ev-other)"></i>기타 추천</span><span><i style="background:var(--ev-direct)"></i>직접</span></div>
+    <div class="ev-chartbox ev-chartbox-sm" id="ev-ch-bars" data-draw="channelBars" data-source="ev_channels"></div>
+    <div class="ev-tablewrap">
+      <table id="tbl-channels" data-source="ev_channels" data-row-key="event_id,preset,channel">
+        <thead><tr><th>유입 경로</th><th class="num">세션</th><th class="num">비중</th><th class="num">신규 사용자</th><th class="num">참여율</th><th class="num">평균 참여</th><th class="num">모바일</th></tr></thead>
+        <tbody data-draw="channels"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="ev-two">
+    <div class="ev-card" id="ev-weekly">
+      <div class="ev-card-head"><div class="ev-sec-head"><h2>주간 유입</h2><p class="ev-note">주는 월~일 기준 · 전체 기간</p></div><button class="ev-mini" type="button" data-copy="tbl-weekly">표 복사</button></div>
+      <div class="ev-tablewrap">
+        <table id="tbl-weekly" data-source="ev_weekly" data-row-key="event_id,week">
+          <thead><tr><th>주</th><th class="num">세션</th><th class="num">신규 사용자</th><th class="num">참여율</th><th class="num">평균 참여</th><th class="num">신청</th></tr></thead>
+          <tbody data-draw="weekly"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="ev-card" id="ev-device">
+      <div class="ev-card-head"><div class="ev-sec-head"><h2>기기</h2><p class="ev-note">선택한 기간</p></div><button class="ev-mini" type="button" data-copy="tbl-device">표 복사</button></div>
+      <div class="ev-tablewrap">
+        <table id="tbl-device" data-source="ev_devices" data-row-key="event_id,preset,device">
+          <thead><tr><th>기기</th><th class="num">세션</th><th class="num">비중</th><th class="num">참여율</th><th class="num">평균 참여</th></tr></thead>
+          <tbody data-draw="devices"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="ev-card" id="ev-srctrend">
+    <div class="ev-card-head">
+      <div class="ev-sec-head"><h2>소스 / 매체 추이</h2><p class="ev-note">세션이 많은 유입 경로 상위 5개의 일별 세션 · 전체 기간</p></div>
+      <button class="ev-mini" type="button" data-copyimg="ev-src-chart">이미지 복사</button>
+    </div>
+    <div class="ev-legend" data-draw="srcLegend" data-source="ev_sessions"></div>
+    <div class="ev-chartbox" id="ev-src-chart" data-draw="srcChart" data-source="ev_sessions"></div>
+  </section>
+
+  <section class="ev-card" id="ev-hourly">
+    <div class="ev-card-head"><div class="ev-sec-head"><h2>시간대별 유입</h2><p class="ev-note">발송·게시 시각과 맞춰 보세요 (한국 시간)</p></div><button class="ev-mini" type="button" data-copyimg="ev-hour-chart">이미지 복사</button></div>
+    <div class="ev-legend" data-draw="hourLegend" data-source="ev_hourly"></div>
+    <div class="ev-chartbox" id="ev-hour-chart" data-draw="hourChart" data-source="ev_hourly"></div>
+  </section>
+
+  <section class="ev-two">
+    <div class="ev-card" id="ev-referrers">
+      <div class="ev-card-head"><div class="ev-sec-head"><h2>사이트 내 유입 경로</h2><p class="ev-note">이벤트 페이지를 보기 직전 페이지(리퍼러) · 선택한 기간 · 페이지뷰 기준</p></div><button class="ev-mini" type="button" data-copy="tbl-ref">표 복사</button></div>
+      <div class="ev-tablewrap">
+        <table id="tbl-ref" data-source="ev_refs" data-row-key="event_id,preset,referrer">
+          <thead><tr><th>직전 페이지</th><th>구분</th><th class="num">페이지뷰</th><th class="num">사용자</th></tr></thead>
+          <tbody data-draw="referrers"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="ev-card" id="ev-actions">
+      <div class="ev-card-head"><div class="ev-sec-head"><h2>이벤트 페이지 안 행동</h2><p class="ev-note">이 페이지에서 일어난 GA4 이벤트 · 선택한 기간</p></div><button class="ev-mini" type="button" data-copy="tbl-actions">표 복사</button></div>
+      <div class="ev-tablewrap">
+        <table id="tbl-actions" data-source="ev_action_totals" data-row-key="event_id,preset,event_name">
+          <thead><tr><th>이벤트</th><th class="num">횟수</th><th class="num">사용자</th><th class="num">페이지뷰 대비</th></tr></thead>
+          <tbody data-draw="actions"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="ev-card" id="ev-checks">
+    <div class="ev-card-head"><h2>점검·개선할 점</h2><button class="ev-mini" type="button" data-copy="tbl-checks">표 복사</button></div>
+    <div class="ev-tablewrap">
+      <table id="tbl-checks" data-source="ev_checks" data-row-key="event_id,no">
+        <thead><tr><th>구분</th><th>내용</th><th>해야 할 일</th></tr></thead>
+        <tbody data-draw="checks"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <details class="ev-card" id="ev-basis">
+    <summary>펼쳐보기 · 집계 기준 안내</summary>
+    <ul>
+      <li>유입(세션) = 이벤트 페이지로 처음 들어온 세션이에요 (GA4 랜딩 페이지가 이벤트 경로로 시작). 사이트 안에서 이동해 온 경우는 '사이트 내 유입 경로'의 페이지뷰로 봐요.</li>
+      <li>기간 비교 = 선택한 기간과 같은 길이의 바로 앞 기간이에요. 앞 기간이 모집 시작 전이면 비교하지 않아요.</li>
+      <li>UTM 캠페인 비중 = utm 파라미터가 붙은 링크로 들어온 세션 ÷ 전체 세션이에요. 검색·직접 유입은 빠져요.</li>
+      <li>참여율 = 10초 이상 머물렀거나, 페이지를 2개 이상 봤거나, 전환이 있었던 세션의 비율(GA4 정의)이에요. 평균 참여 = 참여 시간 합계 ÷ 세션이에요.</li>
+      <li>신청 건수(창업지원센터) = 왈라 신청서로 접수된 응답 수예요. 유입 출처는 신청자가 신청서에서 직접 고른 답이에요.</li>
+      <li>직접 유입 = 리퍼러도 UTM도 없는 방문이에요. 메신저 앱 내 브라우저·북마크·주소 직접 입력이 여기로 들어가요. 창업지원센터 EMS 이메일은 왈라 신청서로 바로 연결돼 페이지 유입에는 잡히지 않아요.</li>
+    </ul>
+  </details>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+window.dash = (() => {
+  const src = {}, calcs = {}, draws = {}, cache = {};
+  const get = (id) => {
+    if (src[id]) return { status: 'ok', data: src[id], columns: src[id].columns };
+    const c = calcs[id]; if (!c) return { status: 'loading', data: [] };
+    if (cache[id]) return cache[id];
+    const ins = c.inputs.map((i) => get(i));
+    if (ins.some((x) => x.status !== 'ok')) return { status: 'loading', data: null };
+    return (cache[id] = { status: 'ok', data: c.fn(...ins.map((x) => x.data)) });
+  };
+  const run = (name) => { for (const el of document.querySelectorAll(`[data-draw="${name}"]`)) { try { draws[name](el); } catch (e) { console.error(name, e); } } };
+  return {
+    _load(id, rows) { src[id] = rows; for (const k in cache) delete cache[k]; },
+    _all() { for (const n in draws) run(n); },
+    data: get, calc(id, o) { calcs[id] = o; },
+    draw(name, fn) { if (fn) { draws[name] = fn; run(name); } else if (draws[name]) run(name); },
+    onData(fn) { try { fn(); } catch (e) { console.error(e); } }, params: () => ({}), setParams() {}, resetParams() {}, setLink() {}, refresh() {},
+    colors: ['#2f6fdb', '#e8590c', '#0e9384', '#7a5af8', '#c0392b', '#b7791f'],
+  };
+})();
+</script>
+<script>
+window.EV = window.EV || { id: '', preset: 'all', closed: {} };
+window.evFmt = {
+  n: (v) => (v == null || v === '' || isNaN(+v)) ? '—' : d3.format(',')(Math.round(+v)),
+  pct: (v, d = 1) => (v == null || v === '' || isNaN(+v)) ? '—' : (+v).toFixed(d) + '%',
+  sec: (v) => { if (v == null || isNaN(+v)) return '—'; const s = Math.round(+v); return s >= 60 ? Math.floor(s / 60) + '분 ' + (s % 60) + '초' : s + '초'; },
+};
+window.evDraws = ['evSelect', 'evChips', 'rangeText', 'evMeta', 'kSessions', 'kSessionsSub', 'kSessionsCmp', 'kNew', 'kNewSub', 'kNewCmp', 'kUtm', 'kUtmSub', 'kUtmCmp', 'kEng', 'kEngSub', 'kEngCmp', 'kApps', 'kAppsSub', 'kAppsCmp', 'kApply', 'kApplySub', 'insights', 'checks', 'dailyChart', 'appsSummary', 'appsChart', 'appsSrcChart', 'appsSpaceChart', 'appsSpaceNote', 'appsDaily', 'appsDailyTotal', 'appsDailyNew', 'appsDailyRenew', 'appsSpace', 'appsSource', 'mixBar', 'channelBars', 'channels', 'weekly', 'devices', 'srcLegend', 'srcChart', 'hourLegend', 'hourChart', 'referrers', 'actions'];
+
+/* 기간: 모집 기간 전체 / 최근 7일 / 어제(하루가 끝난 마지막 날) */
+window.evRanges = (ev, dates) => {
+  const day = 86400000, iso = (t) => new Date(t).toISOString().slice(0, 10), t = (s) => Date.parse(s + 'T00:00:00Z');
+  const today = new Date(Date.now() + 9 * 3600000).toISOString().slice(0, 10);
+  const cap = ev.end && ev.end < today ? ev.end : today;
+  const last = cap < ev.start ? ev.start : cap;
+  const lastFull = last >= today ? iso(t(today) - day) : last;
+  const out = {};
+  const mk = (s, e) => { const n = Math.round((t(e) - t(s)) / day) + 1; const ps = iso(t(s) - n * day), pe = iso(t(s) - day); return { start: s, end: e, prev_start: pe < ev.start ? null : (ps < ev.start ? ev.start : ps), prev_end: pe < ev.start ? null : pe }; };
+  out.all = mk(ev.start, last);
+  out['7'] = mk(iso(Math.max(t(ev.start), t(last) - 6 * day)), last);
+  out['1'] = mk(lastFull < ev.start ? ev.start : lastFull, lastFull < ev.start ? ev.start : lastFull);
+  return out;
+};
+const PRESETS = ['all', '7', '1'];
+const sumBy = (rows, k) => rows.reduce((a, r) => a + (+r[k] || 0), 0);
+const inR = (r, s, e) => r.date >= s && r.date <= e;
+
+dash.calc('ev_kpi', {
+  title: '이벤트·기간별 요약',
+  description: '이벤트마다 기간(모집 기간 전체·최근 7일·어제)의 랜딩 세션, 신규 사용자, UTM 캠페인 비중, 참여율, 평균 참여 시간, 신청 건수, 세션 대비 신청률, 신청하기 클릭을 합산하고, 같은 길이의 바로 앞 기간과 비교해요. 앞 기간이 모집 시작 전이면 비교값은 비워요.',
+  inputs: ['ev_events', 'ev_sessions', 'ev_actions', 'ev_apps_daily'],
+  fn: (events, sessions, actions, apps) => {
+    const out = [];
+    for (const ev of events) {
+      const s = sessions.filter((r) => r.event_id === ev.event_id), a = actions.filter((r) => r.event_id === ev.event_id), p = apps.filter((r) => r.event_id === ev.event_id);
+      const dates = [...new Set(s.map((r) => r.date))].sort();
+      const R = evRanges(ev, dates);
+      const agg = (st, en) => {
+        if (!st) return null;
+        const w = s.filter((r) => inR(r, st, en)), se = sumBy(w, 'sessions');
+        const ap = sumBy(p.filter((r) => inR(r, st, en)), 'total');
+        const cl = sumBy(a.filter((r) => inR(r, st, en) && r.event_name === 'apply_click'), 'event_count');
+        return { sessions: se, new_users: sumBy(w, 'new_users'), utm: sumBy(w.filter((r) => r.group === 'UTM 캠페인'), 'sessions'),
+          engaged: sumBy(w, 'engaged_sessions'), sec: sumBy(w, 'engagement_seconds'), apps: ap, clicks: cl };
+      };
+      for (const k of PRESETS) {
+        const r = R[k], c = agg(r.start, r.end), v = agg(r.prev_start, r.prev_end);
+        const rate = (x) => x && x.sessions ? Math.round(x.engaged / x.sessions * 1000) / 10 : null;
+        const share = (x) => x && x.sessions ? Math.round(x.utm / x.sessions * 1000) / 10 : null;
+        const conv = (x) => x && x.sessions ? Math.round(x.apps / x.sessions * 1000) / 10 : null;
+        out.push({ event_id: ev.event_id, preset: k, start: r.start, end: r.end, prev_start: r.prev_start, prev_end: r.prev_end,
+          sessions: c.sessions, new_users: c.new_users, utm_sessions: c.utm, utm_share: share(c), engagement_rate: rate(c), avg_engagement_sec: c.sessions ? Math.round(c.sec / c.sessions) : null,
+          apps: c.apps, apply_rate: conv(c), apply_clicks: c.clicks, click_rate: c.sessions && c.clicks ? Math.round(c.clicks / c.sessions * 1000) / 10 : null,
+          prev_sessions: v ? v.sessions : null, prev_new_users: v ? v.new_users : null, prev_utm_share: share(v), prev_engagement_rate: rate(v), prev_apps: v ? v.apps : null });
+      }
+    }
+    return out;
+  },
+});
+
+dash.calc('ev_channels', {
+  title: '유입 경로별 성과',
+  description: '이벤트·기간·유입 경로(소스/매체)마다 세션, 비중, 신규 사용자, 참여율, 평균 참여 시간, 모바일 비중을 계산해요.',
+  inputs: ['ev_events', 'ev_sessions'],
+  fn: (events, sessions) => {
+    const out = [];
+    for (const ev of events) {
+      const s = sessions.filter((r) => r.event_id === ev.event_id); const R = evRanges(ev, [...new Set(s.map((r) => r.date))].sort());
+      for (const k of PRESETS) {
+        const w = s.filter((r) => inR(r, R[k].start, R[k].end)), tot = sumBy(w, 'sessions'), m = new Map();
+        for (const r of w) { const x = m.get(r.channel) || { group: r.group, sm: r.source + ' / ' + r.medium, se: 0, nu: 0, en: 0, sec: 0, mo: 0 }; x.se += +r.sessions; x.nu += +r.new_users; x.en += +r.engaged_sessions; x.sec += +r.engagement_seconds; if (r.device === 'mobile') x.mo += +r.sessions; m.set(r.channel, x); }
+        for (const [channel, x] of m) out.push({ event_id: ev.event_id, preset: k, group: x.group, channel, source_medium: x.sm, sessions: x.se, share: tot ? Math.round(x.se / tot * 1000) / 10 : 0, new_users: x.nu,
+          engagement_rate: x.se ? Math.round(x.en / x.se * 1000) / 10 : 0, avg_engagement_sec: x.se ? Math.round(x.sec / x.se) : 0, mobile_share: x.se ? Math.round(x.mo / x.se * 1000) / 10 : 0 });
+      }
+    }
+    return out.sort((a, b) => b.sessions - a.sessions);
+  },
+});
+
+dash.calc('ev_devices', {
+  title: '기기별 성과',
+  description: '이벤트·기간·기기마다 세션, 비중, 참여율, 평균 참여 시간을 계산해요.',
+  inputs: ['ev_events', 'ev_sessions'],
+  fn: (events, sessions) => {
+    const out = [];
+    for (const ev of events) {
+      const s = sessions.filter((r) => r.event_id === ev.event_id); const R = evRanges(ev, [...new Set(s.map((r) => r.date))].sort());
+      for (const k of PRESETS) {
+        const w = s.filter((r) => inR(r, R[k].start, R[k].end)), tot = sumBy(w, 'sessions'), m = new Map();
+        for (const r of w) { const x = m.get(r.device) || { se: 0, en: 0, sec: 0 }; x.se += +r.sessions; x.en += +r.engaged_sessions; x.sec += +r.engagement_seconds; m.set(r.device, x); }
+        for (const [device, x] of m) out.push({ event_id: ev.event_id, preset: k, device, sessions: x.se, share: tot ? Math.round(x.se / tot * 1000) / 10 : 0, engagement_rate: x.se ? Math.round(x.en / x.se * 1000) / 10 : 0, avg_engagement_sec: x.se ? Math.round(x.sec / x.se) : 0 });
+      }
+    }
+    return out.sort((a, b) => b.sessions - a.sessions);
+  },
+});
+
+dash.calc('ev_weekly', {
+  title: '주간 유입',
+  description: '이벤트마다 월~일 주 단위로 세션, 신규 사용자, 참여율, 평균 참여 시간, 신청 건수, 신청하기 클릭을 합산해요. 첫 주와 마지막 주는 모집 기간 안의 날만 세요.',
+  inputs: ['ev_events', 'ev_sessions', 'ev_actions', 'ev_apps_daily'],
+  fn: (events, sessions, actions, apps) => {
+    const day = 86400000, iso = (t) => new Date(t).toISOString().slice(0, 10);
+    const wk = (d) => { const t = Date.parse(d + 'T00:00:00Z'); const dow = (new Date(t).getUTCDay() + 6) % 7; return iso(t - dow * day); };
+    const out = [];
+    for (const ev of events) {
+      const m = new Map(); const get = (w) => { if (!m.has(w)) m.set(w, { se: 0, nu: 0, en: 0, sec: 0, ap: 0, cl: 0, first: null, last: null }); return m.get(w); };
+      const note = (x, d) => { if (!x.first || d < x.first) x.first = d; if (!x.last || d > x.last) x.last = d; };
+      for (const r of sessions.filter((r) => r.event_id === ev.event_id && r.date >= ev.start)) { const x = get(wk(r.date)); x.se += +r.sessions; x.nu += +r.new_users; x.en += +r.engaged_sessions; x.sec += +r.engagement_seconds; note(x, r.date); }
+      for (const r of apps.filter((r) => r.event_id === ev.event_id && r.date >= ev.start)) { const x = get(wk(r.date)); x.ap += +r.total; note(x, r.date); }
+      for (const r of actions.filter((r) => r.event_id === ev.event_id && r.event_name === 'apply_click' && r.date >= ev.start)) { const x = get(wk(r.date)); x.cl += +r.event_count; }
+      for (const [w, x] of m) {
+        const e = iso(Date.parse(w + 'T00:00:00Z') + 6 * day);
+        const s = w < ev.start ? ev.start : w;
+        out.push({ event_id: ev.event_id, week: w, label: `${+s.slice(5, 7)}/${+s.slice(8)}~${+e.slice(5, 7)}/${+e.slice(8)}`, sessions: x.se, new_users: x.nu,
+          engagement_rate: x.se ? Math.round(x.en / x.se * 1000) / 10 : null, avg_engagement_sec: x.se ? Math.round(x.sec / x.se) : null, apps: x.ap, apply_clicks: x.cl });
+      }
+    }
+    return out.sort((a, b) => a.week < b.week ? -1 : 1);
+  },
+});
+
+dash.calc('ev_refs', {
+  title: '사이트 내 유입 경로',
+  description: '이벤트·기간마다 이벤트 페이지 페이지뷰를 직전 페이지(리퍼러 도메인)별로 합산해요.',
+  inputs: ['ev_events', 'ev_referrers', 'ev_sessions'],
+  fn: (events, refs, sessions) => {
+    const out = [];
+    for (const ev of events) {
+      const R = evRanges(ev, [...new Set(sessions.filter((r) => r.event_id === ev.event_id).map((r) => r.date))].sort());
+      for (const k of PRESETS) {
+        const m = new Map();
+        for (const r of refs.filter((r) => r.event_id === ev.event_id && inR(r, R[k].start, R[k].end))) { const x = m.get(r.referrer) || { g: r.ref_group, pv: 0, u: 0 }; x.pv += +r.pageviews; x.u += +r.users; m.set(r.referrer, x); }
+        for (const [referrer, x] of m) out.push({ event_id: ev.event_id, preset: k, referrer, ref_group: x.g, pageviews: x.pv, users: x.u });
+      }
+    }
+    return out.sort((a, b) => b.pageviews - a.pageviews);
+  },
+});
+
+dash.calc('ev_action_totals', {
+  title: '페이지 안 행동 합계',
+  description: '이벤트·기간마다 이벤트 페이지에서 일어난 GA4 이벤트를 이름별로 합산하고 페이지뷰 대비 비율을 계산해요. 사용자는 날짜별 값을 더한 값이에요.',
+  inputs: ['ev_events', 'ev_actions', 'ev_sessions'],
+  fn: (events, actions, sessions) => {
+    const out = [];
+    for (const ev of events) {
+      const R = evRanges(ev, [...new Set(sessions.filter((r) => r.event_id === ev.event_id).map((r) => r.date))].sort());
+      for (const k of PRESETS) {
+        const w = actions.filter((r) => r.event_id === ev.event_id && inR(r, R[k].start, R[k].end)), m = new Map();
+        for (const r of w) { const x = m.get(r.event_name) || { c: 0, u: 0 }; x.c += +r.event_count; x.u += +r.users; m.set(r.event_name, x); }
+        const pv = (m.get('page_view') || { c: 0 }).c;
+        for (const [event_name, x] of m) out.push({ event_id: ev.event_id, preset: k, event_name, event_count: x.c, users: x.u, per_pageview: pv ? Math.round(x.c / pv * 1000) / 10 : null });
+      }
+    }
+    return out.sort((a, b) => b.event_count - a.event_count);
+  },
+});
+
+dash.calc('ev_apps_compare', {
+  title: '자가응답 유입 출처와 GA4 채널 비교',
+  description: '신청자가 고른 유입 출처별 신청 건수(이메일 관련 출처는 하나로 합침) 옆에, 같은 출처로 보이는 GA4 채널(이메일→없음, 가비아 메인 배너→가비아 메인·GNB 배너, 카카오톡→카카오 채널 메시지, 이셀러스 서비스→이셀러스 메인 배너)의 모집 기간 랜딩 세션과 세션 대비 신청 비율을 붙여요.',
+  inputs: ['ev_apps_source', 'ev_sessions', 'ev_events'],
+  fn: (src, sessions, events) => {
+    const MAP = { '가비아 메인 배너': ['가비아 메인 배너', '가비아 GNB 배너'], '카카오톡': ['카카오 채널 메시지'], '이셀러스 서비스': ['이셀러스 메인 배너', '이셀러스 상단 배너'] };
+    const NOTE = { '이메일 (EMS·광고 이메일)': 'EMS + 네이버 광고 이메일 · 왈라 신청서로 바로 연결 (이벤트 페이지 미경유)', '전자신문': '보도 · UTM 없음', '가비아 회원·서비스 이용': '특정 링크 없음' };
+    const merged = new Map();
+    for (const r of src) { const name = /이메일|EMS/i.test(r.source) ? '이메일 (EMS·광고 이메일)' : r.source; const k = r.event_id + '\u0001' + name; const x = merged.get(k) || { event_id: r.event_id, source: name, apps: 0 }; x.apps += +r.apps; merged.set(k, x); }
+    return [...merged.values()].map((r) => {
+      const ev = events.find((e) => e.event_id === r.event_id) || { start: '0000' };
+      const chs = MAP[r.source];
+      const se = chs ? sumBy(sessions.filter((x) => x.event_id === r.event_id && x.date >= ev.start && chs.includes(x.channel)), 'sessions') : null;
+      return { event_id: r.event_id, source: r.source, apps: +r.apps, ga4_sessions: se, apps_per_session: se ? Math.round(r.apps / se * 1000) / 10 : null, note: NOTE[r.source] || (chs ? chs.join(' · ') : '') };
+    }).sort((a, b) => b.apps - a.apps);
+  },
+});
+
+dash.calc('ev_insights', {
+  title: '인사이트 문장',
+  description: '모집 시작 이후 전체 기간 수치로 요약 문장을 만들어요: 유입·신청 합계, 신청 1위 출처와 GA4에서의 모습, 카카오 유입 대비 신청, 가장 신청이 많았던 날, 신청하기 클릭 측정 상태.',
+  inputs: ['ev_kpi', 'ev_apps_compare', 'ev_channels', 'ev_apps_daily', 'ev_events', 'ev_sessions'],
+  fn: (kpi, cmp, channels, apps, events, sessions) => {
+    const out = [], f = d3.format(',');
+    for (const k of kpi.filter((r) => r.preset === 'all')) {
+      const id = k.event_id, lines = [], ev = events.find((e) => e.event_id === id) || {};
+      if (ev.has_apps !== '1') {
+        const ch = channels.filter((r) => r.event_id === id && r.preset === 'all').sort((a, b) => b.sessions - a.sessions);
+        const tot = d3.sum(ch, (r) => r.sessions) || 0;
+        lines.push(`${k.start} 이후 이 페이지로 들어온 랜딩 유입은 ${f(k.sessions)}세션, 참여율은 ${k.engagement_rate ?? '—'}%예요.`);
+        const utm = ch.filter((r) => r.group === 'UTM 캠페인');
+        if (utm[0]) lines.push(`캠페인 링크 중에서는 '${utm[0].channel}'이 ${f(utm[0].sessions)}세션(${tot ? Math.round(utm[0].sessions / tot * 100) : 0}%)으로 가장 많이 데려왔어요.` + (utm[1] ? ` 다음은 '${utm[1].channel}' ${f(utm[1].sessions)}세션이에요.` : ''));
+        const dir = ch.find((r) => r.group === '직접');
+        if (dir && tot && dir.sessions / tot >= 0.3) lines.push(`직접 유입이 ${Math.round(dir.sessions / tot * 100)}%예요. UTM이 없는 링크(메일·메신저·사내 공유)로 들어온 방문이 섞여 있어요.`);
+        const eng = ch.filter((r) => r.sessions >= 10).sort((a, b) => b.engagement_rate - a.engagement_rate)[0];
+        if (eng) lines.push(`10세션 이상 들어온 경로 중 참여율이 가장 높은 곳은 '${eng.channel}'(${eng.engagement_rate}%)이에요.`);
+        const byDay = d3.rollups(sessions.filter((r) => r.event_id === id && r.date >= k.start), (v) => d3.sum(v, (r) => +r.sessions), (r) => r.date).sort((a, b) => b[1] - a[1]);
+        if (byDay[0]) lines.push(`유입이 가장 많았던 날은 ${byDay[0][0]}(${f(byDay[0][1])}세션)이에요.`);
+        lines.forEach((text, i) => out.push({ event_id: id, no: i + 1, text }));
+        continue;
+      }
+      lines.push(`모집 시작(${k.start}) 이후 이벤트 페이지 랜딩 유입은 ${f(k.sessions)}세션, 신청은 ${f(k.apps)}건이에요.`);
+      const c = cmp.filter((r) => r.event_id === id).sort((a, b) => b.apps - a.apps);
+      const total = d3.sum(c, (r) => r.apps);
+      if (c[0]) lines.push(`신청자가 고른 유입 출처 1위는 '${c[0].source}' ${f(c[0].apps)}건(${total ? Math.round(c[0].apps / total * 100) : 0}%)이에요.${/이메일/.test(c[0].source) ? ' 이메일은 이벤트 페이지를 거치지 않고 왈라 신청서로 바로 연결돼서, 이벤트 페이지 유입 숫자와 별개로 신청을 만들고 있어요.' : ''}`);
+      const ch = channels.filter((r) => r.event_id === id && r.preset === 'all').sort((a, b) => b.sessions - a.sessions);
+      const kakao = ch.find((r) => /카카오/.test(r.channel)), kApps = c.find((r) => /카카오/.test(r.source));
+      if (kakao) lines.push(`카카오 채널 메시지는 ${f(kakao.sessions)}세션으로 UTM 채널 중 가장 많이 데려왔지만, 카카오톡을 출처로 고른 신청은 ${kApps ? f(kApps.apps) : 0}건이에요.`);
+      const ap = apps.filter((r) => r.event_id === id && r.date >= k.start).sort((a, b) => b.total - a.total);
+      if (ap[0]) lines.push(`신청이 가장 많았던 날은 ${ap[0].date}(${f(ap[0].total)}건)이에요.`);
+      lines.forEach((text, i) => out.push({ event_id: id, no: i + 1, text }));
+    }
+    return out;
+  },
+});
+
+/* 컨트롤: 듣기만 */
+const evTheme = (dark) => {
+  for (const r of document.querySelectorAll('#ev-root')) r.classList.toggle('ev-dark', dark);
+  for (const b of document.querySelectorAll('[data-theme-opt]')) b.setAttribute('aria-pressed', String((b.dataset.themeOpt === 'dark') === dark));
+  try { localStorage.setItem('ev-theme', dark ? 'dark' : 'light'); } catch (e) {}
+};
+let evDark = false; try { evDark = localStorage.getItem('ev-theme') === 'dark'; } catch (e) {}
+evTheme(evDark);
+for (const b of document.querySelectorAll('[data-theme-opt]')) b.addEventListener('click', () => { evDark = b.dataset.themeOpt === 'dark'; evTheme(evDark); for (const n of evDraws) dash.draw(n); });
+const evSync = () => { for (const b of document.querySelectorAll('#ev-presets [data-preset]')) b.setAttribute('aria-pressed', String(b.dataset.preset === EV.preset)); };
+for (const b of document.querySelectorAll('#ev-presets [data-preset]')) b.addEventListener('click', () => { EV.preset = b.dataset.preset; evSync(); for (const n of evDraws) dash.draw(n); });
+for (const s of document.querySelectorAll('#ev-select')) s.addEventListener('change', () => { EV.id = s.value; EV.closed = {}; for (const n of evDraws) dash.draw(n); });
+for (const b of document.querySelectorAll('[data-copy]')) b.addEventListener('click', () => {
+  const t = document.getElementById(b.dataset.copy); if (!t) return;
+  const text = [...t.querySelectorAll('tr')].filter((tr) => !tr.hidden).map((tr) => [...tr.children].map((c) => c.textContent.trim().replace(/\s+/g, ' ')).join('\t')).join('\n');
+  const done = () => { b.classList.add('ev-done'); setTimeout(() => b.classList.remove('ev-done'), 1500); };
+  const fallback = () => { const r = document.createRange(); r.selectNodeContents(t); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); };
+  try { navigator.clipboard.writeText(text).then(done, fallback); } catch (e) { fallback(); }
+});
+for (const b of document.querySelectorAll('[data-copyimg]')) b.addEventListener('click', async () => {
+  const box = document.getElementById(b.dataset.copyimg); const svg = box && box.querySelector('svg'); if (!svg) return;
+  try {
+    const clone = svg.cloneNode(true), src = [...svg.querySelectorAll('*')], dst = [...clone.querySelectorAll('*')];
+    src.forEach((el, i) => { const cs = getComputedStyle(el); dst[i].setAttribute('style', `fill:${cs.fill};stroke:${cs.stroke};stroke-width:${cs.strokeWidth};font-size:${cs.fontSize};font-family:${cs.fontFamily};opacity:${cs.opacity}`); });
+    const vb = svg.viewBox.baseVal, scale = 2;
+    clone.setAttribute('width', vb.width); clone.setAttribute('height', vb.height); clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    const url = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(new XMLSerializer().serializeToString(clone));
+    const img = new Image(); await new Promise((ok, no) => { img.onload = ok; img.onerror = no; img.src = url; });
+    const cv = document.createElement('canvas'); cv.width = vb.width * scale; cv.height = vb.height * scale;
+    const ctx = cv.getContext('2d'); ctx.fillStyle = getComputedStyle(box).backgroundColor && getComputedStyle(box).backgroundColor !== 'rgba(0, 0, 0, 0)' ? getComputedStyle(box).backgroundColor : getComputedStyle(document.getElementById('ev-root')).getPropertyValue('--color-panel') || '#fff'; ctx.fillRect(0, 0, cv.width, cv.height); ctx.scale(scale, scale); ctx.drawImage(img, 0, 0);
+    const blob = await new Promise((ok) => cv.toBlob(ok, 'image/png'));
+    await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
+    b.classList.add('ev-done'); setTimeout(() => b.classList.remove('ev-done'), 1500);
+  } catch (e) { b.setAttribute('aria-label', '이 화면에서는 이미지 복사가 안 돼요'); b.classList.remove('ev-done'); }
+});
+for (const t of document.querySelectorAll('#tbl-channels')) t.addEventListener('click', (e) => {
+  const tr = e.target.closest('tr.ev-grp'); if (!tr) return;
+  const g = tr.dataset.group; EV.closed[g] = !EV.closed[g]; tr.setAttribute('aria-expanded', String(!EV.closed[g]));
+  for (const c of t.querySelectorAll('tr.ev-child')) if (c.dataset.group === g) c.hidden = !!EV.closed[g];
+});
+</script>
+
+<script>
+const F = window.evFmt, nf = d3.format(',');
+const enc = (v) => encodeURIComponent(v);
+const GROUPS = ['UTM 캠페인', '검색', '기타 추천', '직접'];
+const GCOLOR = { 'UTM 캠페인': 'var(--ev-accent)', '검색': 'var(--ev-search)', '기타 추천': 'var(--ev-other)', '직접': 'var(--ev-direct)' };
+const events = () => { const d = dash.data('ev_events'); return d.status === 'ok' ? d.data : []; };
+const curId = () => { const ev = events(); if (!ev.length) return ''; return ev.some((e) => e.event_id === EV.id) ? EV.id : (ev.find((e) => e.event_id === 'startup') || ev[0]).event_id; };
+const curEvent = () => events().find((e) => e.event_id === curId());
+const rowsOf = (id) => { const d = dash.data(id); const c = curId(); return d.status === 'ok' ? (d.data || []).filter((r) => r.event_id === c) : []; };
+const presetRows = (id) => rowsOf(id).filter((r) => r.preset === EV.preset);
+const kpi = () => presetRows('ev_kpi')[0];
+const markK = (el, field) => { el.setAttribute('data-source', 'ev_kpi'); el.setAttribute('data-field', field); el.setAttribute('data-where', 'event_id=' + enc(curId()) + '&preset=' + enc(EV.preset)); };
+const unmark = (el) => { for (const a of ['data-source', 'data-field', 'data-where']) el.removeAttribute(a); };
+const rowsTo = (tbody, rows, cells, key) => {
+  tbody.replaceChildren(...rows.map((r) => {
+    const tr = document.createElement('tr'); if (key) tr.setAttribute('data-key', key(r));
+    for (const [v, cls] of cells(r)) { const td = document.createElement('td'); if (cls) td.className = cls; if (v instanceof Node) td.append(v); else td.textContent = v; tr.append(td); }
+    return tr;
+  }));
+};
+const tipBox = () => { const t = document.createElement('div'); t.className = 'ev-tip'; t.hidden = true; return t; };
+const placeTip = (el, tip, xPx) => { const bw = el.clientWidth; tip.hidden = false; tip.style.left = Math.min(bw - tip.offsetWidth - 4, Math.max(4, xPx - tip.offsetWidth / 2)) + 'px'; tip.style.top = '0px'; };
+const md = (d) => (+d.slice(5, 7)) + '/' + (+d.slice(8, 10));
+const cmpSpan = (cur, prev, mode) => {
+  const s = document.createElement('span');
+  if (prev == null || cur == null) { s.style.display = 'none'; return s; }
+  let t, v;
+  if (mode === 'pp') { v = cur - prev; t = (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(v).toFixed(1) + '%p'; }
+  else if (!prev) { s.textContent = cur ? '직전 기간 0 → 신규' : '직전 기간과 같음'; s.className = cur ? 'ev-up' : 'ev-flat'; return s; }
+  else { v = (cur - prev) / prev * 100; t = (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(v).toFixed(1) + '%'; }
+  s.textContent = '직전 기간 대비 ' + t; s.className = Math.abs(v) < 1e-9 ? 'ev-flat' : v > 0 ? 'ev-up' : 'ev-down'; return s;
+};
+
+dash.draw('evSelect', (sel) => {
+  const ev = events(), c = curId();
+  sel.replaceChildren(...ev.map((e) => new Option(e.name, e.event_id)));
+  sel.value = c;
+});
+dash.draw('evChips', (el) => {
+  const ev = events(), cur = curEvent(); const cats = [...new Set(ev.map((e) => e.category))];
+  el.replaceChildren(...cats.map((c) => { const s = document.createElement('span'); s.className = 'ev-chip'; s.textContent = c; s.setAttribute('aria-current', String(!!cur && cur.category === c)); return s; }));
+});
+dash.draw('rangeText', (el) => { const k = kpi(); el.textContent = k ? `${k.start} ~ ${k.end}` + (k.prev_start ? ` · 비교 ${k.prev_start} ~ ${k.prev_end}` : '') : '—'; });
+dash.draw('evMeta', (el) => {
+  const e = curEvent(); if (!e) { el.replaceChildren(); return; }
+  const item = (label, node) => { const s = document.createElement('span'); const b = document.createElement('b'); b.textContent = label + ' '; s.append(b, node); return s; };
+  const a = document.createElement('a'); a.href = 'https://' + e.host + e.path; a.target = '_blank'; a.rel = 'noopener'; a.textContent = e.host + e.path;
+  const per = document.createElement('span'); per.textContent = e.start + ' ~ ' + e.end;
+  const today = new Date(Date.now() + 9 * 3600000).toISOString().slice(0, 10);
+  const ongoing = e.ongoing === '1';
+  const days = Math.round((Date.parse(today) - Date.parse(e.start)) / 86400000) + 1;
+  if (ongoing) per.textContent = e.start + ' ~ 진행 중';
+  const left = Math.round((Date.parse(e.end) - Date.parse(today)) / 86400000);
+  const dd = document.createElement('span'); dd.className = 'ev-dday'; dd.textContent = ongoing ? days + '일째' : left > 0 ? '마감 D-' + left : left === 0 ? '오늘 마감' : '종료'; per.append(dd);
+  const cp = document.createElement('code'); cp.textContent = e.campaign;
+  const asof = document.createElement('span'); asof.textContent = e.data_as_of || '—';
+  const items = [item('페이지', a), item(e.period_label || '기간', per), item('UTM 캠페인', cp)];
+  if (e.apply_url) { const ap = document.createElement('a'); ap.href = e.apply_url; ap.target = '_blank'; ap.rel = 'noopener'; ap.textContent = e.cta_label || '신청'; items.push(item('신청', ap)); }
+  items.push(item('데이터 기준', asof));
+  el.replaceChildren(...items);
+  const has = e.has_apps === '1';
+  for (const id of ['ev-apps', 'kpi-apps']) { const n = document.getElementById(id); if (n) n.style.display = has ? '' : 'none'; }
+});
+
+const kDraw = (name, field, fmt) => dash.draw(name, (el) => { const k = kpi(); if (!k || k[field] == null) { el.textContent = '—'; unmark(el); return; } el.textContent = fmt(k[field]); markK(el, field); });
+kDraw('kSessions', 'sessions', F.n); kDraw('kNew', 'new_users', F.n); kDraw('kUtm', 'utm_share', (v) => F.pct(v)); kDraw('kEng', 'engagement_rate', (v) => F.pct(v)); const appsOk = () => dash.data('ev_apps_daily').status === 'ok';
+const appsMsg = () => { const st = dash.data('ev_apps_daily').status; return st === 'loading' ? '불러오는 중' : st === 'connect' || st === 'declined' ? '시트 연결 필요' : '불러오지 못함'; };
+dash.draw('kApps', (el) => { const k = kpi(); if (!appsOk()) { el.textContent = appsMsg(); unmark(el); return; } if (!k) { el.textContent = '—'; unmark(el); return; } el.textContent = F.n(k.apps); markK(el, 'apps'); });
+dash.draw('kSessionsSub', (el) => { const k = kpi(); const n = k ? Math.round((Date.parse(k.end) - Date.parse(k.start)) / 86400000) + 1 : 0; el.textContent = k ? `${n}일 · 하루 평균 ${F.n(k.sessions / n)}` : '—'; });
+dash.draw('kNewSub', (el) => { const k = kpi(); el.textContent = k && k.sessions ? `세션의 ${F.pct(k.new_users / k.sessions * 100, 0)}가 첫 방문` : '—'; });
+dash.draw('kUtmSub', (el) => { const k = kpi(); el.textContent = k ? `캠페인 링크로 들어온 ${F.n(k.utm_sessions)}세션` : '—'; });
+dash.draw('kEngSub', (el) => { const k = kpi(); el.textContent = k ? `평균 참여 ${F.sec(k.avg_engagement_sec)}` : '—'; });
+dash.draw('kAppsSub', (el) => { el.textContent = '왈라 신청서 응답 · 이메일은 신청서로 바로 연결'; });
+dash.draw('kSessionsCmp', (el) => { const k = kpi(); el.replaceChildren(k ? cmpSpan(k.sessions, k.prev_sessions) : '—'); });
+dash.draw('kNewCmp', (el) => { const k = kpi(); el.replaceChildren(k ? cmpSpan(k.new_users, k.prev_new_users) : '—'); });
+dash.draw('kUtmCmp', (el) => { const k = kpi(); el.replaceChildren(k ? cmpSpan(k.utm_share, k.prev_utm_share, 'pp') : '—'); });
+dash.draw('kEngCmp', (el) => { const k = kpi(); el.replaceChildren(k ? cmpSpan(k.engagement_rate, k.prev_engagement_rate, 'pp') : '—'); });
+dash.draw('kAppsCmp', (el) => { if (!appsOk()) { el.textContent = '신청 검토 시트 기준'; return; } const k = kpi(); el.replaceChildren(k ? cmpSpan(k.apps, k.prev_apps) : '—'); });
+dash.draw('kApply', (el) => { const k = kpi(); if (k && k.apply_clicks) { el.textContent = F.n(k.apply_clicks); markK(el, 'apply_clicks'); } else { el.textContent = '측정 전'; unmark(el); } });
+dash.draw('kApplySub', (el) => { const k = kpi(); el.textContent = k && k.apply_clicks ? `세션 대비 ${F.pct(k.click_rate)}` : 'GTM 게시 후부터 집계'; });
+
+dash.draw('insights', (ul) => {
+  ul.replaceChildren(...rowsOf('ev_insights').map((r) => { const li = document.createElement('li'); li.textContent = r.text; li.setAttribute('data-source', 'ev_insights'); li.setAttribute('data-field', 'text'); li.setAttribute('data-where', 'event_id=' + enc(r.event_id) + '&no=' + r.no); return li; }));
+});
+
+dash.draw('checks', (tb) => {
+  const tone = { '오류': 'bad', '주의': 'warn', '확인': 'warn', '할 일': 'info', '진행 중': 'info', '권장': 'ok', '완료': 'ok', '참고': 'muted' };
+  const cr = curId() === 'startup' ? [] : rowsOf('ev_checks'); const box = tb.closest('section'); if (box) box.style.display = cr.length ? '' : 'none';
+  rowsTo(tb, cr, (r) => {
+    const p = document.createElement('span'); p.className = 'ev-pill'; p.dataset.tone = tone[r.level] || 'muted'; p.textContent = r.level;
+    const it = document.createElement('div'); const b = document.createElement('b'); b.textContent = r.item; const d = document.createElement('span'); d.className = 'sub'; d.textContent = r.detail; it.append(b, d);
+    return [[p], [it, 'wrap'], [r.action, 'wrap']];
+  }, (r) => enc(r.event_id) + ',' + enc(r.no));
+});
+
+dash.draw('dailyChart', (el) => {
+  const e = curEvent(); const rows = rowsOf('ev_sessions').filter((r) => !e || r.date >= e.start); if (!rows.length) { el.replaceChildren(); return; }
+  const apps = rowsOf('ev_apps_daily').filter((r) => !e || r.date >= e.start);
+  const k = kpi();
+  const dates = [...new Set([...rows.map((r) => r.date), ...apps.map((r) => r.date)])].sort();
+  const data = dates.map((d) => { const o = { date: d }; for (const g of GROUPS) o[g] = d3.sum(rows.filter((r) => r.date === d && r.group === g), (r) => +r.sessions); o.total = d3.sum(GROUPS, (g) => o[g]); const a = apps.find((r) => r.date === d); o.apps = a ? +a.total : 0; return o; });
+  const stack = d3.stack().keys(GROUPS)(data);
+  const W = Math.max(280, el.clientWidth), H = 240, m = { t: 18, r: 34, b: 24, l: 34 };
+  const x = d3.scaleBand().domain(dates).range([m.l, W - m.r]).padding(0.3);
+  const bw = Math.min(x.bandwidth(), 56), off = (x.bandwidth() - bw) / 2;
+  const y = d3.scaleLinear().domain([0, d3.max(data, (o) => o.total) || 1]).nice().range([H - m.b, m.t]);
+  const y2 = d3.scaleLinear().domain([0, Math.max(5, d3.max(data, (o) => o.apps) || 0)]).nice().range([H - m.b, m.t]);
+  const svg = d3.create('svg').attr('class', 'ev-chart').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', '일별 랜딩 세션 누적 막대와 신청 건수 선');
+  const ticks = y.ticks(4);
+  svg.append('g').selectAll('line').data(ticks).join('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', (v) => y(v)).attr('y2', (v) => y(v)).style('stroke', 'var(--cds-chart-grid)');
+  svg.append('g').selectAll('text').data(ticks).join('text').text((v) => nf(v)).attr('x', m.l - 6).attr('y', (v) => y(v) + 4).attr('text-anchor', 'end');
+  svg.append('g').selectAll('text').data(y2.ticks(4)).join('text').text((v) => nf(v)).attr('x', W - m.r + 6).attr('y', (v) => y2(v) + 4).style('fill', 'var(--ev-apply)');
+  const inSel = (d) => !k || (d >= k.start && d <= k.end);
+  for (const s of stack) svg.append('g').selectAll('rect').data(s).join('rect').attr('x', (d) => x(d.data.date) + off).attr('width', bw).attr('y', (d) => y(d[1])).attr('height', (d) => Math.max(0, y(d[0]) - y(d[1]))).style('fill', GCOLOR[s.key]).style('opacity', (d) => inSel(d.data.date) ? 1 : 0.3);
+  svg.append('g').selectAll('text').data(data).join('text').text((o) => nf(o.total)).attr('x', (o) => x(o.date) + x.bandwidth() / 2).attr('y', (o) => y(o.total) - 4).attr('text-anchor', 'middle').style('fill', 'var(--color-fg)');
+  const cx = (o) => x(o.date) + x.bandwidth() / 2;
+  svg.append('path').datum(data).attr('d', d3.line().x(cx).y((o) => y2(o.apps))).style('fill', 'none').style('stroke', 'var(--ev-apply)').style('stroke-width', 2);
+  svg.append('g').selectAll('circle').data(data).join('circle').attr('cx', cx).attr('cy', (o) => y2(o.apps)).attr('r', 3.5).style('fill', 'var(--ev-apply)').style('stroke', 'var(--color-panel)').style('stroke-width', 1.5);
+  svg.append('g').selectAll('text').data(data.filter((o) => o.apps)).join('text').text((o) => o.apps + '건').attr('x', (o) => cx(o) + 6).attr('y', (o) => y2(o.apps) - 6).style('fill', 'var(--ev-apply)');
+  const step = Math.ceil(dates.length / Math.max(1, Math.floor((W - m.l - m.r) / 44)));
+  svg.append('g').selectAll('text').data(dates.filter((_, i) => i % step === 0)).join('text').text(md).attr('x', (d) => x(d) + x.bandwidth() / 2).attr('y', H - 7).attr('text-anchor', 'middle');
+  const tip = tipBox();
+  svg.append('rect').attr('x', m.l).attr('y', m.t).attr('width', W - m.l - m.r).attr('height', H - m.t - m.b).style('fill', 'transparent')
+    .on('mousemove', (ev) => { const [px] = d3.pointer(ev); const o = data[Math.max(0, Math.min(data.length - 1, Math.floor((px - m.l) / x.step())))];
+      tip.textContent = `${o.date} · 세션 ${nf(o.total)} (` + GROUPS.filter((g) => o[g]).map((g) => g + ' ' + nf(o[g])).join(', ') + `) · 신청 ${o.apps}건`; placeTip(el, tip, (cx(o) / W) * el.clientWidth); })
+    .on('mouseleave', () => { tip.hidden = true; });
+  el.replaceChildren(svg.node(), tip);
+});
+
+
+dash.draw('appsSummary', (el) => {
+  const e = curEvent(); const d = dash.data('ev_apps_daily'); if (!e || d.status !== 'ok') { el.textContent = d.status === 'loading' ? '신청 시트를 불러오는 중이에요.' : '신청 데이터를 불러오지 못했어요.'; return; }
+  const rows = rowsOf('ev_apps_daily').filter((r) => r.date >= e.start);
+  const tot = d3.sum(rows, (r) => +r.total), nw = d3.sum(rows, (r) => +r.new), rn = d3.sum(rows, (r) => +r.renew);
+  const today = new Date(Date.now() + 9 * 3600000).toISOString().slice(0, 10);
+  const days = Math.max(1, Math.round((Date.parse(today < e.end ? today : e.end) - Date.parse(e.start)) / 86400000) + 1);
+  const left = Math.round((Date.parse(e.end) - Date.parse(today)) / 86400000);
+  const b = (t) => { const x = document.createElement('b'); x.textContent = t; return x; };
+  el.replaceChildren('누적 접수 ', b(nf(tot) + '건'), ` (신규 ${nf(nw)} · 재신청 ${nf(rn)}) · 하루 평균 `, b((tot / days).toFixed(1) + '건'), left >= 0 ? ` · 마감까지 ${left}일` : ' · 모집 종료');
+});
+dash.draw('appsChart', (el) => {
+  const e = curEvent(); const rows = rowsOf('ev_apps_daily').filter((r) => e && r.date >= e.start); if (!e || !rows.length) { el.replaceChildren(); return; }
+  const day = 86400000, iso = (t) => new Date(t).toISOString().slice(0, 10);
+  const dates = []; for (let t = Date.parse(e.start + 'T00:00:00Z'); t <= Date.parse(e.end + 'T00:00:00Z'); t += day) dates.push(iso(t));
+  const by = new Map(rows.map((r) => [r.date, r])); const lastD = rows.map((r) => r.date).sort().pop();
+  let cum = 0; const data = dates.map((d) => { const r = by.get(d); const o = { date: d, new: r ? +r.new : 0, renew: r ? +r.renew : 0, has: d <= lastD }; cum += o.new + o.renew; o.cum = cum; return o; });
+  const W = Math.max(280, el.clientWidth), H = 240, m = { t: 18, r: 34, b: 24, l: 30 };
+  const x = d3.scaleBand().domain(dates).range([m.l, W - m.r]).padding(0.25);
+  const y = d3.scaleLinear().domain([0, Math.max(5, d3.max(data, (o) => o.new + o.renew))]).nice().range([H - m.b, m.t]);
+  const y2 = d3.scaleLinear().domain([0, Math.max(10, cum)]).nice().range([H - m.b, m.t]);
+  const svg = d3.create('svg').attr('class', 'ev-chart').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', '모집 기간 일별 신청(신규·재신청) 막대와 누적 접수 선');
+  const ticks = y.ticks(4);
+  svg.append('g').selectAll('line').data(ticks).join('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', (v) => y(v)).attr('y2', (v) => y(v)).style('stroke', 'var(--cds-chart-grid)');
+  svg.append('g').selectAll('text').data(ticks).join('text').text((v) => nf(v)).attr('x', m.l - 6).attr('y', (v) => y(v) + 4).attr('text-anchor', 'end');
+  svg.append('g').selectAll('text').data(y2.ticks(4)).join('text').text((v) => nf(v)).attr('x', W - m.r + 6).attr('y', (v) => y2(v) + 4).style('fill', 'var(--ev-accent)');
+  svg.append('g').selectAll('rect').data(data).join('rect').attr('x', (o) => x(o.date)).attr('width', x.bandwidth()).attr('y', (o) => y(o.new)).attr('height', (o) => y(0) - y(o.new)).style('fill', 'var(--ev-apply)');
+  svg.append('g').selectAll('rect').data(data).join('rect').attr('x', (o) => x(o.date)).attr('width', x.bandwidth()).attr('y', (o) => y(o.new + o.renew)).attr('height', (o) => y(o.new) - y(o.new + o.renew)).style('fill', 'var(--ev-apply-soft)');
+  svg.append('g').selectAll('rect').data(data.filter((o) => !o.has)).join('rect').attr('x', (o) => x(o.date)).attr('width', x.bandwidth()).attr('y', y(0) - 2).attr('height', 2).style('fill', 'var(--color-border-line)');
+  svg.append('g').selectAll('text').data(data.filter((o) => o.new + o.renew)).join('text').text((o) => o.new + o.renew).attr('x', (o) => x(o.date) + x.bandwidth() / 2).attr('y', (o) => y(o.new + o.renew) - 4).attr('text-anchor', 'middle').style('fill', 'var(--color-fg)');
+  const past = data.filter((o) => o.has); const cx = (o) => x(o.date) + x.bandwidth() / 2;
+  svg.append('path').datum(past).attr('d', d3.line().x(cx).y((o) => y2(o.cum))).style('fill', 'none').style('stroke', 'var(--ev-accent)').style('stroke-width', 2);
+  svg.append('g').selectAll('circle').data(past).join('circle').attr('cx', cx).attr('cy', (o) => y2(o.cum)).attr('r', 3).style('fill', 'var(--ev-accent)');
+  const lp = past[past.length - 1]; if (lp) svg.append('text').text('누적 ' + lp.cum + '건').attr('x', Math.min(W - m.r - 4, cx(lp) + 6)).attr('y', y2(lp.cum) - 8).attr('text-anchor', cx(lp) > W - 90 ? 'end' : 'start').style('fill', 'var(--ev-accent)').style('font-weight', 600);
+  const step = Math.ceil(dates.length / Math.max(1, Math.floor((W - m.l - m.r) / 40)));
+  svg.append('g').selectAll('text').data(dates.filter((_, i) => i % step === 0 || i === dates.length - 1)).join('text').text(md).attr('x', (d) => x(d) + x.bandwidth() / 2).attr('y', H - 7).attr('text-anchor', 'middle');
+  const tip = tipBox();
+  svg.append('rect').attr('x', m.l).attr('y', m.t).attr('width', W - m.l - m.r).attr('height', H - m.t - m.b).style('fill', 'transparent')
+    .on('mousemove', (ev) => { const [px] = d3.pointer(ev); const o = data[Math.max(0, Math.min(data.length - 1, Math.floor((px - m.l) / x.step())))];
+      tip.textContent = o.has ? `${o.date} · 신청 ${o.new + o.renew}건 (신규 ${o.new} · 재신청 ${o.renew}) · 누적 ${o.cum}건` : `${o.date} · 아직 집계 전`; placeTip(el, tip, (cx(o) / W) * el.clientWidth); })
+    .on('mouseleave', () => { tip.hidden = true; });
+  el.replaceChildren(svg.node(), tip);
+});
+const hbars = (el, rows, label, color, aria, unit = '건') => {
+  if (!rows.length) { el.replaceChildren(); return; }
+  const tot = d3.sum(rows, (r) => r.v); const W = Math.max(260, el.clientWidth), rowH = 26, H = rows.length * rowH + 8;
+  const svg = d3.create('svg').attr('class', 'ev-chart').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', aria);
+  const g = svg.append('g'); const t = g.append('text').text(rows.reduce((a, r) => r[label].length > a.length ? r[label] : a, '')).style('font-size', '12px');
+  el.replaceChildren(svg.node()); const lw = Math.min(W * 0.45, (t.node().getComputedTextLength() || 120) + 12); t.remove();
+  const x = d3.scaleLinear().domain([0, d3.max(rows, (r) => r.v) || 1]).range([0, W - lw - 115]);
+  const row = g.selectAll('g').data(rows).join('g').attr('transform', (r, i) => `translate(0,${i * rowH + 4})`);
+  row.append('text').text((r) => r[label]).attr('x', lw - 8).attr('y', 14).attr('text-anchor', 'end').style('fill', 'var(--color-fg)').style('font-size', '12px');
+  row.append('rect').attr('x', lw).attr('y', 3).attr('height', 15).attr('rx', 3).attr('width', (r) => Math.max(2, x(r.v))).style('fill', (r, i) => typeof color === 'function' ? color(r, i) : color);
+  row.append('text').text((r) => `${nf(r.v)}${unit} · ${tot ? Math.round(r.v / tot * 1000) / 10 : 0}%`).attr('x', (r) => lw + Math.max(2, x(r.v)) + 6).attr('y', 14);
+};
+dash.draw('appsSrcChart', (el) => { hbars(el, rowsOf('ev_apps_compare').map((r) => ({ name: r.source, v: +r.apps })).sort((a, b) => b.v - a.v), 'name', (r, i) => i === 0 ? 'var(--ev-apply)' : 'var(--ev-apply-soft)', '신청자가 고른 유입 출처별 신청 건수 가로 막대'); });
+const ROOMS = { '1인실': 11, '2인실': 1, '3인실': 1, '4인실': 1 };
+dash.draw('appsSpaceChart', (el) => { hbars(el, rowsOf('ev_apps_space').map((r) => ({ name: ROOMS[r.space] ? `${r.space} (${ROOMS[r.space]}실)` : r.space, v: +r.total })), 'name', 'var(--ev-apply)', '희망 공간별 신청 건수 가로 막대'); });
+dash.draw('appsSpaceNote', (el) => {
+  const parts = rowsOf('ev_apps_space').filter((r) => ROOMS[r.space]).map((r) => `${r.space} ${(Math.round(+r.total / ROOMS[r.space] * 10) / 10).toLocaleString('ko-KR')} : 1`);
+  el.textContent = parts.length ? '실당 경쟁률 · ' + parts.join(' · ') : '';
+});
+
+
+dash.draw('mixBar', (el) => {
+  const rows = presetRows('ev_channels'); const tot = d3.sum(rows, (r) => r.sessions); if (!tot) { el.replaceChildren(); return; }
+  el.replaceChildren(...GROUPS.map((g) => { const v = d3.sum(rows.filter((r) => r.group === g), (r) => r.sessions); if (!v) return null; const d = document.createElement('div'); const pc = v / tot * 100; d.style.flex = String(v); d.style.background = GCOLOR[g]; d.textContent = pc >= 8 ? `${g} ${pc.toFixed(1)}%` : pc >= 4 ? `${pc.toFixed(0)}%` : ''; d.setAttribute('aria-label', `${g} ${nf(v)}세션 ${pc.toFixed(1)}%`); return d; }).filter(Boolean));
+});
+dash.draw('channelBars', (el) => {
+  const rows = presetRows('ev_channels').slice().sort((a, b) => b.sessions - a.sessions);
+  const top = rows.slice(0, 8).map((r) => ({ name: r.channel, v: r.sessions, g: r.group }));
+  const rest = d3.sum(rows.slice(8), (r) => r.sessions); if (rest) top.push({ name: `그 외 ${rows.length - 8}개`, v: rest, g: '' });
+  hbars(el, top, 'name', (r) => GCOLOR[r.g] || 'var(--color-border-line)', '유입 경로별 세션 비중 가로 막대', '세션');
+});
+
+const evStart = () => (curEvent() || { start: '0000' }).start;
+dash.draw('appsDaily', (tb) => {
+  rowsTo(tb, rowsOf('ev_apps_daily').filter((r) => r.date >= evStart()).slice().reverse(), (r) => [[r.date], [F.n(r.total), 'num'], [F.n(r.new), 'num'], [F.n(r.renew), 'num']], (r) => enc(r.date));
+});
+const appsSum = (k) => d3.sum(rowsOf('ev_apps_daily').filter((r) => r.date >= evStart()), (r) => +r[k]);
+dash.draw('appsDailyTotal', (el) => { if (!appsOk()) { el.textContent = '—'; return; } el.textContent = F.n(appsSum('total')); });
+dash.draw('appsDailyNew', (el) => { if (!appsOk()) { el.textContent = '—'; return; } el.textContent = F.n(appsSum('new')); });
+dash.draw('appsDailyRenew', (el) => { if (!appsOk()) { el.textContent = '—'; return; } el.textContent = F.n(appsSum('renew')); });
+dash.draw('appsSpace', (tb) => {
+  const rows = rowsOf('ev_apps_space'); const max = d3.max(rows, (r) => +r.total) || 1;
+  rowsTo(tb, rows, (r) => { const bar = document.createElement('div'); bar.className = 'ev-barcell'; const i = document.createElement('span'); i.className = 'ev-bar ev-apply'; i.style.width = Math.max(2, r.total / max * 50) + 'px'; const v = document.createElement('span'); v.textContent = F.n(r.total); bar.append(i, v); return [[r.space], [bar, 'num'], [F.n(r.new), 'num'], [F.n(r.renew), 'num']]; }, (r) => enc(r.space));
+});
+dash.draw('appsSource', (tb) => {
+  rowsTo(tb, rowsOf('ev_apps_compare'), (r) => {
+    const d = document.createElement('div'); d.textContent = r.source; if (r.note) { const s = document.createElement('span'); s.className = 'sub'; s.textContent = r.note; d.append(s); }
+    return [[d, 'wrap'], [F.n(r.apps), 'num'], [r.ga4_sessions == null ? '—' : F.n(r.ga4_sessions), 'num'], [r.apps_per_session == null ? '—' : F.pct(r.apps_per_session), 'num']];
+  }, (r) => enc(r.event_id) + ',' + enc(r.source));
+});
+
+dash.draw('channels', (tb) => {
+  const rows = presetRows('ev_channels'); const max = d3.max(rows, (r) => r.sessions) || 1;
+  const out = [];
+  for (const g of GROUPS) {
+    const kids = rows.filter((r) => r.group === g); if (!kids.length) continue;
+    const se = d3.sum(kids, (r) => r.sessions), tot = d3.sum(rows, (r) => r.sessions);
+    const tr = document.createElement('tr'); tr.className = 'ev-grp'; tr.dataset.group = g; tr.setAttribute('aria-expanded', String(!EV.closed[g])); tr.tabIndex = 0;
+    const nm = document.createElement('td'); const sw = document.createElement('span'); sw.className = 'ev-swatch'; sw.style.background = GCOLOR[g]; nm.append(sw, `${g} `); const cnt = document.createElement('span'); cnt.className = 'ev-note'; cnt.textContent = `${kids.length}개`; nm.append(cnt);
+    tr.append(nm);
+    const en = d3.sum(kids, (r) => r.sessions * r.engagement_rate / 100), sec = d3.sum(kids, (r) => r.sessions * r.avg_engagement_sec), mo = d3.sum(kids, (r) => r.sessions * r.mobile_share / 100);
+    for (const [v] of [[F.n(se)], [F.pct(tot ? se / tot * 100 : 0)], [F.n(d3.sum(kids, (r) => r.new_users))], [F.pct(se ? en / se * 100 : 0)], [F.sec(se ? sec / se : 0)], [F.pct(se ? mo / se * 100 : 0, 0)]]) { const td = document.createElement('td'); td.className = 'num'; td.textContent = v; tr.append(td); }
+    out.push(tr);
+    for (const r of kids) {
+      const c = document.createElement('tr'); c.className = 'ev-child'; c.dataset.group = g; c.hidden = !!EV.closed[g]; c.setAttribute('data-key', enc(r.event_id) + ',' + enc(r.preset) + ',' + enc(r.channel));
+      const name = document.createElement('td'); name.append(r.channel); const sub = document.createElement('span'); sub.className = 'sub'; sub.textContent = r.source_medium; name.append(sub); c.append(name);
+      const bar = document.createElement('div'); bar.className = 'ev-barcell'; const i = document.createElement('span'); i.className = 'ev-bar'; i.style.width = Math.max(2, r.sessions / max * 60) + 'px'; i.style.background = GCOLOR[g]; const v = document.createElement('span'); v.textContent = F.n(r.sessions); bar.append(i, v);
+      for (const [val, cls] of [[bar, 'num'], [F.pct(r.share), 'num'], [F.n(r.new_users), 'num'], [F.pct(r.engagement_rate), 'num'], [F.sec(r.avg_engagement_sec), 'num'], [F.pct(r.mobile_share, 0), 'num']]) { const td = document.createElement('td'); td.className = cls; if (val instanceof Node) td.append(val); else td.textContent = val; c.append(td); }
+      out.push(c);
+    }
+  }
+  tb.replaceChildren(...out);
+});
+
+dash.draw('weekly', (tb) => {
+  rowsTo(tb, rowsOf('ev_weekly'), (r) => [[r.label], [F.n(r.sessions), 'num'], [F.n(r.new_users), 'num'], [F.pct(r.engagement_rate), 'num'], [F.sec(r.avg_engagement_sec), 'num'], [F.n(r.apps), 'num']], (r) => enc(r.event_id) + ',' + enc(r.week));
+});
+dash.draw('devices', (tb) => {
+  const lab = { desktop: 'PC', mobile: '모바일', tablet: '태블릿' };
+  rowsTo(tb, presetRows('ev_devices'), (r) => [[lab[r.device] || r.device], [F.n(r.sessions), 'num'], [F.pct(r.share), 'num'], [F.pct(r.engagement_rate), 'num'], [F.sec(r.avg_engagement_sec), 'num']], (r) => enc(r.event_id) + ',' + enc(r.preset) + ',' + enc(r.device));
+});
+
+const PAL = ['#e8590c', '#2f6fdb', '#0e9384', '#c2255c', '#7a5af8'];
+const srcSeries = () => {
+  const e = curEvent(); const rows = rowsOf('ev_sessions').filter((r) => !e || r.date >= e.start);
+  const tot = d3.rollups(rows, (v) => d3.sum(v, (r) => +r.sessions), (r) => r.source + ' / ' + r.medium).sort((a, b) => b[1] - a[1]).slice(0, 5);
+  const names = new Map(rows.map((r) => [r.source + ' / ' + r.medium, r.channel]));
+  return { rows, keys: tot.map((t) => t[0]), names, color: new Map(tot.map((t, i) => [t[0], t[0] === '(direct) / (none)' ? 'var(--ev-direct)' : PAL[i % PAL.length]])) };
+};
+dash.draw('srcLegend', (el) => { const { keys, names, color } = srcSeries(); el.replaceChildren(...keys.map((k) => { const s = document.createElement('span'); const i = document.createElement('i'); i.className = 'ev-line'; i.style.background = color.get(k); s.append(i, `${k} (${names.get(k)})`); return s; })); });
+dash.draw('srcChart', (el) => {
+  const { rows, keys, color } = srcSeries(); if (!rows.length) { el.replaceChildren(); return; }
+  const dates = [...new Set(rows.map((r) => r.date))].sort();
+  const series = keys.map((k) => ({ k, v: dates.map((d) => ({ d, n: d3.sum(rows.filter((r) => r.date === d && r.source + ' / ' + r.medium === k), (r) => +r.sessions) })) }));
+  const W = Math.max(280, el.clientWidth), H = 240, m = { t: 14, r: 12, b: 24, l: 34 };
+  const x = d3.scalePoint().domain(dates).range([m.l + 10, W - m.r - 10]);
+  const y = d3.scaleLinear().domain([0, d3.max(series, (s) => d3.max(s.v, (p) => p.n)) || 1]).nice().range([H - m.b, m.t]);
+  const svg = d3.create('svg').attr('class', 'ev-chart').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', '상위 5개 소스/매체의 일별 세션 선 그래프');
+  const ticks = y.ticks(4);
+  svg.append('g').selectAll('line').data(ticks).join('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', (v) => y(v)).attr('y2', (v) => y(v)).style('stroke', 'var(--cds-chart-grid)');
+  svg.append('g').selectAll('text').data(ticks).join('text').text((v) => nf(v)).attr('x', m.l - 6).attr('y', (v) => y(v) + 4).attr('text-anchor', 'end');
+  for (const s of series) {
+    svg.append('path').datum(s.v).attr('d', d3.line().x((p) => x(p.d)).y((p) => y(p.n))).style('fill', 'none').style('stroke', color.get(s.k)).style('stroke-width', 2);
+    svg.append('g').selectAll('circle').data(s.v).join('circle').attr('cx', (p) => x(p.d)).attr('cy', (p) => y(p.n)).attr('r', 3).style('fill', color.get(s.k));
+  }
+  const step = Math.ceil(dates.length / Math.max(1, Math.floor((W - m.l) / 44)));
+  svg.append('g').selectAll('text').data(dates.filter((_, i) => i % step === 0)).join('text').text(md).attr('x', (d) => x(d)).attr('y', H - 7).attr('text-anchor', 'middle');
+  const tip = tipBox();
+  svg.append('rect').attr('x', m.l).attr('y', m.t).attr('width', W - m.l - m.r).attr('height', H - m.t - m.b).style('fill', 'transparent')
+    .on('mousemove', (ev) => { const [px] = d3.pointer(ev); const i = d3.minIndex(dates, (d) => Math.abs(x(d) - px)); const d = dates[i];
+      tip.textContent = d + ' · ' + series.map((s) => s.k + ' ' + nf(s.v[i].n)).join(' · '); placeTip(el, tip, (x(d) / W) * el.clientWidth); })
+    .on('mouseleave', () => { tip.hidden = true; });
+  el.replaceChildren(svg.node(), tip);
+});
+
+const hourSeries = () => {
+  const e = curEvent(); const rows = rowsOf('ev_hourly').filter((r) => !e || r.date >= e.start);
+  const tot = d3.rollups(rows, (v) => d3.sum(v, (r) => +r.sessions), (r) => r.channel).sort((a, b) => b[1] - a[1]);
+  const top = tot.slice(0, 5).map((t) => t[0]); const keys = tot.length > 5 ? [...top, '그 외'] : top;
+  const nonDirect = top.filter((t) => t !== '직접 유입');
+  const color = new Map(keys.map((k) => [k, k === '직접 유입' ? 'var(--ev-direct)' : k === '그 외' ? 'var(--color-border-line)' : PAL[nonDirect.indexOf(k) % PAL.length]]));
+  return { rows, top, keys, color };
+};
+dash.draw('hourLegend', (el) => { const { keys, color } = hourSeries(); el.replaceChildren(...keys.map((k) => { const s = document.createElement('span'); const i = document.createElement('i'); i.style.background = color.get(k); s.append(i, k); return s; })); });
+dash.draw('hourChart', (el) => {
+  const { rows, top, keys, color } = hourSeries(); if (!rows.length) { el.replaceChildren(); return; }
+  const slots = [...new Set(rows.map((r) => r.date + ' ' + String(r.hour).padStart(2, '0')))].sort();
+  const first = slots[0], last = slots[slots.length - 1], all = [];
+  for (let t = Date.parse(first.slice(0, 10) + 'T' + first.slice(11) + ':00:00Z'); ; t += 3600000) { const iso = new Date(t).toISOString(); const s = iso.slice(0, 10) + ' ' + iso.slice(11, 13); all.push(s); if (s >= last) break; }
+  const data = all.map((s) => { const o = { slot: s }; for (const k of keys) o[k] = 0; return o; });
+  const idx = new Map(all.map((s, i) => [s, i]));
+  for (const r of rows) { const o = data[idx.get(r.date + ' ' + String(r.hour).padStart(2, '0'))]; const k = top.includes(r.channel) ? r.channel : '그 외'; o[k] += +r.sessions; }
+  const stack = d3.stack().keys(keys)(data);
+  const W = Math.max(280, el.clientWidth), H = 220, m = { t: 12, r: 6, b: 24, l: 34 };
+  const x = d3.scaleBand().domain(all).range([m.l, W - m.r]).padding(0.15);
+  const y = d3.scaleLinear().domain([0, d3.max(data, (o) => d3.sum(keys, (k) => o[k])) || 1]).nice().range([H - m.b, m.t]);
+  const svg = d3.create('svg').attr('class', 'ev-chart').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', '시간대별 유입 세션, 채널별 누적 막대');
+  const ticks = y.ticks(4);
+  svg.append('g').selectAll('line').data(ticks).join('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', (v) => y(v)).attr('y2', (v) => y(v)).style('stroke', 'var(--cds-chart-grid)');
+  svg.append('g').selectAll('text').data(ticks).join('text').text((v) => nf(v)).attr('x', m.l - 6).attr('y', (v) => y(v) + 4).attr('text-anchor', 'end');
+  for (const s of stack) svg.append('g').selectAll('rect').data(s).join('rect').attr('x', (d) => x(d.data.slot)).attr('width', x.bandwidth()).attr('y', (d) => y(d[1])).attr('height', (d) => Math.max(0, y(d[0]) - y(d[1]))).style('fill', color.get(s.key));
+  const every = Math.max(3, Math.ceil(all.length / Math.max(1, Math.floor((W - m.l) / 40))));
+  const lab = all.filter((s) => +s.slice(11) % every === 0 || s.endsWith(' 00'));
+  svg.append('g').selectAll('text').data(lab).join('text').text((s) => s.endsWith(' 00') ? md(s) : (+s.slice(11)) + '시').attr('x', (s) => x(s) + x.bandwidth() / 2).attr('y', H - 7).attr('text-anchor', 'middle').style('font-weight', (s) => s.endsWith(' 00') ? 600 : null);
+  const tip = tipBox();
+  svg.append('rect').attr('x', m.l).attr('y', m.t).attr('width', W - m.l - m.r).attr('height', H - m.t - m.b).style('fill', 'transparent')
+    .on('mousemove', (ev) => { const [px] = d3.pointer(ev); const o = data[Math.max(0, Math.min(data.length - 1, Math.floor((px - m.l) / x.step())))];
+      const parts = keys.filter((k) => o[k]).map((k) => k + ' ' + nf(o[k]));
+      tip.textContent = `${md(o.slot)} ${+o.slot.slice(11)}시 · ` + (parts.length ? parts.join(' · ') : '유입 없음'); placeTip(el, tip, ((x(o.slot) + x.bandwidth() / 2) / W) * el.clientWidth); })
+    .on('mouseleave', () => { tip.hidden = true; });
+  el.replaceChildren(svg.node(), tip);
+});
+
+dash.draw('referrers', (tb) => {
+  rowsTo(tb, presetRows('ev_refs').filter((r) => r.ref_group !== '사내 시스템'), (r) => [[r.referrer, 'wrap'], [r.ref_group], [F.n(r.pageviews), 'num'], [F.n(r.users), 'num']], (r) => enc(r.event_id) + ',' + enc(r.preset) + ',' + enc(r.referrer));
+});
+dash.draw('actions', (tb) => {
+  const lab = { page_view: '페이지 보기', session_start: '세션 시작', first_visit: '첫 방문', scroll: '90% 스크롤', user_engagement: '참여(10초 이상 등)', naver_oquery: '네이버 검색어 수집 태그', click: '외부 링크 클릭', apply_click: '신청하기 클릭', form_start: '양식 입력 시작', form_submit: '양식 제출' };
+  rowsTo(tb, presetRows('ev_action_totals'), (r) => { const d = document.createElement('div'); d.textContent = lab[r.event_name] || r.event_name; const s = document.createElement('span'); s.className = 'sub'; s.textContent = r.event_name; d.append(s); return [[d], [F.n(r.event_count), 'num'], [F.n(r.users), 'num'], [r.event_name === 'page_view' ? '—' : F.pct(r.per_pageview), 'num']]; }, (r) => enc(r.event_id) + ',' + enc(r.preset) + ',' + enc(r.event_name));
+});
+</script>
+<script>
+Promise.all(["ev_actions", "ev_apps_daily", "ev_apps_source", "ev_apps_space", "ev_checks", "ev_events", "ev_hourly", "ev_referrers", "ev_sessions"].map((id) => fetch(`data/${id}.csv?v=${Date.now()}`).then((r) => r.text()).then((t) => [id, d3.csvParse(t, (r) => { for (const k in r) if (r[k] === '') r[k] = null; return r; })])))
+  .then((all) => { for (const [id, rows] of all) dash._load(id, rows); dash._all(); })
+  .catch((e) => console.error(e));
+let pubRt; window.addEventListener('resize', () => { clearTimeout(pubRt); pubRt = setTimeout(() => dash._all(), 150); });
+</script>
+
+</body>
+</html>
