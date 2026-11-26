@@ -1,3 +1,116 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><meta http-equiv="refresh" content="0; url=banner/"><title>가비아CNS 리포트</title></head>
-<body><a href="banner/">가비아CNS 배너 클릭 리포트</a></body></html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>가비아CNS 리포트 허브</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+/* Layout: 머리 → 섹션(운영 중 / 준비 중)마다 카드 그리드 */
+:root { --bg: #f6f5f2; --panel: #ffffff; --fg: #1f1e1c; --muted: #6b6a66; --line: #e6e3dc; --accent: #e8590c; --blue: #2f6fdb; --teal: #0e9384; --violet: #7a5af8; --soft-orange: #fdebe0; --soft-blue: #e4ecfb; --soft-teal: #ddf2ef; --soft-violet: #ece7fe; --ok: #2e7d4f; --shadow: 0 1px 2px rgba(30,25,20,.04), 0 6px 20px rgba(30,25,20,.05);
+  --font: "Pretendard Variable", Pretendard, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif; color-scheme: light; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #191918; --panel: #232321; --fg: #ecebe8; --muted: #a3a19c; --line: #353431; --accent: #ff8a4c; --blue: #6f9bff; --teal: #3cc4b1; --violet: #a28bff; --soft-orange: #3a2a20; --soft-blue: #1f2a40; --soft-teal: #1a3330; --soft-violet: #2b2540; --ok: #5cbf86; --shadow: 0 1px 2px rgba(0,0,0,.3); color-scheme: dark; } }
+:root[data-theme="dark"] { --bg: #191918; --panel: #232321; --fg: #ecebe8; --muted: #a3a19c; --line: #353431; --accent: #ff8a4c; --blue: #6f9bff; --teal: #3cc4b1; --violet: #a28bff; --soft-orange: #3a2a20; --soft-blue: #1f2a40; --soft-teal: #1a3330; --soft-violet: #2b2540; --ok: #5cbf86; --shadow: 0 1px 2px rgba(0,0,0,.3); color-scheme: dark; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font); letter-spacing: -0.01em; }
+.wrap { max-width: 1080px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 40px 56px; display: flex; flex-direction: column; gap: 36px; }
+header { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; }
+.eyebrow { font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: .02em; margin: 0 0 6px; }
+h1 { font-size: 28px; font-weight: 800; letter-spacing: -0.03em; margin: 0; text-wrap: balance; }
+.lede { margin: 6px 0 0; color: var(--muted); font-size: 14px; }
+.modes { display: flex; gap: 4px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 3px; }
+.modes button { font: inherit; font-size: 12.5px; border: 0; background: transparent; color: var(--muted); padding: 5px 12px; border-radius: 7px; cursor: pointer; }
+.modes button[aria-pressed="true"] { background: var(--fg); color: var(--bg); font-weight: 600; }
+.modes button:focus-visible, a.card:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+section { display: flex; flex-direction: column; gap: 14px; }
+.sec-head { display: flex; align-items: center; gap: 10px; }
+.sec-head h2 { font-size: 17px; font-weight: 700; margin: 0; }
+.count { font-size: 12px; font-weight: 600; min-width: 22px; height: 22px; padding: 0 7px; border-radius: 999px; border: 1px solid var(--line); display: inline-flex; align-items: center; justify-content: center; color: var(--muted); background: var(--panel); }
+.sec-head::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 16px; }
+.card { display: flex; flex-direction: column; gap: 12px; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 22px 22px 18px; box-shadow: var(--shadow); color: inherit; text-decoration: none; min-width: 0; transition: transform .15s ease, border-color .15s ease; }
+a.card:hover { border-color: color-mix(in srgb, var(--tone) 45%, var(--line)); }
+@media (prefers-reduced-motion: no-preference) { a.card:hover { transform: translateY(-2px); } }
+.icon { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: var(--tone-soft); color: var(--tone); }
+.icon svg { width: 22px; height: 22px; }
+.card h3 { font-size: 18px; font-weight: 700; margin: 2px 0 0; letter-spacing: -0.02em; }
+.card p { margin: 0; color: var(--muted); font-size: 13.5px; line-height: 1.6; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { font-size: 11.5px; padding: 2px 9px; border-radius: 999px; background: var(--tone-soft); color: var(--tone); font-weight: 600; }
+.tag.plain { background: transparent; border: 1px solid var(--line); color: var(--muted); font-weight: 500; }
+.foot { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 12.5px; font-weight: 600; }
+.go { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: var(--tone-soft); color: var(--tone); flex: none; }
+.go svg { width: 14px; height: 14px; }
+.card.wait { opacity: .72; box-shadow: none; border-style: dashed; }
+.card.wait .foot { color: var(--muted); }
+.t-orange { --tone: var(--accent); --tone-soft: var(--soft-orange); }
+.t-blue { --tone: var(--blue); --tone-soft: var(--soft-blue); }
+.t-teal { --tone: var(--teal); --tone-soft: var(--soft-teal); }
+.t-violet { --tone: var(--violet); --tone-soft: var(--soft-violet); }
+.note { color: var(--muted); font-size: 12.5px; margin: 0; }
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <p class="eyebrow">비즈니스밸류팀</p>
+      <h1>가비아CNS 리포트 허브</h1>
+      <p class="lede">마케팅 성과 보고서를 한곳에서 열어 봐요.</p>
+    </div>
+    <div class="modes" role="group" aria-label="화면 모드">
+      <button type="button" id="m-light" data-mode="light" aria-pressed="true">라이트</button>
+      <button type="button" id="m-dark" data-mode="dark" aria-pressed="false">다크</button>
+    </div>
+  </header>
+
+  <section aria-labelledby="s1">
+    <div class="sec-head"><h2 id="s1">볼 수 있는 리포트</h2><span class="count">1</span></div>
+    <div class="grid">
+      <a class="card t-violet" href="banner/">
+        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 9 5 12 1.8-5.2L21 14 9 9z"/><path d="M4 4l2 2M9 3v2.5M3 9h2.5"/></svg></span>
+        <h3>배너 클릭 리포트</h3>
+        <p>가비아커머스·퍼스트몰·클릭엔 배너의 위치별·배너별 클릭과 닫기·넘기기를 봐요.</p>
+        <div class="tags"><span class="tag">평일 아침 갱신</span><span class="tag plain">11/23부터 측정</span></div>
+        <div class="foot"><span>GA4</span><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span></div>
+      </a>
+    </div>
+  </section>
+
+  <section aria-labelledby="s2">
+    <div class="sec-head"><h2 id="s2">공개 준비 중</h2><span class="count">2</span></div>
+    <div class="grid">
+      <div class="card wait t-orange">
+        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h11l-2 4 2 4H5"/></svg></span>
+        <h3>이벤트 리포트</h3>
+        <p>이벤트 페이지별 유입 채널과 비중, 접수 현황을 기간별로 봐요.</p>
+        <div class="tags"><span class="tag plain">곧 공개</span></div>
+        <div class="foot"><span>GA4</span></div>
+      </div>
+      <div class="card wait t-blue">
+        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg></span>
+        <h3>서치콘솔 성과 보고서</h3>
+        <p>gabiacns·퍼스트몰·클릭엔의 검색어와 페이지별 노출, 클릭, 평균 순위를 봐요.</p>
+        <div class="tags"><span class="tag plain">곧 공개</span></div>
+        <div class="foot"><span>Google Search Console</span></div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(() => {
+  const root = document.documentElement;
+  const set = (mode) => {
+    root.setAttribute('data-theme', mode);
+    document.querySelectorAll('[data-mode]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.mode === mode)));
+    try { localStorage.setItem('hub-theme', mode); } catch (e) {}
+  };
+  let saved = 'light';
+  try { saved = localStorage.getItem('hub-theme') || 'light'; } catch (e) {}
+  set(saved);
+  document.querySelectorAll('[data-mode]').forEach((b) => b.addEventListener('click', () => set(b.dataset.mode)));
+})();
+</script>
+
+</html>

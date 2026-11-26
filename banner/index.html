@@ -66,6 +66,8 @@ body.dark { background: #121211; }
 .bn details ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 4px; line-height: 1.55; color: var(--color-fg-muted); font-size: 12px; }
 .bn details li { display: list-item; list-style: disc; }
 [data-dash-source-state=refreshing] { opacity: .5; }
+.bn-back { display: inline-block; margin-bottom: 6px; text-decoration: none; }
+.bn-back:hover { color: var(--bn-cta); }
 
 </style>
 </head>
@@ -74,6 +76,7 @@ body.dark { background: #121211; }
   <header class="bn-top" id="bn-top">
     <div class="bn-row" style="align-items:flex-start">
       <div style="flex:1;min-width:0">
+        <a class="bn-note bn-back" href="../">← 리포트 허브</a>
         <h1>가비아CNS 배너 클릭 리포트</h1>
         <p class="bn-note">사이트 배너(헤드리스 배너)에서 일어난 클릭을 GA4로 모았어요 · 11월 23일 저녁부터 측정해 아직 데이터가 적어요</p>
       </div>
